@@ -1,0 +1,133 @@
+/* css/tokens.css — VERBATIM from DESIGN_BRIEF §2.1 (slot A/foundation owns it; every other slot read-only). */
+:root {
+  /* ---------- Surfaces (light) ---------- */
+  --paper:      #FFF8F6;   /* page background */
+  --paper-2:    #F6ECE6;   /* alternate band */
+  --paper-3:    #EDE0D8;   /* deepest light band, input wells */
+  --card:       #FFFFFF;   /* cards, tiles, sticky bar */
+
+  /* ---------- Ink (text on light) ---------- */
+  --ink:        #12182B;   /* headings, body */
+  --ink-2:      #4B5268;   /* secondary text */
+  --ink-3:      #5A6075;   /* labels/captions — passes 4.5:1 on paper, paper-2, paper-3, card; NOT on stage colours */
+
+  /* ---------- Night (dark chapters) ---------- */
+  --night:      #12182B;
+  --night-2:    #1B2342;
+  --night-deep: #0B1020;
+  --fg:         #FFF8F6;   /* text on dark */
+  --fg-2:       #B9BED0;   /* secondary on dark */
+  --fg-3:       #9AA0B8;   /* tertiary on dark (>=6.79:1 on night) */
+  --peach:      #F2C7B8;   /* warm text on the lower dusk stops (>=5.99:1) */
+
+  /* ---------- Signal ---------- */
+  --accent:       #FF3600; /* surfaces/rings/strokes; text only >=24px */
+  --accent-hover: #FF5A2A; /* LIGHTER on hover so the navy label keeps 5.66:1 */
+  --accent-press: #FF4A1A; /* pressed, 5.24:1 with navy label */
+  --accent-ink:   #B82500; /* orange TEXT on light, any size */
+  --accent-soft:  #FFE3DA; /* tint behind chips/hotspots; ink text only */
+  --on-accent:    #12182B; /* label on orange. NEVER white. */
+
+  /* ---------- Focus (one rule everywhere, §2.2): ink ring + paper halo; orange ring fails on plates (2.49-2.63:1) ---------- */
+  --focus:        #12182B; /* = --ink; 12.1-17.6:1 on every light surface */
+  --focus-halo:   #FFF8F6; /* = --paper; keeps the ring legible over photos */
+
+  /* ---------- Fleet chapter plates (light mid-tones, ink text 12.1-12.8:1) ---------- */
+  --stage-hatch: #F6D5C3;
+  --stage-suv:   #EBD5BA;
+  --stage-sedan: #CBD9EA;
+  --stage-van:   #DAD3E3;
+
+  /* ---------- States ---------- */
+  --ok:  #1B7F4B;          /* 4.78:1 on paper */
+  --err: #B3261E;          /* 6.23:1 on paper */
+
+  /* ---------- Lines ---------- */
+  --line:          rgba(18, 24, 43, .14);    /* decorative hairlines ONLY (1.33:1) */
+  --line-ui:       rgba(18, 24, 43, .55);    /* input borders, outline buttons (3.89:1 on paper) */
+  --line-dark:     rgba(255, 248, 246, .18); /* decorative on dark */
+  --line-dark-ui:  rgba(255, 248, 246, .55); /* UI borders on dark (5.8:1 on night) */
+
+  /* ---------- Scrims (text over photos: only >= .55 for >=40px text, >= .72 for small text) ---------- */
+  --scrim-55: rgba(18, 24, 43, .55);
+  --scrim-62: rgba(18, 24, 43, .62);
+  --scrim-72: rgba(18, 24, 43, .72);
+
+  /* ---------- Type ---------- */
+  --font-display: "Epilogue", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;   /* D-10: same family as the old site (Elementor primary/secondary) */
+  --font-ui:      "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;  /* D-10: old-site text/accent face */
+  --font-mono:    "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;  /* D-10: no mono on the old site; labels keep tracking/uppercase */
+
+  --fs-folio:   clamp(.6875rem, .66rem + .1vw, .75rem);       /* 11-12 */
+  --fs-small:   clamp(.8125rem, .79rem + .1vw, .875rem);      /* 13-14 */
+  --fs-body:    clamp(1rem, .97rem + .15vw, 1.125rem);        /* 16-18 */
+  --fs-lead:    clamp(1.125rem, 1.02rem + .5vw, 1.375rem);    /* 18-22 */
+  --fs-h3:      clamp(1.375rem, 1.2rem + .8vw, 1.875rem);     /* 22-30 */
+  --fs-h2:      clamp(2rem, 1.3rem + 3vw, 4rem);              /* 32-64, Epilogue 700 is wider than the serif */
+  --fs-h1:      clamp(2.5rem, 1.2rem + 5.2vw, 6.25rem);       /* 40-100 */
+  --fs-numeral: clamp(3rem, 1.3rem + 6.8vw, 7.5rem);          /* 48-120 */
+  --lh-tight: 1.0; --lh-head: 1.06; --lh-body: 1.55;
+
+  /* ---------- Space (8px base) ---------- */
+  --s-1: .25rem; --s-2: .5rem; --s-3: .75rem; --s-4: 1rem; --s-5: 1.5rem;
+  --s-6: 2rem;   --s-7: 3rem;  --s-8: 4rem;   --s-9: 6rem; --s-10: 9rem;
+  --gutter: 16px;                                   /* phone side gutter */
+  --gutter-lg: clamp(24px, 4vw, 64px);              /* >=768 */
+  --maxw: 1360px;                                   /* content max width */
+  --nav-h: 64px;                                    /* mobile nav height */
+  --nav-h-lg: 76px;                                 /* >=1024 */
+  --bar-h: 64px;                                    /* sticky mobile CTA bar */
+
+  /* ---------- Radii, shadows ---------- */
+  --r-sm: 8px; --r-md: 14px; --r-lg: 24px; --r-pill: 999px;
+  --arch: 999px 999px 0 0;
+  --shadow-1: 0 1px 2px rgba(18,24,43,.06), 0 4px 16px rgba(18,24,43,.06);
+  --shadow-2: 0 2px 4px rgba(18,24,43,.08), 0 18px 48px rgba(18,24,43,.14);
+  --shadow-dark: 0 24px 64px rgba(0,0,0,.45);
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(.16, 1, .3, 1);       /* "expo out": reveals */
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);      /* state changes */
+  --ease-press:  cubic-bezier(.3, 0, .2, 1);
+  --dur-1: 120ms; --dur-2: 200ms; --dur-3: 320ms; --dur-4: 500ms; --dur-5: 800ms; /* D-11: faster */
+
+  /* ---------- Z-index ladder ---------- */
+  --z-base: 0; --z-plate: 1; --z-split: 5; --z-fleet: 10; --z-canvas: 20; --z-scrim: 25;
+  --z-nav: 100; --z-bar: 110; --z-menu: 200; --z-dialog: 300; --z-preloader: 1000; --z-skip: 1100;
+
+  /* ---------- 3D sculpture colours (read by scene-column.js via getComputedStyle) ---------- */
+  --sculpt-body:   #12182B;
+  --sculpt-wheel:  #4B5268;   /* wheels are ink-grey like the real logo; orange only as the thin rim line below */
+  --sculpt-rim:    #FF3600;   /* torus tube <= 6px projected; never a filled orange area (orange budget, 1.5) */
+  --sculpt-glow:   #FF5A2A;
+  --sculpt-env-zenith:  #BFD3E6;
+  --sculpt-env-horizon: #FFF1E6;
+  --sculpt-env-ground:  #E9D6C6;
+  --sculpt-dusk-top:    #12182B;
+  --sculpt-dusk-bottom: #6B3A33;
+  --sculpt-dusk-sun:    #FFB27A;
+}
+
+/* Semantic aliases: sections use these, never the raw palette names, so a palette swap is one file. */
+:root {
+  --bg: var(--paper); --bg-alt: var(--paper-2); --bg-deep: var(--paper-3); --surface: var(--card);
+  --text: var(--ink); --text-2: var(--ink-2); --text-3: var(--ink-3);
+  --signal: var(--accent); --signal-text: var(--accent-ink);
+  --border-ui: var(--line-ui); --border-soft: var(--line);
+}
+
+/* Dark scope: any element with data-theme="night" (dusk back cover, arrival plate overlay, mobile menu) */
+[data-theme="night"] {
+  --bg: var(--night); --bg-alt: var(--night-2); --bg-deep: var(--night-deep); --surface: var(--night-2);
+  --text: var(--fg); --text-2: var(--fg-2); --text-3: var(--fg-3);
+  --signal: var(--accent); --signal-text: var(--accent);   /* orange text on dark: only on night/night-deep, >=24px */
+  --focus: var(--fg); --focus-halo: var(--night);
+  --border-ui: var(--line-dark-ui); --border-soft: var(--line-dark);
+  color: var(--text); background: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) { :root { --dur-1: 1ms; --dur-2: 1ms; --dur-3: 1ms; --dur-4: 1ms; --dur-5: 1ms; } }
+html.is-static { --dur-1: 1ms; --dur-2: 1ms; --dur-3: 1ms; --dur-4: 1ms; --dur-5: 1ms; }
+
+html { color-scheme: light; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; box-shadow: 0 0 0 6px var(--focus-halo); }  /* the single focus rule; no component restyles it */

@@ -1,0 +1,46 @@
+name: Deploy Public Rent a Car to client Vercel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rentacar-public-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    # Unset/false is disabled. The reviewed rental project must be filled first.
+    if: >-
+      github.repository == 'lamingsrb/public-rent-a-car-site' &&
+      github.ref == 'refs/heads/main' &&
+      vars.VERCEL_CLIENT_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      EXPECTED_VERCEL_ORG_ID: team_q4RaIK40c2Iesb8YrpHNowFG
+      EXPECTED_VERCEL_PROJECT_ID: prj_BTZu2FmoDnUBRzMeJBb92L8KMwg6
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: "24"
+      - name: Validate rental client target
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$VERCEL_TOKEN"
+          [[ "$EXPECTED_VERCEL_PROJECT_ID" == prj_* ]]
+          test "$VERCEL_ORG_ID" = "$EXPECTED_VERCEL_ORG_ID"
+          test "$VERCEL_PROJECT_ID" = "$EXPECTED_VERCEL_PROJECT_ID"
+      - name: Deploy this public checkout
+        run: npx --yes vercel@65.9.0 deploy --prod --yes

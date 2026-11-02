@@ -1,0 +1,267 @@
+/* ==========================================================================
+   css/cover.css — hero + arrival (slot B, brief 5.1 / 5.2). Class prefix .cover__ and .pass.
+   Source of truth = the STATIC layout (no pin, no scrub): hero, then the arrival as a normal dark block, then pass + panels.
+   cover.js adds .cover--scrolly (desktop pin on #cover) or .cover--scrolly-m (mobile pin on .cover__stage) inside its
+   gsap.matchMedia callbacks and removes it on revert, so a dead script or reduced motion always falls back to the static layout.
+   No hex literals (tokens only).
+   ========================================================================== */
+
+/* ---------- Slot geometry (shared by the plate clip, the slot, the credit and the column anchor) ---------- */
+#cover {
+  --slot-t: calc(var(--nav-h) + 16px);
+  --slot-h: calc(min(100vw - 2 * var(--gutter), 520px) * 1.25);
+  --slot-w: calc(var(--slot-h) * .8);
+  --slot-r: calc((100% - var(--slot-w)) / 2);
+  --slot-l: var(--slot-r);
+  --slot-b: calc(100% - var(--slot-t) - var(--slot-h));
+  --hero-h: max(100svh, 640px);
+  position: relative;
+}
+
+/* ---------- Text layer ---------- */
+.cover__paper { position: relative; z-index: 3; padding-top: calc(var(--nav-h) + 20px); padding-bottom: 12px; }
+.cover__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.cover__title { font-size: var(--fs-h1); max-width: 11ch; margin-top: 4px; }
+.cover__sub { margin: 0; max-width: 44ch; }
+.cover__ctas { display: flex; flex-direction: column; gap: 12px; width: 100%; margin-top: 4px; }
+.cover__ctas .btn { width: 100%; position: relative; }
+.cover__num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cover__chips {
+  display: flex; gap: 8px; width: calc(100% + 2 * var(--gutter)); margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter);
+  overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-inline: var(--gutter); scrollbar-width: none; overscroll-behavior-x: contain;
+  -webkit-mask-image: linear-gradient(to right, black 86%, transparent); mask-image: linear-gradient(to right, black 86%, transparent);
+  -webkit-overflow-scrolling: touch; padding-block: 2px;
+}
+.cover__chips::-webkit-scrollbar { display: none; }
+.cover__chips .chip { flex: none; scroll-snap-align: start; }
+
+/* ---------- Stage + hero zone ---------- */
+.cover__stage { position: relative; margin-top: -56px; pointer-events: none; }
+.cover__hero { position: relative; display: flex; flex-direction: column; padding-top: var(--slot-t); padding-bottom: 28px; }
+.cover__slot {
+  position: relative; width: var(--slot-w); aspect-ratio: 4 / 5; margin-inline: auto;
+  background: var(--paper-2); border-radius: var(--arch); box-shadow: var(--shadow-2);
+}
+.cover__plate { position: absolute; inset: 0; margin: 0; pointer-events: none; } /* z auto: no stacking context, so the credit can sit above the scrim */
+.cover__clip {
+  position: absolute; inset: 0;
+  /* --cl-* are tweened by cover.js (plate expansion); without JS the slot values apply */
+  clip-path: inset(var(--cl-t, var(--slot-t)) var(--cl-r, var(--slot-r)) var(--cl-b, var(--slot-b)) var(--cl-l, var(--slot-l)) round var(--cl-rad, 999px) var(--cl-rad, 999px) 0 0);
+}
+.cover__wipe { position: absolute; inset: 0; overflow: hidden; }
+.cover__wipe picture { display: contents; }
+.cover__img {
+  position: absolute; top: var(--slot-t); right: var(--slot-r); width: var(--slot-w); height: var(--slot-h); max-width: none;
+  object-fit: cover; object-position: 50% 38%; background: var(--paper-3); will-change: auto;
+}
+.cover__credit {
+  --credit-mix: 0;
+  position: absolute; right: var(--slot-r); top: calc(var(--slot-t) + var(--slot-h) + 8px); z-index: calc(var(--z-scrim) + 1);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500; line-height: 1.3; letter-spacing: .04em;
+  color: color-mix(in srgb, var(--fg) calc(var(--credit-mix) * 100%), var(--ink-3));
+  text-shadow: 0 1px 3px color-mix(in srgb, var(--night-deep) calc(var(--credit-mix) * 75%), transparent);
+  white-space: nowrap;
+}
+
+/* The column: .cover__canvas is the scrubbed box (scale, y, opacity); .cover__anchor is the intro box and the stage anchor. */
+.cover__canvas {
+  position: absolute; z-index: var(--z-canvas); pointer-events: none;
+  width: 150px; height: 214px;
+  left: calc(var(--slot-l) - 8px); top: calc(var(--slot-t) + var(--slot-h) - 186px);
+  transform-origin: 50% 100%;
+}
+.cover__anchor { position: absolute; inset: 0; }
+.cover__poster, .cover__anchor canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .4s var(--ease-out); }
+.cover__anchor.is-live .cover__poster { opacity: 0; }
+
+.cover__scrim { position: absolute; inset: 0; z-index: var(--z-scrim); background: var(--scrim-62); opacity: 0; pointer-events: none; }
+
+/* ---------- Ring pulse on the primary CTA (JS appends .cover__ring; STRETCH) ---------- */
+.cover__ring { position: absolute; top: -3px; right: -3px; bottom: -3px; left: -3px; border: 2px solid var(--accent); border-radius: inherit; pointer-events: none; opacity: 0; }
+
+/* ---------- Fact strip + price footnote ---------- */
+.cover__strip { position: relative; z-index: 3; margin: 44px var(--gutter) 0; pointer-events: auto; }
+.cover__facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 8px; padding-top: 14px; border-top: 1px solid var(--line); }
+.cover__facts li { display: flex; flex-direction: column-reverse; align-items: center; gap: 3px; text-align: center; }
+.cover__fv { font-family: var(--font-display); font-weight: 700; font-size: 26px; line-height: 1; letter-spacing: -.01em; color: var(--text); font-variant-numeric: lining-nums; white-space: nowrap; }
+.cover__fv small { font-family: var(--font-ui); font-size: 13px; font-weight: 500; letter-spacing: 0; color: var(--text-2); }
+.cover__fl { font-family: var(--font-mono); font-size: 11px; font-weight: 500; line-height: 1.3; letter-spacing: .06em; text-transform: uppercase; color: var(--text-3); }
+.cover__foot { margin-top: 12px; font-family: var(--font-mono); font-size: 11px; line-height: 1.5; letter-spacing: .01em; color: var(--ink-3); text-align: center; text-wrap: balance; }
+
+/* ---------- Arrival (static = dark block under the hero) ---------- */
+.cover__arrival { position: relative; overflow: clip; padding-block: 88px 8px; pointer-events: auto; }
+.cover__beg {
+  position: absolute; left: 0; bottom: 2vw; z-index: 0; user-select: none; pointer-events: none; /* inside the clip box, not cut (2026-11-01) */
+  font-family: var(--font-display); font-size: 24vw; line-height: .8; letter-spacing: -.02em; color: transparent;
+  -webkit-text-stroke: 2px var(--fg-2); opacity: .4;
+}
+.cover__arrival-in { position: relative; z-index: 1; display: grid; gap: 20px; }
+.cover__arrival-folio { color: var(--text-2); }
+.cover__arrival-title { display: grid; font-family: var(--font-display); font-weight: 800; font-size: clamp(4rem, 2.6rem + 6vw, 8.5rem); line-height: .94; letter-spacing: -.02em; color: var(--text); margin: 0; }
+.cover__mask { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
+.cover__line { display: block; }
+.cover__fade { display: none; }
+
+/* ---------- Extras: Pick-up Pass + two panels ---------- */
+.cover__extras { position: relative; padding: 32px 0 120px; pointer-events: auto; }
+.cover__extras::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 48px; background: linear-gradient(to bottom, var(--night), var(--paper)); pointer-events: none; }
+.cover__extras-in { display: grid; gap: 32px; }
+
+.pass { --text: var(--ink); --text-2: var(--ink-2); --text-3: var(--ink-3); --signal-text: var(--accent-ink);
+  position: relative; width: 100%; max-width: 420px; min-width: min(320px, 100%); color: var(--ink);
+  filter: drop-shadow(0 20px 22px color-mix(in srgb, var(--night-deep) 55%, transparent));
+}
+.pass__tilt { transform-style: preserve-3d; }
+.pass__flipper { display: grid; gap: 14px; }
+.pass__face { position: relative; color: var(--ink); }
+.pass__front {
+  display: grid; grid-template-columns: 58% 42%; min-height: 210px; border-radius: var(--r-md); background: var(--paper);
+  -webkit-mask: radial-gradient(circle 10px at 58% 0, transparent 9.5px, black 10px) top / 100% 51% no-repeat, radial-gradient(circle 10px at 58% 100%, transparent 9.5px, black 10px) bottom / 100% 51% no-repeat;
+  mask: radial-gradient(circle 10px at 58% 0, transparent 9.5px, black 10px) top / 100% 51% no-repeat, radial-gradient(circle 10px at 58% 100%, transparent 9.5px, black 10px) bottom / 100% 51% no-repeat;
+}
+.pass__main, .pass__stub { display: flex; flex-direction: column; gap: 12px; padding: 18px 14px 16px 18px; min-width: 0; }
+.pass__stub { padding: 18px 12px 14px 14px; border-left: 2px dashed var(--line-ui); justify-content: space-between; }
+.pass__label { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink); }
+.pass__rows { display: grid; gap: 12px; margin: 0; }
+.pass__row { display: grid; gap: 2px; }
+.pass__row dt { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); line-height: 1.3; }
+.pass__row dd { margin: 0; text-wrap: balance; font-size: 14px; font-weight: 700; line-height: 1.25; color: var(--ink); }
+.pass__note { margin-top: auto; font-size: 12px; font-weight: 500; line-height: 1.4; color: var(--ink-2); }
+.pass__flip {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 4px 8px; align-self: flex-start; max-width: 100%; text-align: center; line-height: 1.2;
+  border: 1.5px solid var(--ink); border-radius: var(--r-pill); color: var(--ink);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .01em; white-space: normal;
+  transition: background-color var(--dur-2) var(--ease-press), color var(--dur-2) var(--ease-press);
+}
+.pass__flip[hidden] { display: none; }
+@media (hover: hover) and (pointer: fine) { .pass__flip:hover { background: var(--ink); color: var(--paper); } }
+.pass__flip { --focus: var(--ink); --focus-halo: var(--paper); }
+
+/* Back face = plain list directly beneath the pass (CORE). The flip variant (.pass--flip) turns it into a card. */
+.pass__back { color: var(--text); --text: var(--fg); --text-2: var(--fg-2); }
+.pass__terms { display: grid; gap: 8px; }
+.pass__terms li { position: relative; padding-left: 22px; font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--fg); }
+.pass__terms li::before { content: ""; position: absolute; left: 0; top: .72em; width: 12px; height: 1.5px; background: var(--peach); }
+
+.pass--flip { perspective: 1400px; }
+.pass--flip .pass__back { --text: var(--ink); }
+.pass--flip .pass__flipper { gap: 0; transform-style: preserve-3d; transition: transform .45s var(--ease-in-out); }
+.pass--flip .pass__face { grid-area: 1 / 1; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.pass--flip .pass__back {
+  transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: space-between; gap: 14px; min-height: 210px; padding: 20px 20px 16px;
+  border-radius: var(--r-md); background: var(--paper); color: var(--ink);
+  -webkit-mask: radial-gradient(circle 10px at 58% 0, transparent 9.5px, black 10px) top / 100% 51% no-repeat, radial-gradient(circle 10px at 58% 100%, transparent 9.5px, black 10px) bottom / 100% 51% no-repeat;
+  mask: radial-gradient(circle 10px at 58% 0, transparent 9.5px, black 10px) top / 100% 51% no-repeat, radial-gradient(circle 10px at 58% 100%, transparent 9.5px, black 10px) bottom / 100% 51% no-repeat;
+}
+.pass--flip .pass__terms li { color: var(--ink); }
+.pass--flip .pass__terms li::before { background: var(--accent-ink); }
+.pass--flip.is-flipped .pass__flipper { transform: rotateY(180deg); }
+
+.cover__panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 460px; }
+.cover__panel { display: grid; gap: 8px; margin: 0; }
+.cover__panel-img { aspect-ratio: 3 / 4; overflow: hidden; border-radius: var(--r-lg); border: 1px solid var(--line-dark); background: var(--night-2); }
+.cover__panel-img img { width: 100%; height: 100%; max-width: none; object-fit: cover; transform-origin: 50% 50%; }
+.cover__panel-cap { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: .04em; line-height: 1.3; color: var(--fg-2); }
+
+/* ---------- Mobile pin (< 1024): the stage pins, the extras stay in the flow ---------- */
+.cover--scrolly-m .cover__stage { height: 100svh; overflow: clip; margin-top: calc(-1 * var(--nav-h)); }
+.cover--scrolly-m .cover__hero { position: absolute; inset: 0; padding-bottom: 0; }
+.cover--scrolly-m .cover__arrival { position: absolute; inset: 0; z-index: calc(var(--z-scrim) + 1); display: grid; align-content: center; padding: 0; background: transparent; pointer-events: none; }
+.cover--scrolly-m .cover__arrival-in { gap: 14px; }
+.cover--scrolly-m .cover__beg { bottom: 6svh; left: 0; }
+.cover--scrolly-m .cover__fade { display: block; position: absolute; left: 0; right: 0; bottom: 0; height: 28%; background: linear-gradient(to bottom, transparent, var(--night)); pointer-events: none; }
+.cover--scrolly-m .cover__extras { margin-top: -1px; }
+
+/* ---------- Chips + CTAs at tablet widths ---------- */
+@media (min-width: 640px) {
+  .cover__ctas { flex-direction: row; flex-wrap: wrap; width: auto; }
+  .cover__ctas .btn { width: auto; }
+  .cover__chips { flex-wrap: wrap; overflow: visible; width: auto; margin-inline: 0; padding-inline: 0; -webkit-mask-image: none; mask-image: none; }
+  .cover__strip { max-width: 560px; margin-inline: auto; }
+  .cover__extras-in { max-width: 520px; margin-inline: auto; }
+}
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .cover__extras-in { justify-items: center; } /* the pass (420) and the panels (460) sit centred in the 520 px column, not flush left (2026-11-01) */
+}
+
+/* ---------- Desktop (>= 1024) ---------- */
+@media (min-width: 1024px) {
+  #cover {
+    --slot-t: calc(var(--nav-h-lg) + 24px);
+    --slot-h: min(78svh, 700px, calc(100svh - var(--slot-t) - 124px));
+    --slot-w: calc(var(--slot-h) * .8);
+    --slot-r: max(var(--gutter-lg), (100% - var(--maxw)) / 2);
+    --slot-l: calc(100% - var(--slot-r) - var(--slot-w));
+    --anchor-h: 62svh;
+    --anchor-w: calc(var(--anchor-h) * .7);
+  }
+  .cover__paper {
+    position: absolute; top: 0; left: 0; right: 0; height: var(--hero-h); padding: 0; pointer-events: none;
+    display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px;
+  }
+  .cover__copy { grid-column: 1 / 7; align-self: end; padding-bottom: 132px; gap: 18px; pointer-events: auto; }
+  .cover__title { font-size: min(var(--fs-h1), 12.2svh); max-width: 5.2em; }
+  .cover__sub { font-size: min(var(--fs-lead), 2.6svh); }
+  .cover__chips { gap: 8px; }
+
+  .cover__stage { margin-top: 0; pointer-events: auto; }
+  .cover__hero { display: block; height: var(--hero-h); padding: 0; }
+  .cover__slot { position: absolute; top: var(--slot-t); right: var(--slot-r); margin: 0; width: var(--slot-w); height: var(--slot-h); aspect-ratio: auto; }
+  .cover__canvas {
+    width: var(--anchor-w); height: var(--anchor-h);
+    left: calc(var(--slot-l) - var(--anchor-w) / 2); top: auto; bottom: calc(100% - var(--slot-t) - var(--slot-h) - 3svh);
+  }
+  .cover__strip {
+    position: absolute; left: 0; right: 0; bottom: 0; max-width: none; margin: 0 auto; padding-bottom: 16px;
+    width: min(100% - 2 * var(--gutter-lg), var(--maxw));
+  }
+  .cover__facts { display: flex; justify-content: flex-start; gap: clamp(28px, 3.8vw, 72px); padding-top: 12px; }
+  .cover__facts li { flex-direction: row; align-items: baseline; gap: .7em; text-align: left; }
+  .cover__fv { font-size: 28px; }
+  .cover__fl { font-size: 12px; }
+  .cover__foot { text-align: left; margin-top: 8px; font-size: 12px; max-width: none; text-wrap: pretty; }
+
+  .cover__arrival { padding-block: 120px 24px; }
+  .cover__arrival-title { font-size: min(clamp(4.5rem, 3rem + 7vw, 10rem), 16svh); }
+  .cover__arrival-in { margin-inline: auto; width: min(100% - 2 * var(--gutter-lg), var(--maxw)); justify-items: start; }
+  .cover__arrival-in > :not(.cover__arrival-title) { max-width: 650px; } /* the title keeps its own width so "Preuzmite." does not break (2026-11-01) */
+
+  .cover__extras { padding: 24px 0 140px; }
+  .cover__extras-in {
+    grid-template-columns: minmax(0, 420px) minmax(0, 1fr); align-items: start; gap: 64px; max-width: none;
+    width: min(100% - 2 * var(--gutter-lg), var(--maxw)); margin-inline: auto;
+  }
+  .cover__panels { max-width: 480px; gap: 16px; }
+
+  /* desktop pin on #cover: stage, arrival and extras are overlays on one 100svh frame */
+  .cover--scrolly { height: var(--hero-h); overflow: clip; }
+  .cover--scrolly .cover__stage { position: absolute; inset: 0; }
+  .cover--scrolly .cover__arrival {
+    position: absolute; inset: 0; z-index: calc(var(--z-scrim) + 1); padding: 0; background: transparent;
+    display: grid; align-content: center; padding-top: var(--nav-h-lg); pointer-events: none;
+  }
+  .cover--scrolly .cover__extras { position: absolute; inset: 0; z-index: calc(var(--z-scrim) + 2); padding: 0; background: transparent; pointer-events: none; }
+  .cover--scrolly .cover__extras::after { display: none; }
+  .cover--scrolly .cover__extras-in {
+    height: 100%; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 24px;
+    padding: var(--nav-h-lg) 0 5svh;
+  }
+  .cover--scrolly .pass { width: 400px; max-width: 400px; pointer-events: auto; }
+  .cover--scrolly .cover__panels { display: flex; gap: 16px; max-width: none; pointer-events: auto; }
+  .cover--scrolly .cover__panel { width: clamp(150px, 13.2vw, 200px); }
+}
+
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+  #cover { --anchor-h: 54svh; }
+  .cover__title { font-size: min(calc(var(--fs-h1) * .9), 11.4svh); }
+  /* The copy cell (columns 1-6 of 12, 24 px gaps) ends at 50% - 12px and the column's bars begin ~12 % inside the anchor box:
+     at 1024 the box started 97 px before the cell's end and the bars ran over the sub line (audit 2026-11-01). The box may not
+     start before the cell's end plus 8 px of clear space; from 1280 the slot formula already keeps it clear and wins the max(). */
+  .cover__canvas { left: max(calc(var(--slot-l) - var(--anchor-w) / 2), calc(50% + 8px - var(--anchor-w) * .1)); }
+}
+
+/* ---------- Print: keep it readable, no scrubbed layers ---------- */
+@media print {
+  .cover__scrim, .cover__canvas { display: none; }
+  .cover__paper { position: static; height: auto; }
+}

@@ -1,0 +1,92 @@
+<!-- atlas (slot E): three pick-up points on a schematic diagram (brief 5.7). Addresses live in js/atlas.js PLACES; markup carries the EN copy. -->
+<section id="atlas" class="sec sec-atlas" data-nav-theme="light" aria-labelledby="atlas-title">
+  <header class="sec__head wrap" data-reveal>
+    <p class="folio"><span class="folio__tick"></span><span data-i18n="atlas.folio">06 · Locations</span></p>
+    <h2 id="atlas-title" data-i18n="atlas.title" data-i18n-html>Three places to <em class="acc">start.</em></h2>
+    <p class="lead" data-i18n="atlas.lead">Pick up at Belgrade Nikola Tesla Airport or at one of our two city locations.</p>
+  </header>
+
+  <div class="atlas__pinbox">
+    <div class="atlas__stage wrap">
+      <figure class="atlas__map" data-atlas-map>
+        <svg class="atlas__svg" viewBox="0 0 1200 720" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <defs>
+            <mask id="atlas-mask-1" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="720">
+              <path id="atlas-solid-1" class="atlas__mask" d="M210 170 C 330 150, 480 350, 640 430" />
+            </mask>
+            <mask id="atlas-mask-2" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="720">
+              <path id="atlas-solid-2" class="atlas__mask" d="M640 430 C 740 380, 850 570, 960 520" />
+            </mask>
+          </defs>
+          <g class="atlas__river">
+            <path d="M-20 470 C 260 470, 400 280, 640 250 S 1000 150, 1220 60" />
+            <path d="M-20 520 C 260 520, 410 330, 650 300 S 1010 200, 1220 110" />
+          </g>
+          <path class="atlas__route" d="M210 170 C 330 150, 480 350, 640 430" mask="url(#atlas-mask-1)" />
+          <path class="atlas__route" d="M640 430 C 740 380, 850 570, 960 520" mask="url(#atlas-mask-2)" />
+          <ellipse class="atlas__traveller" rx="6" ry="6" cx="0" cy="0" />
+          <ellipse class="atlas__traveller" rx="6" ry="6" cx="0" cy="0" />
+        </svg>
+
+        <button type="button" class="atlas__pin" data-place="airport" style="--x: 17.5%; --y: 23.611%" aria-controls="atlas-card-airport" data-i18n-attr="aria-label:atlas.place.airport" aria-label="Belgrade Nikola Tesla Airport">
+          <span class="atlas__halo" aria-hidden="true"></span>
+          <span class="atlas__dot" aria-hidden="true"></span>
+          <span class="atlas__pin-n mono" aria-hidden="true">01</span>
+        </button>
+        <button type="button" class="atlas__pin" data-place="milosa" style="--x: 53.333%; --y: 59.722%" aria-controls="atlas-card-milosa" data-i18n-attr="aria-label:atlas.place.milosa" aria-label="Kneza Miloša 14, Belgrade">
+          <span class="atlas__halo" aria-hidden="true"></span>
+          <span class="atlas__dot" aria-hidden="true"></span>
+          <span class="atlas__pin-n mono" aria-hidden="true">02</span>
+        </button>
+        <button type="button" class="atlas__pin" data-place="dobracina" style="--x: 80%; --y: 72.222%" aria-controls="atlas-card-dobracina" data-i18n-attr="aria-label:atlas.place.dobracina" aria-label="Dobračina, Belgrade {{DOBRACINA_NO}}">
+          <span class="atlas__halo" aria-hidden="true"></span>
+          <span class="atlas__dot" aria-hidden="true"></span>
+          <span class="atlas__pin-n mono" aria-hidden="true">03</span>
+        </button>
+
+        <figcaption class="atlas__tag mono" data-i18n="atlas.diagramTag">Schematic, not to scale</figcaption>
+      </figure>
+
+      <ol class="atlas__cards">
+        <li class="atlas__card" id="atlas-card-airport" data-place="airport" tabindex="-1" aria-labelledby="atlas-name-airport">
+          <div class="atlas__card-head">
+            <span class="atlas__idx mono" aria-hidden="true">01</span>
+            <h3 id="atlas-name-airport" data-i18n="atlas.place.airport">Belgrade Nikola Tesla Airport</h3>
+          </div>
+          <p class="atlas__note" data-i18n="atlas.note.airport">Airport pick-up: €20 + VAT, 08:00–22:00; €30 + VAT outside those hours.</p>
+          <div class="atlas__actions">
+            <a class="btn btn--ink" data-ask href="#contact" data-i18n="atlas.ask">Ask about pick-up here</a>
+            <a class="btn btn--outline" data-maps target="_blank" rel="noopener" data-i18n="atlas.maps">View on Maps</a>
+          </div>
+          <p class="atlas__hours mono" data-i18n="atlas.hours">Hours: ask us</p>
+        </li>
+
+        <li class="atlas__card" id="atlas-card-milosa" data-place="milosa" tabindex="-1" aria-labelledby="atlas-name-milosa">
+          <div class="atlas__card-head">
+            <span class="atlas__idx mono" aria-hidden="true">02</span>
+            <h3 id="atlas-name-milosa" data-i18n="atlas.place.milosa">Kneza Miloša 14, Belgrade</h3>
+          </div>
+          <p class="atlas__note" data-i18n="atlas.note.city">City location.</p>
+          <div class="atlas__actions">
+            <a class="btn btn--ink" data-ask href="#contact" data-i18n="atlas.ask">Ask about pick-up here</a>
+            <a class="btn btn--outline" data-maps target="_blank" rel="noopener" data-i18n="atlas.maps">View on Maps</a>
+          </div>
+          <p class="atlas__hours mono" data-i18n="atlas.hours">Hours: ask us</p>
+        </li>
+
+        <li class="atlas__card" id="atlas-card-dobracina" data-place="dobracina" tabindex="-1" aria-labelledby="atlas-name-dobracina">
+          <div class="atlas__card-head">
+            <span class="atlas__idx mono" aria-hidden="true">03</span>
+            <h3 id="atlas-name-dobracina" data-i18n="atlas.place.dobracina">Dobračina, Belgrade {{DOBRACINA_NO}}</h3>
+          </div>
+          <p class="atlas__note" data-i18n="atlas.note.city">City location.</p>
+          <div class="atlas__actions">
+            <a class="btn btn--ink" data-ask href="#contact" data-i18n="atlas.ask">Ask about pick-up here</a>
+            <!-- CLIENT-CONFIRM: Dobračina street number is unconfirmed (brief 11.2) -->
+          </div>
+          <p class="atlas__hours mono" data-i18n="atlas.hours">Hours: ask us</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,1608 @@
+{
+ "generated_from": "archive extract (prc/data) via scripts/build_fleet_data.py",
+ "price_note": {
+  "en": "Daily starting price*. The daily price includes tax, insurance and unlimited mileage unless a promotional price says otherwise. Final price depends on rental period and season — ask us for a quote.",
+  "sr": "Početna dnevna cena*. Dnevna cena uključuje porez, osiguranje i neograničenu kilometražu, osim ako promotivna cena ne kaže drugačije. Konačna cena zavisi od dužine najma i sezone — zatražite ponudu."
+ },
+ "equipment": {
+  "en": "Air conditioning, navigation, USB port, Bluetooth, parking sensors, driving assistance",
+  "sr": "Klima uređaj, navigacija, USB port, Blutut, senzori za parkiranje, pomoć pri vožnji"
+ },
+ "upsell": [
+  {
+   "key": "airport",
+   "heading": {
+    "en": "Airport transfer",
+    "sr": "Transfer sa Aerodroma"
+   },
+   "text": {
+    "en": "Enhance your travel with seamless airport pick-up and drop-off at Belgrade Airport.",
+    "sr": "Ulepšajte svoje putovanje prevozom sa i do beogradskog aerodroma."
+   }
+  },
+  {
+   "key": "extras",
+   "heading": {
+    "en": "Extra equipment",
+    "sr": "Dodatna Oprema"
+   },
+   "text": {
+    "en": "Enhance your rental with extras like baby seats, Wi-Fi, snow chains, or a Thule roof box.",
+    "sr": "Poboljšajte svoje putovanje dodatnom opremom kao što su dečja sedišta, Wi-Fi, lanci ili Thule krovna kutija."
+   }
+  },
+  {
+   "key": "locations",
+   "heading": {
+    "en": "Pick-up & return",
+    "sr": "Preuzimanje i Vraćanje"
+   },
+   "text": {
+    "en": "Enhance your convenience with multiple locations in Belgrade for pick-up and drop-off.",
+    "sr": "Uživajte u većoj fleksibilnosti uz više lokacija u Beogradu za preuzimanje i vraćanje vozila."
+   }
+  },
+  {
+   "key": "abroad",
+   "heading": {
+    "en": "Travel abroad",
+    "sr": "Putovanje u inostranstvo"
+   },
+   "text": {
+    "en": "Enhance your journey by taking your rental car abroad for a small additional fee.",
+    "sr": "Naša vozila možete koristiti i za putovanja u inostranstvo uz dodatnu naknadu."
+   }
+  }
+ ],
+ "categories": [
+  {
+   "key": "van",
+   "en": "Van",
+   "sr": "Kombi",
+   "vehicle_ids": [
+    "mercedes-v"
+   ]
+  },
+  {
+   "key": "hatchback",
+   "en": "Hatchback",
+   "sr": "Hečbek",
+   "vehicle_ids": [
+    "polo-comfort",
+    "skoda-fabia-2",
+    "skoda-fabia",
+    "skoda-scala",
+    "toyota-yaris"
+   ]
+  },
+  {
+   "key": "suv",
+   "en": "SUV",
+   "sr": "SUV",
+   "vehicle_ids": [
+    "skoda-kamiq-2",
+    "skoda-kamiq",
+    "skoda-karoq",
+    "toyota-yaris-cross"
+   ]
+  },
+  {
+   "key": "sedan",
+   "en": "Sedan",
+   "sr": "Limuzina",
+   "vehicle_ids": [
+    "skoda-octavia",
+    "skoda-superb-2",
+    "skoda-superb",
+    "toyota-corolla-2"
+   ]
+  }
+ ],
+ "vehicles": [
+  {
+   "id": "polo-comfort",
+   "name": "Polo Comfort",
+   "brand": "Volkswagen",
+   "model_short": "Polo Comfort",
+   "model": "Polo Comfort 1.0 TSI",
+   "category": {
+    "key": "hatchback",
+    "en": "Hatchback",
+    "sr": "Hečbek"
+   },
+   "year": 2019,
+   "transmission": {
+    "key": "manual",
+    "en": "Manual",
+    "sr": "Manuelni"
+   },
+   "fuel": {
+    "key": "petrol",
+    "en": "Petrol",
+    "sr": "Benzin",
+    "raw": "Petrol"
+   },
+   "hp": 80,
+   "kw": 59,
+   "cc": null,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 355,
+   "trunk_raw": "355 L",
+   "color": {
+    "key": "white",
+    "en": "White",
+    "sr": "Bela"
+   },
+   "price_from_eur": 20.0,
+   "price_raw": "€20 /Daily Starting Price*",
+   "description": {
+    "en": "A reliable and economical car, perfect for city driving. Easy to handle, comfortable, and practical for everyday needs, with the recognizable quality of Volkswagen vehicles.",
+    "sr": "Pouzdan i ekonomičan automobil savršen za gradsku vožnju. Jednostavan za upravljanje, udoban i praktičan za svakodnevne potrebe, uz prepoznatljiv kvalitet Volkswagen vozila."
+   },
+   "card": {
+    "base": "/assets/img/fleet/polo-comfort/card",
+    "cut": "/assets/img/fleet/polo-comfort/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Polo Comfort (white) — Public Rent a Car Belgrade",
+     "sr": "Polo Comfort (bela) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-11.png"
+   },
+   "photos": [],
+   "source_url": "https://publicrentacar.rs/cars/polo-comfort/",
+   "notes": []
+  },
+  {
+   "id": "skoda-fabia-2",
+   "name": "Škoda Fabia",
+   "brand": "Škoda",
+   "model_short": "Fabia",
+   "model": "Fabia Ambition 1.0 TSI",
+   "category": {
+    "key": "hatchback",
+    "en": "Hatchback",
+    "sr": "Hečbek"
+   },
+   "year": 2018,
+   "transmission": {
+    "key": "manual",
+    "en": "Manual",
+    "sr": "Manuelni"
+   },
+   "fuel": {
+    "key": "petrol",
+    "en": "Petrol",
+    "sr": "Benzin",
+    "raw": "Petrol"
+   },
+   "hp": 75,
+   "kw": 55,
+   "cc": 999,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 330,
+   "trunk_raw": "330 L",
+   "color": {
+    "key": "white",
+    "en": "White",
+    "sr": "Bela"
+   },
+   "price_from_eur": 20.0,
+   "price_raw": "€20 /Daily Starting Price*",
+   "description": {
+    "en": "A practical city car that is easy to drive and park, with low fuel consumption. Ideal for short distances, city driving, and clients looking for an economical and reliable solution.",
+    "sr": "Praktičan gradski automobil koji se lako vozi i parkira, uz malu potrošnju goriva. Idealan za kraće relacije, gradske vožnje i klijente koji traže ekonomično i pouzdano rešenje."
+   },
+   "card": {
+    "base": "/assets/img/fleet/skoda-fabia-2/card",
+    "cut": "/assets/img/fleet/skoda-fabia-2/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Škoda Fabia (white) — Public Rent a Car Belgrade",
+     "sr": "Škoda Fabia (bela) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-7.png"
+   },
+   "photos": [],
+   "source_url": "https://publicrentacar.rs/cars/skoda-fabia-2/",
+   "notes": []
+  },
+  {
+   "id": "skoda-fabia",
+   "name": "Škoda Fabia",
+   "brand": "Škoda",
+   "model_short": "Fabia",
+   "model": "Fabia Ambition 1.0",
+   "category": {
+    "key": "hatchback",
+    "en": "Hatchback",
+    "sr": "Hečbek"
+   },
+   "year": 2021,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "petrol",
+    "en": "Petrol",
+    "sr": "Benzin",
+    "raw": "Petrol"
+   },
+   "hp": 95,
+   "kw": 70,
+   "cc": 999,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 330,
+   "trunk_raw": "330 L",
+   "color": {
+    "key": "white",
+    "en": "White",
+    "sr": "Bela"
+   },
+   "price_from_eur": 20.0,
+   "price_raw": "€20 /Daily Starting Price*",
+   "description": {
+    "en": "A practical city car that is easy to drive and park, with low fuel consumption. Ideal for short distances, city driving, and clients looking for an economical and reliable solution.",
+    "sr": "Praktičan gradski automobil koji se lako vozi i parkira, uz malu potrošnju goriva. Idealan za kraće relacije, gradske vožnje i klijente koji traže ekonomično i pouzdano rešenje."
+   },
+   "card": {
+    "base": "/assets/img/fleet/skoda-fabia/card",
+    "cut": "/assets/img/fleet/skoda-fabia/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Škoda Fabia (white) — Public Rent a Car Belgrade",
+     "sr": "Škoda Fabia (bela) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-8.png"
+   },
+   "photos": [],
+   "source_url": "https://publicrentacar.rs/cars/skoda-fabia/",
+   "notes": []
+  },
+  {
+   "id": "toyota-yaris",
+   "name": "Toyota Yaris",
+   "brand": "Toyota",
+   "model_short": "Yaris",
+   "model": "Toyota Yaris",
+   "category": {
+    "key": "hatchback",
+    "en": "Hatchback",
+    "sr": "Hečbek"
+   },
+   "year": 2026,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "hybrid",
+    "en": "Hybrid",
+    "sr": "Hibrid",
+    "raw": "Hybrid"
+   },
+   "hp": 92,
+   "kw": 68,
+   "cc": 1490,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 286,
+   "trunk_raw": "286 L",
+   "color": {
+    "key": "white",
+    "en": "White",
+    "sr": "Bela"
+   },
+   "price_from_eur": 22.0,
+   "price_raw": "€22 /Daily Starting Price*",
+   "description": {
+    "en": null,
+    "sr": null
+   },
+   "card": {
+    "base": "/assets/img/fleet/toyota-yaris/card",
+    "cut": "/assets/img/fleet/toyota-yaris/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Toyota Yaris (white) — Public Rent a Car Belgrade",
+     "sr": "Toyota Yaris (bela) — Public Rent a Car Beograd"
+    },
+    "src": "2026-08-yariss.png"
+   },
+   "photos": [
+    {
+     "base": "/assets/img/fleet/toyota-yaris/01",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris (white) — Public Rent a Car Belgrade, photo 1",
+      "sr": "Toyota Yaris (bela) — Public Rent a Car Beograd, fotografija 1"
+     },
+     "src": "2026-08-41.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris/02",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris (white) — Public Rent a Car Belgrade, photo 2",
+      "sr": "Toyota Yaris (bela) — Public Rent a Car Beograd, fotografija 2"
+     },
+     "src": "2026-08-42.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris/03",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8003,
+     "alt": {
+      "en": "Toyota Yaris (white) — Public Rent a Car Belgrade, photo 3",
+      "sr": "Toyota Yaris (bela) — Public Rent a Car Beograd, fotografija 3"
+     },
+     "src": "2026-08-488.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris/04",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris (white) — Public Rent a Car Belgrade, photo 4",
+      "sr": "Toyota Yaris (bela) — Public Rent a Car Beograd, fotografija 4"
+     },
+     "src": "2026-08-43.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris/05",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris (white) — Public Rent a Car Belgrade, photo 5",
+      "sr": "Toyota Yaris (bela) — Public Rent a Car Beograd, fotografija 5"
+     },
+     "src": "2026-08-44.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris/06",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8003,
+     "alt": {
+      "en": "Toyota Yaris (white) — Public Rent a Car Belgrade, photo 6",
+      "sr": "Toyota Yaris (bela) — Public Rent a Car Beograd, fotografija 6"
+     },
+     "src": "2026-08-499.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris/07",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris (white) — Public Rent a Car Belgrade, photo 7",
+      "sr": "Toyota Yaris (bela) — Public Rent a Car Beograd, fotografija 7"
+     },
+     "src": "2026-08-45.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris/08",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris (white) — Public Rent a Car Belgrade, photo 8",
+      "sr": "Toyota Yaris (bela) — Public Rent a Car Beograd, fotografija 8"
+     },
+     "src": "2026-08-47.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris/09",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris (white) — Public Rent a Car Belgrade, photo 9",
+      "sr": "Toyota Yaris (bela) — Public Rent a Car Beograd, fotografija 9"
+     },
+     "src": "2026-08-46.png"
+    }
+   ],
+   "source_url": "https://publicrentacar.rs/cars/toyota-yaris/",
+   "notes": [
+    "description_awaiting_client"
+   ]
+  },
+  {
+   "id": "skoda-scala",
+   "name": "Škoda Scala",
+   "brand": "Škoda",
+   "model_short": "Scala",
+   "model": "Scala Ambition 1.0 TSI",
+   "category": {
+    "key": "hatchback",
+    "en": "Hatchback",
+    "sr": "Hečbek"
+   },
+   "year": 2024,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "petrol",
+    "en": "Petrol",
+    "sr": "Benzin",
+    "raw": "Petrol"
+   },
+   "hp": 110,
+   "kw": 81,
+   "cc": 999,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 467,
+   "trunk_raw": "467 L",
+   "color": {
+    "key": "blue",
+    "en": "Blue",
+    "sr": "Plava"
+   },
+   "price_from_eur": 24.0,
+   "price_raw": "€24 /Daily Starting Price*",
+   "description": {
+    "en": "Built for everyday versatility, the Škoda Scala combines easy handling, generous cabin space and a practical luggage compartment. Its efficient performance and comfortable ride make it a smart choice for city trips, business travel and longer journeys.",
+    "sr": "Napravljena za svakodnevnu praktičnost, Škoda Scala kombinuje lako upravljanje, prostranu kabinu i veliki prtljažni prostor. Efikasan motor i udobna vožnja čine je odličnim izborom za gradsku vožnju, poslovna putovanja i duže relacije."
+   },
+   "card": {
+    "base": "/assets/img/fleet/skoda-scala/card",
+    "cut": "/assets/img/fleet/skoda-scala/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Škoda Scala (blue) — Public Rent a Car Belgrade",
+     "sr": "Škoda Scala (plava) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-Untitled-design-1.png"
+   },
+   "photos": [],
+   "source_url": "https://publicrentacar.rs/cars/skoda-scala/",
+   "notes": []
+  },
+  {
+   "id": "toyota-yaris-cross",
+   "name": "Toyota Yaris Cross",
+   "brand": "Toyota",
+   "model_short": "Yaris Cross",
+   "model": "Toyota Yaris Cross Hybrid",
+   "category": {
+    "key": "suv",
+    "en": "SUV",
+    "sr": "SUV"
+   },
+   "year": 2026,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "hybrid",
+    "en": "Hybrid (petrol / electric)",
+    "sr": "Hibrid (benzin / struja)",
+    "raw": "Petrol / Electric"
+   },
+   "hp": 92,
+   "kw": 68,
+   "cc": 1490,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 397,
+   "trunk_raw": "397 L",
+   "color": {
+    "key": "grey",
+    "en": "Grey",
+    "sr": "Siva"
+   },
+   "price_from_eur": 27.0,
+   "price_raw": "€27 /Daily Starting Price*",
+   "description": {
+    "en": "Combining hybrid efficiency with SUV versatility, the Toyota Yaris Cross Hybrid offers a smooth, economical, and comfortable driving experience. Its modern design, practical interior, and advanced technology make it an excellent choice for both everyday driving and longer trips.",
+    "sr": "Kombinujući efikasnost hibridnog pogona sa praktičnošću SUV vozila, Toyota Yaris Cross Hybrid pruža udobnu, ekonomičnu i prijatnu vožnju. Moderan dizajn, prostran i funkcionalan enterijer, kao i napredna tehnologija čine je odličnim izborom za svakodnevnu vožnju, ali i za duža putovanja."
+   },
+   "card": {
+    "base": "/assets/img/fleet/toyota-yaris-cross/card",
+    "cut": "/assets/img/fleet/toyota-yaris-cross/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Toyota Yaris Cross (grey) — Public Rent a Car Belgrade",
+     "sr": "Toyota Yaris Cross (siva) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-13.png"
+   },
+   "photos": [
+    {
+     "base": "/assets/img/fleet/toyota-yaris-cross/01",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris Cross (grey) — Public Rent a Car Belgrade, photo 1",
+      "sr": "Toyota Yaris Cross (siva) — Public Rent a Car Beograd, fotografija 1"
+     },
+     "src": "2026-08-23.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris-cross/02",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris Cross (grey) — Public Rent a Car Belgrade, photo 2",
+      "sr": "Toyota Yaris Cross (siva) — Public Rent a Car Beograd, fotografija 2"
+     },
+     "src": "2026-08-22.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris-cross/03",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris Cross (grey) — Public Rent a Car Belgrade, photo 3",
+      "sr": "Toyota Yaris Cross (siva) — Public Rent a Car Beograd, fotografija 3"
+     },
+     "src": "2026-08-21.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris-cross/04",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris Cross (grey) — Public Rent a Car Belgrade, photo 4",
+      "sr": "Toyota Yaris Cross (siva) — Public Rent a Car Beograd, fotografija 4"
+     },
+     "src": "2026-08-24.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris-cross/05",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris Cross (grey) — Public Rent a Car Belgrade, photo 5",
+      "sr": "Toyota Yaris Cross (siva) — Public Rent a Car Beograd, fotografija 5"
+     },
+     "src": "2026-08-26.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris-cross/06",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris Cross (grey) — Public Rent a Car Belgrade, photo 6",
+      "sr": "Toyota Yaris Cross (siva) — Public Rent a Car Beograd, fotografija 6"
+     },
+     "src": "2026-08-25.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris-cross/07",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris Cross (grey) — Public Rent a Car Belgrade, photo 7",
+      "sr": "Toyota Yaris Cross (siva) — Public Rent a Car Beograd, fotografija 7"
+     },
+     "src": "2026-08-27.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris-cross/08",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris Cross (grey) — Public Rent a Car Belgrade, photo 8",
+      "sr": "Toyota Yaris Cross (siva) — Public Rent a Car Beograd, fotografija 8"
+     },
+     "src": "2026-08-28.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris-cross/09",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris Cross (grey) — Public Rent a Car Belgrade, photo 9",
+      "sr": "Toyota Yaris Cross (siva) — Public Rent a Car Beograd, fotografija 9"
+     },
+     "src": "2026-08-Untitled-design.png"
+    },
+    {
+     "base": "/assets/img/fleet/toyota-yaris-cross/10",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Toyota Yaris Cross (grey) — Public Rent a Car Belgrade, photo 10",
+      "sr": "Toyota Yaris Cross (siva) — Public Rent a Car Beograd, fotografija 10"
+     },
+     "src": "2026-08-30.png"
+    }
+   ],
+   "source_url": "https://publicrentacar.rs/cars/toyota-yaris-cross/",
+   "notes": []
+  },
+  {
+   "id": "skoda-octavia",
+   "name": "Škoda Octavia",
+   "brand": "Škoda",
+   "model_short": "Octavia",
+   "model": "A8 Style 2.0 TDI",
+   "category": {
+    "key": "sedan",
+    "en": "Sedan",
+    "sr": "Limuzina"
+   },
+   "year": 2020,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "diesel",
+    "en": "Diesel",
+    "sr": "Dizel",
+    "raw": "Diesel"
+   },
+   "hp": 150,
+   "kw": null,
+   "cc": 1968,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 565,
+   "trunk_raw": "565 L",
+   "color": {
+    "key": "white",
+    "en": "White",
+    "sr": "Bela"
+   },
+   "price_from_eur": 33.0,
+   "price_raw": "€33 /Daily Starting Price*",
+   "description": {
+    "en": "A reliable and economical vehicle that offers an excellent balance of comfort, performance, and fuel efficiency. A perfect choice for business users, family trips, and everyday driving.",
+    "sr": "Pouzdano i ekonomično vozilo koje pruža odličan balans između udobnosti, performansi i potrošnje. Savršen izbor za poslovne korisnike, porodična putovanja i svakodnevnu vožnju."
+   },
+   "card": {
+    "base": "/assets/img/fleet/skoda-octavia/card",
+    "cut": "/assets/img/fleet/skoda-octavia/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Škoda Octavia (white) — Public Rent a Car Belgrade",
+     "sr": "Škoda Octavia (bela) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-10.png"
+   },
+   "photos": [],
+   "source_url": "https://publicrentacar.rs/cars/skoda-octavia/",
+   "notes": []
+  },
+  {
+   "id": "toyota-corolla-2",
+   "name": "Toyota Corolla",
+   "brand": "Toyota",
+   "model_short": "Corolla",
+   "model": "Toyota Corolla 1.5",
+   "category": {
+    "key": "sedan",
+    "en": "Sedan",
+    "sr": "Limuzina"
+   },
+   "year": 2026,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "petrol",
+    "en": "Petrol",
+    "sr": "Benzin",
+    "raw": "Petrol"
+   },
+   "hp": 125,
+   "kw": 92,
+   "cc": 1490,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 471,
+   "trunk_raw": "471 L",
+   "color": {
+    "key": "white",
+    "en": "White",
+    "sr": "Bela"
+   },
+   "price_from_eur": 35.0,
+   "price_raw": "€35 /Daily Starting Price*",
+   "description": {
+    "en": "An excellent choice for both city driving and longer journeys. Its modern design, outstanding fuel efficiency, and comfortable interior make the Toyota Corolla the perfect vehicle for clients seeking reliability, comfort, and a smooth driving experience.",
+    "sr": "Odličan izbor kako za gradsku vožnju, tako i za duža putovanja. Moderan dizajn, izuzetna ekonomičnost i udoban enterijer čine Toyotu Corollu savršenim vozilom za klijente koji traže pouzdanost, udobnost i prijatno iskustvo vožnje."
+   },
+   "card": {
+    "base": "/assets/img/fleet/toyota-corolla-2/card",
+    "cut": "/assets/img/fleet/toyota-corolla-2/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Toyota Corolla (white) — Public Rent a Car Belgrade",
+     "sr": "Toyota Corolla (bela) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-12.png"
+   },
+   "photos": [],
+   "source_url": "https://publicrentacar.rs/cars/toyota-corolla-2/",
+   "notes": []
+  },
+  {
+   "id": "skoda-kamiq-2",
+   "name": "Škoda Kamiq",
+   "brand": "Škoda",
+   "model_short": "Kamiq",
+   "model": "Ambition 1.5 TSI",
+   "category": {
+    "key": "suv",
+    "en": "SUV",
+    "sr": "SUV"
+   },
+   "year": 2023,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "petrol",
+    "en": "Petrol",
+    "sr": "Benzin",
+    "raw": "Petrol"
+   },
+   "hp": 150,
+   "kw": 110,
+   "cc": 1498,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 600,
+   "trunk_raw": "600 L",
+   "color": {
+    "key": "white",
+    "en": "White",
+    "sr": "Bela"
+   },
+   "price_from_eur": 35.0,
+   "price_raw": "€35 /Daily Starting Price*",
+   "description": {
+    "en": "A compact SUV ideal for city driving and longer trips. The elevated seating position, modern design, and comfort provide safety and an enjoyable driving experience on every journey.",
+    "sr": "Kompaktan SUV idealan za gradsku vožnju i duža putovanja. Povišena pozicija sedenja, moderan izgled i udobnost pružaju sigurnost i prijatno iskustvo tokom svake vožnje."
+   },
+   "card": {
+    "base": "/assets/img/fleet/skoda-kamiq-2/card",
+    "cut": "/assets/img/fleet/skoda-kamiq-2/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Škoda Kamiq (white) — Public Rent a Car Belgrade",
+     "sr": "Škoda Kamiq (bela) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-Untitled-design-2.png"
+   },
+   "photos": [],
+   "source_url": "https://publicrentacar.rs/cars/skoda-kamiq-2/",
+   "notes": []
+  },
+  {
+   "id": "skoda-kamiq",
+   "name": "Škoda Kamiq",
+   "brand": "Škoda",
+   "model_short": "Kamiq",
+   "model": "Selection 1.0 TSI",
+   "category": {
+    "key": "suv",
+    "en": "SUV",
+    "sr": "SUV"
+   },
+   "year": 2024,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "petrol",
+    "en": "Petrol",
+    "sr": "Benzin",
+    "raw": "Petrol"
+   },
+   "hp": 115,
+   "kw": 85,
+   "cc": 999,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 600,
+   "trunk_raw": "600 L",
+   "color": {
+    "key": "blue",
+    "en": "Blue",
+    "sr": "Plava"
+   },
+   "price_from_eur": 35.0,
+   "price_raw": "€35 /Daily Starting Price*",
+   "description": {
+    "en": "A compact SUV ideal for city driving and longer trips. The elevated seating position, modern design, and comfort provide safety and an enjoyable driving experience on every journey.",
+    "sr": "Kompaktan SUV idealan za gradsku vožnju i duža putovanja. Povišena pozicija sedenja, moderan izgled i udobnost pružaju sigurnost i prijatno iskustvo tokom svake vožnje."
+   },
+   "card": {
+    "base": "/assets/img/fleet/skoda-kamiq/card",
+    "cut": "/assets/img/fleet/skoda-kamiq/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Škoda Kamiq (blue) — Public Rent a Car Belgrade",
+     "sr": "Škoda Kamiq (plava) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-9.png"
+   },
+   "photos": [],
+   "source_url": "https://publicrentacar.rs/cars/skoda-kamiq/",
+   "notes": []
+  },
+  {
+   "id": "skoda-karoq",
+   "name": "Škoda Karoq",
+   "brand": "Škoda",
+   "model_short": "Karoq",
+   "model": "Karoq Sportline 1.5 TSI",
+   "category": {
+    "key": "suv",
+    "en": "SUV",
+    "sr": "SUV"
+   },
+   "year": 2021,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "petrol",
+    "en": "Petrol",
+    "sr": "Benzin",
+    "raw": "Petrol"
+   },
+   "hp": 150,
+   "kw": 110,
+   "cc": 1498,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 521,
+   "trunk_raw": "521 L",
+   "color": {
+    "key": "grey",
+    "en": "Grey",
+    "sr": "Siva"
+   },
+   "price_from_eur": 35.0,
+   "price_raw": "€35 /Daily Starting Price*",
+   "description": {
+    "en": "A spacious and modern SUV that offers an excellent balance of comfort, safety, and performance. An ideal choice for family and business trips, featuring a high level of comfort, a large luggage space, and a safe driving experience in all conditions.",
+    "sr": "Prostran i moderan SUV koji pruža odličan balans između udobnosti, sigurnosti i performansi. Idealan izbor za porodična i poslovna putovanja, uz visok nivo komfora, veliki prtljažni prostor i sigurnu vožnju u svim uslovima."
+   },
+   "card": {
+    "base": "/assets/img/fleet/skoda-karoq/card",
+    "cut": "/assets/img/fleet/skoda-karoq/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Škoda Karoq (grey) — Public Rent a Car Belgrade",
+     "sr": "Škoda Karoq (siva) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-16.png"
+   },
+   "photos": [
+    {
+     "base": "/assets/img/fleet/skoda-karoq/01",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Karoq (grey) — Public Rent a Car Belgrade, photo 1",
+      "sr": "Škoda Karoq (siva) — Public Rent a Car Beograd, fotografija 1"
+     },
+     "src": "2026-08-11.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-karoq/02",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Karoq (grey) — Public Rent a Car Belgrade, photo 2",
+      "sr": "Škoda Karoq (siva) — Public Rent a Car Beograd, fotografija 2"
+     },
+     "src": "2026-08-12.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-karoq/03",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Karoq (grey) — Public Rent a Car Belgrade, photo 3",
+      "sr": "Škoda Karoq (siva) — Public Rent a Car Beograd, fotografija 3"
+     },
+     "src": "2026-08-13.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-karoq/04",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Karoq (grey) — Public Rent a Car Belgrade, photo 4",
+      "sr": "Škoda Karoq (siva) — Public Rent a Car Beograd, fotografija 4"
+     },
+     "src": "2026-08-14.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-karoq/05",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Karoq (grey) — Public Rent a Car Belgrade, photo 5",
+      "sr": "Škoda Karoq (siva) — Public Rent a Car Beograd, fotografija 5"
+     },
+     "src": "2026-08-20.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-karoq/06",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Karoq (grey) — Public Rent a Car Belgrade, photo 6",
+      "sr": "Škoda Karoq (siva) — Public Rent a Car Beograd, fotografija 6"
+     },
+     "src": "2026-08-17.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-karoq/07",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Karoq (grey) — Public Rent a Car Belgrade, photo 7",
+      "sr": "Škoda Karoq (siva) — Public Rent a Car Beograd, fotografija 7"
+     },
+     "src": "2026-08-19.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-karoq/08",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Karoq (grey) — Public Rent a Car Belgrade, photo 8",
+      "sr": "Škoda Karoq (siva) — Public Rent a Car Beograd, fotografija 8"
+     },
+     "src": "2026-08-16.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-karoq/09",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Karoq (grey) — Public Rent a Car Belgrade, photo 9",
+      "sr": "Škoda Karoq (siva) — Public Rent a Car Beograd, fotografija 9"
+     },
+     "src": "2026-08-15.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-karoq/10",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Karoq (grey) — Public Rent a Car Belgrade, photo 10",
+      "sr": "Škoda Karoq (siva) — Public Rent a Car Beograd, fotografija 10"
+     },
+     "src": "2026-08-18.png"
+    }
+   ],
+   "source_url": "https://publicrentacar.rs/cars/skoda-karoq/",
+   "notes": []
+  },
+  {
+   "id": "skoda-superb",
+   "name": "Škoda Superb",
+   "brand": "Škoda",
+   "model_short": "Superb",
+   "model": "Superb Style 2.0 TDI 4x4",
+   "category": {
+    "key": "sedan",
+    "en": "Sedan",
+    "sr": "Limuzina"
+   },
+   "year": 2021,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "diesel",
+    "en": "Diesel",
+    "sr": "Dizel",
+    "raw": "Diesel"
+   },
+   "hp": 200,
+   "kw": 147,
+   "cc": 1968,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 625,
+   "trunk_raw": "625 L",
+   "color": {
+    "key": "black",
+    "en": "Black",
+    "sr": "Crna"
+   },
+   "price_from_eur": 37.0,
+   "price_raw": "€37 /Daily Starting Price*",
+   "description": {
+    "en": "An ideal choice for business trips and longer journeys. Its spacious interior, high level of comfort, and premium driving experience make it the perfect vehicle for clients who want more space, comfort, and elegance.",
+    "sr": "Idealan izbor za poslovna putovanja i duže relacije. Prostran enterijer, visok nivo udobnosti i premium osećaj u vožnji čine ga savršenim vozilom za klijente koji žele više prostora, komfora i elegancije."
+   },
+   "card": {
+    "base": "/assets/img/fleet/skoda-superb/card",
+    "cut": "/assets/img/fleet/skoda-superb/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Škoda Superb (black) — Public Rent a Car Belgrade",
+     "sr": "Škoda Superb (crna) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-15.png"
+   },
+   "photos": [],
+   "source_url": "https://publicrentacar.rs/cars/skoda-superb/",
+   "notes": []
+  },
+  {
+   "id": "skoda-superb-2",
+   "name": "Škoda Superb",
+   "brand": "Škoda",
+   "model_short": "Superb",
+   "model": "Škoda Superb 1.5 TSI",
+   "category": {
+    "key": "sedan",
+    "en": "Sedan",
+    "sr": "Limuzina"
+   },
+   "year": 2023,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "lpg",
+    "en": "Petrol / LPG",
+    "sr": "Benzin / TNG",
+    "raw": "Petrol / LPG"
+   },
+   "hp": 150,
+   "kw": 110,
+   "cc": 1498,
+   "seats": 5,
+   "doors": 5,
+   "trunk_l": 625,
+   "trunk_raw": "625 L",
+   "color": {
+    "key": "black",
+    "en": "Black",
+    "sr": "Crna"
+   },
+   "price_from_eur": 47.0,
+   "price_raw": "€47 /Daily Starting Price*",
+   "description": {
+    "en": "Škoda Superb is the perfect choice for business travel and long-distance journeys. Its spacious cabin, premium comfort, powerful performance, and refined design provide an exceptional driving experience for those who value luxury, reliability, and practicality.",
+    "sr": "Škoda Superb je savršen izbor za poslovna putovanja i duže relacije. Prostrana unutrašnjost, vrhunska udobnost, snažne performanse i elegantan dizajn pružaju izuzetno iskustvo vožnje svima koji cene luksuz, pouzdanost i praktičnost."
+   },
+   "card": {
+    "base": "/assets/img/fleet/skoda-superb-2/card",
+    "cut": "/assets/img/fleet/skoda-superb-2/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Škoda Superb (black) — Public Rent a Car Belgrade",
+     "sr": "Škoda Superb (crna) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-15.png"
+   },
+   "photos": [
+    {
+     "base": "/assets/img/fleet/skoda-superb-2/01",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Superb (black) — Public Rent a Car Belgrade, photo 1",
+      "sr": "Škoda Superb (crna) — Public Rent a Car Beograd, fotografija 1"
+     },
+     "src": "2026-07-1.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-superb-2/02",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Superb (black) — Public Rent a Car Belgrade, photo 2",
+      "sr": "Škoda Superb (crna) — Public Rent a Car Beograd, fotografija 2"
+     },
+     "src": "2026-07-2.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-superb-2/03",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Superb (black) — Public Rent a Car Belgrade, photo 3",
+      "sr": "Škoda Superb (crna) — Public Rent a Car Beograd, fotografija 3"
+     },
+     "src": "2026-07-3.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-superb-2/04",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Superb (black) — Public Rent a Car Belgrade, photo 4",
+      "sr": "Škoda Superb (crna) — Public Rent a Car Beograd, fotografija 4"
+     },
+     "src": "2026-07-4.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-superb-2/05",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Superb (black) — Public Rent a Car Belgrade, photo 5",
+      "sr": "Škoda Superb (crna) — Public Rent a Car Beograd, fotografija 5"
+     },
+     "src": "2026-07-5.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-superb-2/06",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Superb (black) — Public Rent a Car Belgrade, photo 6",
+      "sr": "Škoda Superb (crna) — Public Rent a Car Beograd, fotografija 6"
+     },
+     "src": "2026-07-6.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-superb-2/07",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Superb (black) — Public Rent a Car Belgrade, photo 7",
+      "sr": "Škoda Superb (crna) — Public Rent a Car Beograd, fotografija 7"
+     },
+     "src": "2026-07-7-1.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-superb-2/08",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Superb (black) — Public Rent a Car Belgrade, photo 8",
+      "sr": "Škoda Superb (crna) — Public Rent a Car Beograd, fotografija 8"
+     },
+     "src": "2026-07-8-1.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-superb-2/09",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Superb (black) — Public Rent a Car Belgrade, photo 9",
+      "sr": "Škoda Superb (crna) — Public Rent a Car Beograd, fotografija 9"
+     },
+     "src": "2026-07-9-1.png"
+    },
+    {
+     "base": "/assets/img/fleet/skoda-superb-2/10",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Škoda Superb (black) — Public Rent a Car Belgrade, photo 10",
+      "sr": "Škoda Superb (crna) — Public Rent a Car Beograd, fotografija 10"
+     },
+     "src": "2026-07-10-1.png"
+    }
+   ],
+   "source_url": "https://publicrentacar.rs/cars/skoda-superb-2/",
+   "notes": []
+  },
+  {
+   "id": "mercedes-v",
+   "name": "Mercedes V-Class",
+   "brand": "Mercedes-Benz",
+   "model_short": "V-Class",
+   "model": "V 250d 4 Matic",
+   "category": {
+    "key": "van",
+    "en": "Van",
+    "sr": "Kombi"
+   },
+   "year": 2021,
+   "transmission": {
+    "key": "automatic",
+    "en": "Automatic",
+    "sr": "Automatik"
+   },
+   "fuel": {
+    "key": "diesel",
+    "en": "Diesel (AdBlue)",
+    "sr": "Dizel (AdBlue)",
+    "raw": "Diesel, AdBlue"
+   },
+   "hp": 190,
+   "kw": 140,
+   "cc": 1950,
+   "seats": 8,
+   "doors": null,
+   "trunk_l": null,
+   "trunk_raw": "57-70 L",
+   "color": {
+    "key": "black",
+    "en": "Black",
+    "sr": "Crna"
+   },
+   "price_from_eur": 60.0,
+   "price_raw": "€60 /Daily Starting Price*",
+   "description": {
+    "en": "A premium 7+1 seat van designed for clients who want maximum comfort during group travel, business transfers, or family trips. Spacious, luxurious, and exceptionally comfortable.",
+    "sr": "Premium kombi sa 7+1 sedišta namenjen klijentima koji žele maksimalan komfor tokom grupnih putovanja, poslovnih transfera ili porodičnih putovanja. Prostran, luksuzan i izuzetno udoban."
+   },
+   "card": {
+    "base": "/assets/img/fleet/mercedes-v/card",
+    "cut": "/assets/img/fleet/mercedes-v/cut",
+    "widths": [
+     410
+    ],
+    "ratio": 1.5185,
+    "alt": {
+     "en": "Mercedes V-Class (black) — Public Rent a Car Belgrade",
+     "sr": "Mercedes V-Class (crna) — Public Rent a Car Beograd"
+    },
+    "src": "2026-07-14.png"
+   },
+   "photos": [
+    {
+     "base": "/assets/img/fleet/mercedes-v/01",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Mercedes V-Class (black) — Public Rent a Car Belgrade, photo 1",
+      "sr": "Mercedes V-Class (crna) — Public Rent a Car Beograd, fotografija 1"
+     },
+     "src": "2026-08-31.png"
+    },
+    {
+     "base": "/assets/img/fleet/mercedes-v/02",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Mercedes V-Class (black) — Public Rent a Car Belgrade, photo 2",
+      "sr": "Mercedes V-Class (crna) — Public Rent a Car Beograd, fotografija 2"
+     },
+     "src": "2026-08-32.png"
+    },
+    {
+     "base": "/assets/img/fleet/mercedes-v/03",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Mercedes V-Class (black) — Public Rent a Car Belgrade, photo 3",
+      "sr": "Mercedes V-Class (crna) — Public Rent a Car Beograd, fotografija 3"
+     },
+     "src": "2026-08-34.png"
+    },
+    {
+     "base": "/assets/img/fleet/mercedes-v/04",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Mercedes V-Class (black) — Public Rent a Car Belgrade, photo 4",
+      "sr": "Mercedes V-Class (crna) — Public Rent a Car Beograd, fotografija 4"
+     },
+     "src": "2026-08-33.png"
+    },
+    {
+     "base": "/assets/img/fleet/mercedes-v/05",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Mercedes V-Class (black) — Public Rent a Car Belgrade, photo 5",
+      "sr": "Mercedes V-Class (crna) — Public Rent a Car Beograd, fotografija 5"
+     },
+     "src": "2026-08-37.png"
+    },
+    {
+     "base": "/assets/img/fleet/mercedes-v/06",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Mercedes V-Class (black) — Public Rent a Car Belgrade, photo 6",
+      "sr": "Mercedes V-Class (crna) — Public Rent a Car Beograd, fotografija 6"
+     },
+     "src": "2026-08-38.png"
+    },
+    {
+     "base": "/assets/img/fleet/mercedes-v/07",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Mercedes V-Class (black) — Public Rent a Car Belgrade, photo 7",
+      "sr": "Mercedes V-Class (crna) — Public Rent a Car Beograd, fotografija 7"
+     },
+     "src": "2026-08-39.png"
+    },
+    {
+     "base": "/assets/img/fleet/mercedes-v/08",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Mercedes V-Class (black) — Public Rent a Car Belgrade, photo 8",
+      "sr": "Mercedes V-Class (crna) — Public Rent a Car Beograd, fotografija 8"
+     },
+     "src": "2026-08-36.png"
+    },
+    {
+     "base": "/assets/img/fleet/mercedes-v/09",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Mercedes V-Class (black) — Public Rent a Car Belgrade, photo 9",
+      "sr": "Mercedes V-Class (crna) — Public Rent a Car Beograd, fotografija 9"
+     },
+     "src": "2026-08-40.png"
+    },
+    {
+     "base": "/assets/img/fleet/mercedes-v/10",
+     "widths": [
+      480,
+      960,
+      1080
+     ],
+     "ratio": 0.8,
+     "alt": {
+      "en": "Mercedes V-Class (black) — Public Rent a Car Belgrade, photo 10",
+      "sr": "Mercedes V-Class (crna) — Public Rent a Car Beograd, fotografija 10"
+     },
+     "src": "2026-08-35.png"
+    }
+   ],
+   "source_url": "https://publicrentacar.rs/cars/mercedes-v/",
+   "notes": []
+  }
+ ]
+}

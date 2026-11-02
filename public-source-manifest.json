@@ -1,0 +1,1704 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "lamingsrb/public_rent_a_car",
+  "sourceRevision": "b93d6e661b4acec99bd3930d0f8db1c732d3b61b",
+  "sourceTreeClean": true,
+  "localBootstrap": false,
+  "hashAlgorithm": "sha256",
+  "contentSHA256": "a62304c689c83ecf3544aeb2da3687e8b38434e057a304cac26d792e2ed179d5",
+  "files": [
+    {
+      "path": ".github/workflows/deploy-vercel.yml",
+      "bytes": 1426,
+      "sha256": "127135461575f8c72396ad6cdc071fbbb8ffbd71045a547475aae8379f098f2b",
+      "kind": "generated"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 80,
+      "sha256": "b2256dedfb4f40eed221b85386f22a0e8512e1a89258df403388ab855797b2c1",
+      "kind": "generated"
+    },
+    {
+      "path": "README.md",
+      "bytes": 692,
+      "sha256": "41c08b9dc6229543d31ad38b5f6b2a36257d668f22e0b8ef401bba3fde9bc0e2",
+      "kind": "generated"
+    },
+    {
+      "path": "css/atlas.css",
+      "bytes": 6157,
+      "sha256": "6105c2b52642d73132da1d86b3dfe3999566337e49660868d5c47d78470933f5",
+      "kind": "copied"
+    },
+    {
+      "path": "css/base.css",
+      "bytes": 12013,
+      "sha256": "f120c4aaa8fd6d4f04f277fb93b47f0580fe115caab0559300c0d4ba98dfc003",
+      "kind": "copied"
+    },
+    {
+      "path": "css/compact-content.css",
+      "bytes": 29471,
+      "sha256": "7523aabcfda158f6bbf42d8dc8aa0617d152c4963ba367718b33e50473d8ce66",
+      "kind": "copied"
+    },
+    {
+      "path": "css/contact.css",
+      "bytes": 14271,
+      "sha256": "291357e4e36d170e0fbfffa205d86bdaaebf5e7ed594e22be226293d9d181a5f",
+      "kind": "copied"
+    },
+    {
+      "path": "css/cover.css",
+      "bytes": 18710,
+      "sha256": "f63045a0fcf57470b77a8b84388442228e6f7fbfac01fd0b82ab6a092bc3098d",
+      "kind": "copied"
+    },
+    {
+      "path": "css/drive-cover.css",
+      "bytes": 17360,
+      "sha256": "848bd0a63fa3634432b0cff97e8ec49a878b83298c49504b9a728c8b71c700fa",
+      "kind": "copied"
+    },
+    {
+      "path": "css/fleet-showroom.css",
+      "bytes": 14119,
+      "sha256": "9759222965e6d8dffe5142693c65e464fd4f997d8efc891e903de9272d7e4e9e",
+      "kind": "copied"
+    },
+    {
+      "path": "css/fleet.css",
+      "bytes": 22844,
+      "sha256": "db2e46db694f565fe29f4eaf21142329944ad8441aa423efa3226f9c84577394",
+      "kind": "copied"
+    },
+    {
+      "path": "css/fonts.css",
+      "bytes": 2456,
+      "sha256": "bcd16ecc7ecc9502ecc53170ffc523f1ed9be8c59935711cf5d2f3cea49bcf46",
+      "kind": "copied"
+    },
+    {
+      "path": "css/footer.css",
+      "bytes": 9017,
+      "sha256": "9ea118959346cda483839b98287e37a4d15d3d2a7ae7f0a5317399486f4dbce5",
+      "kind": "copied"
+    },
+    {
+      "path": "css/nav.css",
+      "bytes": 8411,
+      "sha256": "4c5e946d50cb1fedecab91e3097ce30224e94e43738c625797313cf2308f8a5b",
+      "kind": "copied"
+    },
+    {
+      "path": "css/preloader.css",
+      "bytes": 1393,
+      "sha256": "814013a4560bff438440cbd1c67f2d36c0e9e3398ae279d1a9c2c87cad84a702",
+      "kind": "copied"
+    },
+    {
+      "path": "css/price.css",
+      "bytes": 13104,
+      "sha256": "7e59cb6bbefa570e89587882e36f59573d10672b18909b7d6d1f90fa0bb69590",
+      "kind": "copied"
+    },
+    {
+      "path": "css/redesign.css",
+      "bytes": 8510,
+      "sha256": "1d1a1cc99d3fb32b8460c3b49abaa171a11e041d3d8d9a2fead1fdb90c758491",
+      "kind": "copied"
+    },
+    {
+      "path": "css/reel.css",
+      "bytes": 4765,
+      "sha256": "824899bff976179497d8dba8462acf1e5893ecdb65ab1a8d360bff6b25c596bc",
+      "kind": "copied"
+    },
+    {
+      "path": "css/route.css",
+      "bytes": 4297,
+      "sha256": "2c961f6dbbab6eca4acbe878ae278ed5285a7be6da43e7ec3c6268b4d2b88227",
+      "kind": "copied"
+    },
+    {
+      "path": "css/stickybar.css",
+      "bytes": 1480,
+      "sha256": "5497583226fceef74228c28cca58652375688957557b1e245ed4a49776380756",
+      "kind": "copied"
+    },
+    {
+      "path": "css/terms.css",
+      "bytes": 4444,
+      "sha256": "010d520f9493f234e803be1a5134d594dc72e6d4d44c7e79823140acf280dfe3",
+      "kind": "copied"
+    },
+    {
+      "path": "css/tokens.css",
+      "bytes": 7395,
+      "sha256": "ac18898ac60f5e35e15f1da9c6aeaa62302b90f23981c0a4a254c016345bbba1",
+      "kind": "copied"
+    },
+    {
+      "path": "data/fleet.json",
+      "bytes": 44281,
+      "sha256": "3ca8b647a5c1516de9b6f5f367966a76a916ae6938a6ed82cb05dd0caa3c520c",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/atlas.json",
+      "bytes": 796,
+      "sha256": "9e152360f1a50b1cbf9a241632c26e09660d51ff4fe311fb41876612f3eba804",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/common.json",
+      "bytes": 2263,
+      "sha256": "1555b1882125e0c55d5158c598d21faa2015569eb8bcfb54c10207ec5523fd21",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/contact.json",
+      "bytes": 2243,
+      "sha256": "919f380289247dfab23bc368cea405c7d445a1bfd0a2c2131eff5cb4df7e6727",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/cover.json",
+      "bytes": 3213,
+      "sha256": "e96cec60fdc563254aa76bb9d0c43c1785493af349ea87c5a2b17e240934892d",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/fleet.json",
+      "bytes": 2173,
+      "sha256": "ee07fa164b2d755b8aa473bc9c778e10f9fc8a59a194e5da84ea9ff6baace58e",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/footer.json",
+      "bytes": 393,
+      "sha256": "1f7d8aeb3f93d9acb0dfe0b7454e5ce41988e52cf9cc1a49ac194a4888df4070",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/nav.json",
+      "bytes": 401,
+      "sha256": "01208754d7e5b59cdc318230940f2e01f4a47fc4b1e71d57174040d9987bb2b3",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/preloader.json",
+      "bytes": 58,
+      "sha256": "7247c11e369f63d78e596ba1874ca599b3da00e8164d46fcffdf62d75ead6d18",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/price.json",
+      "bytes": 2143,
+      "sha256": "90442acd3dde57d3b6f11b8e2c86659d3ba0ae52c13320ba9feb6678159f96ac",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/reel.json",
+      "bytes": 556,
+      "sha256": "1c5c26f3f188541049eb81a95b229fa9526508f3c54e74abd3d32c0a80744aee",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/rental-info.json",
+      "bytes": 2843,
+      "sha256": "a8d957c34673425d9aea50582f754157ab866f2a9105cba90cbf0347ad08825f",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/route.json",
+      "bytes": 1103,
+      "sha256": "99862fa0ce1a115c20e73ff6beb1a55338f5bc27e61e6c5b7c8b23802283df83",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/stickybar.json",
+      "bytes": 130,
+      "sha256": "2a3b3a51d91b5c672a236509cf1db1b2b877bbf794507e6c39cad15be0bd8adf",
+      "kind": "copied"
+    },
+    {
+      "path": "i18n/sr/terms.json",
+      "bytes": 2404,
+      "sha256": "ccd13cf3ef09101f17da417f4ca00ed2d3927b67b3103affa4c90f40ac2cebc3",
+      "kind": "copied"
+    },
+    {
+      "path": "index.html",
+      "bytes": 4750,
+      "sha256": "ec1cb9112e6c8fc0038bcf36a78a97f7408d1e2996c657c0d677fd6471189c21",
+      "kind": "copied"
+    },
+    {
+      "path": "js/atlas.js",
+      "bytes": 10606,
+      "sha256": "9a40ed651dd1b497188a39d17f422af254ae67cc2df9203295276d16a0884ab6",
+      "kind": "copied"
+    },
+    {
+      "path": "js/contact.js",
+      "bytes": 12460,
+      "sha256": "c4b9aceffa1912aacee0fd84c2f6463bb4f590342c4b5db7b71db71d0bb28f20",
+      "kind": "copied"
+    },
+    {
+      "path": "js/cover.js",
+      "bytes": 7600,
+      "sha256": "dc795ab8581be22ce6906bf0b9483045b77029e96ae72a3f8523f39631767be6",
+      "kind": "copied"
+    },
+    {
+      "path": "js/fleet.js",
+      "bytes": 51037,
+      "sha256": "a582ec5384b6e0c1711666e4f5acda1253721c3fe416d1d0e4fe413dd1bbb6c5",
+      "kind": "copied"
+    },
+    {
+      "path": "js/footer.js",
+      "bytes": 4033,
+      "sha256": "f04817adc40a35f880367fa6c34878cdd12f68e02409e89730ba10e7c90a9e0b",
+      "kind": "copied"
+    },
+    {
+      "path": "js/i18n.js",
+      "bytes": 4897,
+      "sha256": "3fad09ab6989589631d7e4bb44d6169bc4443ec3f80056252fa39060b5417c3b",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/column-geometry.js",
+      "bytes": 3231,
+      "sha256": "c09a4e1bee2594a7b3bc613d8a6524772b2ff5b2351127aaa10ac98aa89509a2",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/column-stage.js",
+      "bytes": 5234,
+      "sha256": "9d4fa3d91a9f4174ac61f9b7250827da33916bd0016d71e87b9408f681702c11",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/common-en.js",
+      "bytes": 2513,
+      "sha256": "b4116aa1a5e8c769fbf91caba34c3daf89fc8836fe59f6b831f541ba602e85da",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/contact.js",
+      "bytes": 6422,
+      "sha256": "176e505a8672a59716d91788d9be2dcc927f5e9ee6e48112910fde854e6b2d71",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/drive-scene.js",
+      "bytes": 26086,
+      "sha256": "c7e0f36c9268d3b8d17a3a409e938cb8c114abd9a77dada8a3c9aa2cdb13cc1e",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/media-index.js",
+      "bytes": 10000,
+      "sha256": "d15740de31856fcccfa0f7c76f4299b404278911b6f25e71e5a43e8eef1b2501",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/media.js",
+      "bytes": 3528,
+      "sha256": "30a8b8eb140866a9f8fca1a85404a28e5695e501033ef75c0d88c02c605f794d",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/motion-mode.js",
+      "bytes": 2398,
+      "sha256": "7a7fd4d453a999098e87f716c2e10f9a32291df9d4b54199512e19bce6e96655",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/motion-tokens.js",
+      "bytes": 1035,
+      "sha256": "db4f7e0f11bb9dc9ffe7020f224000274116d3ff374bbdd15cbbf2f652fed0a9",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/nav-theme.js",
+      "bytes": 1935,
+      "sha256": "41174328d4f7691871182612cdb3f6267b5a5aaeda31d7632b162bd41a15c2aa",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/reveal.js",
+      "bytes": 5247,
+      "sha256": "0b4dc81deb4c3b2177d61ab74ee7b0df60f622a8c1ec492cbf8752471e1accf0",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/scene-column.js",
+      "bytes": 30706,
+      "sha256": "1ba168a4e3faf316a86a51805f01c286bd76cb113792afa03e12a66f207cac8f",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/toast.js",
+      "bytes": 3338,
+      "sha256": "fb47712edff988737c4f4b7e9ebd420b98552be8198f85a17dc0f4046050c3e8",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/tr.js",
+      "bytes": 1040,
+      "sha256": "9f15297ed0bc9f1ea2214e59b2a638b2c02ec590f214efce89c73623ea124db5",
+      "kind": "copied"
+    },
+    {
+      "path": "js/lib/vehicles.js",
+      "bytes": 4302,
+      "sha256": "e276cd263253dc82e4ad56449db41909eedab152ff2b13621d4b60da3c141e95",
+      "kind": "copied"
+    },
+    {
+      "path": "js/main.js",
+      "bytes": 5026,
+      "sha256": "2e581987a80de4bd2332681c1ff3664a5561bf3fb0b8b17055150157693e7c03",
+      "kind": "copied"
+    },
+    {
+      "path": "js/motion.js",
+      "bytes": 5026,
+      "sha256": "2c88a11b98e28a59eb55f8855c40426313a56ac22406d6b24801bf9fe10684eb",
+      "kind": "copied"
+    },
+    {
+      "path": "js/nav.js",
+      "bytes": 9065,
+      "sha256": "e2332a3f9d68005b518043f0f382e7dd8e5e01c4351344afabf22481e13a28a8",
+      "kind": "copied"
+    },
+    {
+      "path": "js/preloader.js",
+      "bytes": 3079,
+      "sha256": "da68de2a0593360ab62d958f2af4e64e9a60573da03b3d0ec91f6f9b45ab3a18",
+      "kind": "copied"
+    },
+    {
+      "path": "js/price.js",
+      "bytes": 14160,
+      "sha256": "5ef2ee397aff8b7302d573388000d622b91c0286df39d4b49c8272965f0f6a39",
+      "kind": "copied"
+    },
+    {
+      "path": "js/reel.js",
+      "bytes": 7791,
+      "sha256": "800745b51364ea29480e87b76553b8c67496306ad39b08e822522abe5ae1b3a1",
+      "kind": "copied"
+    },
+    {
+      "path": "js/rental-info.js",
+      "bytes": 1160,
+      "sha256": "32a81c918d9d44108035364aa8d385cdbcfd02ed08d78619e852121032273f31",
+      "kind": "copied"
+    },
+    {
+      "path": "js/route.js",
+      "bytes": 4134,
+      "sha256": "3bd040180476017d850325f95f47b046aae2eee1334062602cb0062cbd2b1b3a",
+      "kind": "copied"
+    },
+    {
+      "path": "js/stickybar.js",
+      "bytes": 3203,
+      "sha256": "d1c3f4290c4cfb005363633764d492ddd617a47fdab60a833960c693dfa259cb",
+      "kind": "copied"
+    },
+    {
+      "path": "js/terms.js",
+      "bytes": 3343,
+      "sha256": "505f679538d55e2f548b61249d4d4afefe63a67ae20e77f76afd515ed1a5dba8",
+      "kind": "copied"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 33409,
+      "sha256": "5a55312cf184e992aa78ab8a0780f5ce5e6db45fabe56fefd8c1dfd0d3a6df29",
+      "kind": "copied"
+    },
+    {
+      "path": "package.json",
+      "bytes": 544,
+      "sha256": "bd4dbe16b5be442c2f6f349daf0ba6c727dff0e33b23ab5c85c97ba7202cd5d0",
+      "kind": "transformed"
+    },
+    {
+      "path": "public/404.html",
+      "bytes": 5208,
+      "sha256": "b856c4ad59062d1e01aa6599df6fb7b1fd580f3e1c252e3f6e42e56647f6dd4c",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/fonts/dm-sans-latin-ext-wght-normal.woff2",
+      "bytes": 3764,
+      "sha256": "74a00bfea03b7ebde804d382b322e421b6c4367a3de5d74115f1014d6a982e5a",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/fonts/dm-sans-latin-wght-normal.woff2",
+      "bytes": 36932,
+      "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/fonts/epilogue-latin-ext-wght-italic.woff2",
+      "bytes": 4020,
+      "sha256": "865170140a03bc3bd8d8a6c55190d5bfd0d7e363db45e80411f60625bd84adcc",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/fonts/epilogue-latin-ext-wght-normal.woff2",
+      "bytes": 3828,
+      "sha256": "31858beb18731819402679c55683fa37ac840fe143c1180abc8ae7bbd9068c51",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/fonts/epilogue-latin-wght-italic.woff2",
+      "bytes": 37560,
+      "sha256": "7817d0d2baa825844a9b2227a8b51e288c96bd868a3748ac16dff0676c125e34",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/fonts/epilogue-latin-wght-normal.woff2",
+      "bytes": 35700,
+      "sha256": "943ab208b058dbb0a8b257c02d6d9cfe5932a72c4deea8c77d192111c7c14519",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/apple-touch-icon.png",
+      "bytes": 6699,
+      "sha256": "0feb07d168bfd6b2ab17ec9dc346291cccc552171323d2476a2b6410d6954290",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/column-poster-day.webp",
+      "bytes": 51386,
+      "sha256": "74c810d2cbc7f94d4773e124e30362724c54ee96664fe1bcb2b8f8280f27a8f9",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/column-poster-dusk.webp",
+      "bytes": 41892,
+      "sha256": "0c757d491a436048e0e522bdb4b9a10bf95a8512abc37d4722f1185cddd3bbc9",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/column.svg",
+      "bytes": 1623,
+      "sha256": "5bd4e69d9dc1051fb1ed64e063da8ecb0e349720aa2db79908e8a4aff8cd684b",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/favicon-16.png",
+      "bytes": 483,
+      "sha256": "4c8e91e2f5d0840872d3f2c3da13b35504690578ed8edbcb594a3eadbd58fed5",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/favicon-32.png",
+      "bytes": 1023,
+      "sha256": "2e8bc8cf14e72c9676517e3432b6ec839b26125d9379137b592d4dcbee6f1b0e",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/favicon-48.png",
+      "bytes": 1708,
+      "sha256": "7b8671ac56f85514ecb0603af9d8c2c1e79cd2d66d5018cdb931407ea09ffe70",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/favicon.ico",
+      "bytes": 4401,
+      "sha256": "93afccbdc709217a0c1f02820938acaeb24119d2cb73bf768e61429f112ae17f",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/01-1080.webp",
+      "bytes": 304146,
+      "sha256": "7878f093b7db560f133fab56a26117e524de6b2bfc1d4f24ecf3cd40c7b220e0",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/01-480.webp",
+      "bytes": 76592,
+      "sha256": "2411dd5ea9c2227c9625e017b8965a9411b31a8fd28b313f971970dfa8549f4c",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/01-960.webp",
+      "bytes": 280026,
+      "sha256": "e4b02150651bd91714b16a3a2e565e5a6160b0a5e48f69848625d2741b8f6b1c",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/02-1080.webp",
+      "bytes": 273520,
+      "sha256": "4401c6c2b57e3d4854207f23bb70edee0db8c7064c8f79c7bed8da4a9280ed05",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/02-480.webp",
+      "bytes": 68420,
+      "sha256": "0beca3aed4d859f645eca3cb8332625a1a06bc9226b4040b7e2c786abe4d45cb",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/02-960.webp",
+      "bytes": 253542,
+      "sha256": "8672ee29732d8f7f6d001b3039f6d836190a2ffad4f32509871bcb3b0b69b3cc",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/03-1080.webp",
+      "bytes": 297774,
+      "sha256": "c3dd393bc66b061abc1fc9c869606a63c336bfa767bccefd4fbe370a90293162",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/03-480.webp",
+      "bytes": 81532,
+      "sha256": "c29feaf0786c798d8a9858258ba2b4457b6abfc95fe6eaebc9d73d3147422410",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/03-960.webp",
+      "bytes": 324500,
+      "sha256": "578eed1921e1e92b8be34d2cf967067b5bbb38cc9605b94b63e27e5746c363f0",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/04-1080.webp",
+      "bytes": 257070,
+      "sha256": "6f98531be0669f84c529824fe7604a17729feb1f60156d244614721802238e6a",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/04-480.webp",
+      "bytes": 63412,
+      "sha256": "d12279bbe34c824aef7cf488e50bb2c7cf006af18999266aded08b35d5f66d2a",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/04-960.webp",
+      "bytes": 234352,
+      "sha256": "5bd471a1d2ce8ab298178450a1df8c85aa7c59ff270775b5db5bb626fcd0e496",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/05-1080.webp",
+      "bytes": 142884,
+      "sha256": "c84e7855cfbbaa3798373d84dd049fa8af54fa6fb760b7cf15d7e31d2e31b7d6",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/05-480.webp",
+      "bytes": 44724,
+      "sha256": "2edee7005a1812477868024322f18e363b87c5e2011614efc76635380783a944",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/05-960.webp",
+      "bytes": 133102,
+      "sha256": "facce056123d3634e0aedad460db03c5ffb2d20e27710675a2adb70d7f491614",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/06-1080.webp",
+      "bytes": 190608,
+      "sha256": "48cec49f546a553a10b377dbb41b6a54fe7522e9a4dcde481ea0e72e08b1e1af",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/06-480.webp",
+      "bytes": 46192,
+      "sha256": "f9876f7e5d24f130a63a4f290692d9c03b7c3d4c8b35f1c6189c90fea18d9935",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/06-960.webp",
+      "bytes": 170982,
+      "sha256": "654b16c9382b7a67d1bbd407b225abcce604087537434e8b8e9ab655ee55ef54",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/07-1080.webp",
+      "bytes": 130470,
+      "sha256": "f6303bc42c44fd414adc85a739c26ff53d575d9723417611270f16ae7fcf7544",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/07-480.webp",
+      "bytes": 34830,
+      "sha256": "a59ee072ced77f0aca9b7a0ab9cecf40ce447996483cd36c57c6121cacdd9a1a",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/07-960.webp",
+      "bytes": 123738,
+      "sha256": "36854cbfd03089088e6c86d88a5fae2fffe2af46373904ef6f020b2a9fa1ee60",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/08-1080.webp",
+      "bytes": 158740,
+      "sha256": "c6bec7c00c5ce329b7a7cbfdbefa906d5aaeebba6ca0cd9412b9bfde05cfd1f0",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/08-480.webp",
+      "bytes": 43632,
+      "sha256": "618a67690cfc8ca1de25e49cf385cd377c2ba10edb5512038fab2f813e275375",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/08-960.webp",
+      "bytes": 148626,
+      "sha256": "1e82979bcda23b241a253ed281b3962719b9742406fea799cedc3ca4e0e19042",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/09-1080.webp",
+      "bytes": 248898,
+      "sha256": "3d90838375d7e1dc2f608d63b09ed3a211ee1c8d6a6c4e933f76046562007e9f",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/09-480.webp",
+      "bytes": 63324,
+      "sha256": "ecf426f85d642f6d0c1477e5bcdb08ac5d08b0332df1aa6e02adbfa096650124",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/09-960.webp",
+      "bytes": 233060,
+      "sha256": "bd66c501dd19e127af34b0d5751b826c5cae1714cd404360480904a7e22f6813",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/10-1080.webp",
+      "bytes": 175446,
+      "sha256": "65e712ad9535d08f2e613f5bd96414dcc9d12b7e191d4d445cccfebd26f0d9ea",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/10-480.webp",
+      "bytes": 51780,
+      "sha256": "07c7e0a2917716fab8babd62d475bbb145e95b3632446c43f1727f4c7f72e7ac",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/10-960.webp",
+      "bytes": 172582,
+      "sha256": "ac152500064cbb03e3a24c5b815ff447c6ea6bf755e3c9be0d5c32edad068967",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/card-410.webp",
+      "bytes": 11904,
+      "sha256": "032f20c1ffedaf368101eb5095565c462c676f0cbd7dfed561c84f8b0a470851",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/mercedes-v/cut-410.webp",
+      "bytes": 16960,
+      "sha256": "7cbd7e9e41c16a74339ef84177c9498af39a73cf8f6fc53e12bb7116b564e155",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/polo-comfort/card-410.webp",
+      "bytes": 11852,
+      "sha256": "a8b8b034ec413df0f3cb467b399b23a7443866bf10f1bdb08bfb00052ceb256e",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/polo-comfort/cut-410.webp",
+      "bytes": 15978,
+      "sha256": "9792e6a2814a497274c14bb8b6a3c0c00cfe63e60c1e7cb7f55c1b3eef808fe9",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-fabia-2/card-410.webp",
+      "bytes": 10866,
+      "sha256": "d5cf7eaf5c8c13183ccf287c2423892aa8cfa111afc24d083c24b17b42a1e69b",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-fabia-2/cut-410.webp",
+      "bytes": 15336,
+      "sha256": "63a0441975a7a43c47923d8c5b539a88b831cab588bda279328042bf683d7b95",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-fabia/card-410.webp",
+      "bytes": 10866,
+      "sha256": "d5cf7eaf5c8c13183ccf287c2423892aa8cfa111afc24d083c24b17b42a1e69b",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-fabia/cut-410.webp",
+      "bytes": 15336,
+      "sha256": "63a0441975a7a43c47923d8c5b539a88b831cab588bda279328042bf683d7b95",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-kamiq-2/card-410.webp",
+      "bytes": 10632,
+      "sha256": "6f9128457e3d92f7fb63011e4d816a544f1ca4cae505270c14a22019670eb16b",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-kamiq-2/cut-410.webp",
+      "bytes": 16660,
+      "sha256": "6c4763ab2eb81bb88ae244e971e6a146efd1b691f31a5391cea86e9125e1b817",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-kamiq/card-410.webp",
+      "bytes": 13842,
+      "sha256": "17c7d1578691f809ab87ea7877b2e62842ce87a06049ce686d22ca29d09967f8",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-kamiq/cut-410.webp",
+      "bytes": 20340,
+      "sha256": "59a510d29d21760f932ac6852f4ec5215cac960723d0c4483c3f61352b431005",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/01-1080.webp",
+      "bytes": 260212,
+      "sha256": "e1b42ac4da0e7ee5a251b4409904ef3fc7b8d01bd7a77526af28ebd46cdd1395",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/01-480.webp",
+      "bytes": 67256,
+      "sha256": "981006410b08989698511e7f9a266d7a14a07f79375c848d209330598b42cd1a",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/01-960.webp",
+      "bytes": 244860,
+      "sha256": "a6280eb22d0fade370f61ef0f03be2976fb39434361d07ae3cf2044838b60f12",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/02-1080.webp",
+      "bytes": 95214,
+      "sha256": "e3f80b224ff12837ec89f56323979dc3b9a408cb03f923702602bba8b474dd9e",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/02-480.webp",
+      "bytes": 39156,
+      "sha256": "21cee2070f4831abeb517a1861e9fff84627823594be0a2bb7860a43e6adf82e",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/02-960.webp",
+      "bytes": 94756,
+      "sha256": "b26c3224d14fa211f4fbf9636ddf4d86bc9a2e1e9899965b50c7b078a7543db4",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/03-1080.webp",
+      "bytes": 250050,
+      "sha256": "d214661163a11a1428f3b00221fc4a42cb44b0e895684e6aa467c681ea9bf08f",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/03-480.webp",
+      "bytes": 62288,
+      "sha256": "f0b911c52b13c63f2a694f21ad8c3bd35aad5711a06e61d8f22d2267eb83d1f2",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/03-960.webp",
+      "bytes": 229618,
+      "sha256": "359b1b294c35c77282f2b99850b3727e8f914841c727796f64394945d57cc841",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/04-1080.webp",
+      "bytes": 250022,
+      "sha256": "6216328c6134947ac7083118965f89ad6ae0f2e32684626564739a667df3d406",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/04-480.webp",
+      "bytes": 67104,
+      "sha256": "26bbe146f1ea8d8bd15c5550c1998ac1aa8b5268ddcbe6555a82c8f80ee9caaa",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/04-960.webp",
+      "bytes": 234536,
+      "sha256": "c6cd467ede135a9568bd08668d73e62fae2398ce811cc4012c8bea2d03b5a7f4",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/05-1080.webp",
+      "bytes": 130228,
+      "sha256": "f3cbe39b7a916ad49c057dfed11cb59ad843484f402feffe662b2885a5ab1b7d",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/05-480.webp",
+      "bytes": 44614,
+      "sha256": "fd5a7d255ebe1c8a826aa87270b740fe49207e132600233ad3e8e51009e1a5f2",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/05-960.webp",
+      "bytes": 128576,
+      "sha256": "31702965e1d18b14144c897e8201f1fe6b00f2c018cf326fc19a014d47ced2a9",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/06-1080.webp",
+      "bytes": 152712,
+      "sha256": "25c31e4cc53bec26d90ad42f469aa8a4afd6e7877c46ae458027f80a779a2cea",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/06-480.webp",
+      "bytes": 43042,
+      "sha256": "3824b5ee482cc9171dcbe4409381a265c43071fa807d09d9f92705a6a77f744e",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/06-960.webp",
+      "bytes": 138520,
+      "sha256": "cb01d7b0f50d9c9b530746b12c0da810d7610d19acc6b1b0e9711587c9474448",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/07-1080.webp",
+      "bytes": 138188,
+      "sha256": "8fd97607db38acba122ac8bab014ef9785a84dbb83c7791ba51ea68745544966",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/07-480.webp",
+      "bytes": 40394,
+      "sha256": "1c7608738207c9c282b737df93d68bccef125d184ad12cb86a534ee35f674e5f",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/07-960.webp",
+      "bytes": 129236,
+      "sha256": "dbaebdd072aa2f1fb2064e59d316450029079a37ea4e2c3e5d9959b789fafd32",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/08-1080.webp",
+      "bytes": 171634,
+      "sha256": "0c5e6d8bfc2e88ec89f4d3242e954cf42bf756f68b4a7f124a8253aced060436",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/08-480.webp",
+      "bytes": 41924,
+      "sha256": "844ba1bdcc8a6f2015d37d94638ebb078df995a00e1988378f0dee008a842682",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/08-960.webp",
+      "bytes": 159806,
+      "sha256": "9a180ba46030a95c892f77a65ea08e093886c6f62a29101e38b56ada281bf1b6",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/09-1080.webp",
+      "bytes": 224286,
+      "sha256": "654646a0ce6b81f7aaac51a348e4e20b00affc910af69525e9671dd91f470c8b",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/09-480.webp",
+      "bytes": 42668,
+      "sha256": "354ac05bb47c8c2adf327f9751a643cddbbe12017659c8075b1b0144e4666418",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/09-960.webp",
+      "bytes": 203186,
+      "sha256": "7c12b7973f28c888d40edb12d78a1a4667e47bd477c2add9077ebe44a1702d91",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/10-1080.webp",
+      "bytes": 164842,
+      "sha256": "223efa974b627eadc0987073c2b0a3913298afa3b1f8e3d227a1e3cd7abd72fa",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/10-480.webp",
+      "bytes": 43976,
+      "sha256": "01580050a3a717de01d9c1235209c49d0f2f2470b339b2fbd0075ee5dbbed660",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/10-960.webp",
+      "bytes": 153394,
+      "sha256": "573285abffca9ef5d29e7ed0428e549b10614a99cfaa6de718e18cd1be9f0cca",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-karoq/card-410.webp",
+      "bytes": 11570,
+      "sha256": "780d777408525cdcf824f9d8338f9788d56d2e8464572e23cb4f692da6187f2f",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-octavia/card-410.webp",
+      "bytes": 10796,
+      "sha256": "28d98722229bf37f252921f5b1343e4a2ef67d95ac92753f2905506bb02e4c9a",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-octavia/cut-410.webp",
+      "bytes": 15070,
+      "sha256": "2b8c3e0f189171e3ade77f99018490be4448e4da9cd9297b017cc2e2d031a76c",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-scala/card-410.webp",
+      "bytes": 12676,
+      "sha256": "041cbda2a19ab5bcee607db07fcf8924b7e23adfcf09b209ce04b18e7ec09113",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-scala/cut-410.webp",
+      "bytes": 18262,
+      "sha256": "3ebc34549079cb1a3934b9f655612d72f59ef7625a90a93d4edd304df269f9e9",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/01-1080.webp",
+      "bytes": 257094,
+      "sha256": "d642ef538691adb364720620700fea3410d9bee5e5b40215a4ca38b47736cfe5",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/01-480.webp",
+      "bytes": 63678,
+      "sha256": "2326d5b23d6ca8e554af9cc08dfa860dd820b7da8ddc3afd0bfeaaba3c6b0a0c",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/01-960.webp",
+      "bytes": 236024,
+      "sha256": "4a46d9e6306bdd8c514e92d8fe3a9777fead66ae279dc4ebf9194e4a2ddc0f1a",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/02-1080.webp",
+      "bytes": 126972,
+      "sha256": "7a2cae1e06f7fb06bbfe6f885a3ae0ae72e525c986fba5b14515cfe1e109273a",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/02-480.webp",
+      "bytes": 52216,
+      "sha256": "6a1edce655c03f16ce12e7993ef388c9bdf1f17b9f023267e8692507046b4833",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/02-960.webp",
+      "bytes": 129796,
+      "sha256": "15eecf5414abf20f6d12a4e6d562fbb72dbf78d5e4803aded65cf33a78a7734d",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/03-1080.webp",
+      "bytes": 277380,
+      "sha256": "df173978f112141a5da9a9b9c1d4fd34e014051d8e93b115e47717e10ab8b0fc",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/03-480.webp",
+      "bytes": 69322,
+      "sha256": "01d188400fd1dc06c53ccb910783cf74f300007e44fb0e09bf8bac3f98e110f8",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/03-960.webp",
+      "bytes": 254528,
+      "sha256": "e0348642e92b5f26f7ed1c31350a724619f5c535b83876c87d0d478368d6d5b6",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/04-1080.webp",
+      "bytes": 311258,
+      "sha256": "13eed4926c75fcc50f7c16f1a91150265a232119f23000b3301112d55304c4c7",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/04-480.webp",
+      "bytes": 72210,
+      "sha256": "3bc852e5db24e172d495d27615026d7b14c7c45c1d27507d70f7c6e990d5172e",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/04-960.webp",
+      "bytes": 278646,
+      "sha256": "64a645db07858c50a7e1c8babd6fabfe6b2e2f1809153193fbc28ec89be5bd0d",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/05-1080.webp",
+      "bytes": 243980,
+      "sha256": "c807b4031b1f7c5facb54026c887f037bf8b274d63d42ed79e3257d833c3dffc",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/05-480.webp",
+      "bytes": 61534,
+      "sha256": "5211c1e078341fee489b184cd0fc7c8a1646ff579eb61d65097230b80052cfe1",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/05-960.webp",
+      "bytes": 226384,
+      "sha256": "4719aa40237952f17186163f2d49a609fea46bcdee8b640b9aa145018be70eaf",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/06-1080.webp",
+      "bytes": 289898,
+      "sha256": "ec683b3d0bca3b7dfb4cf3a1f639b7c4b4360f75100977ad4aaf9b3cc4497f79",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/06-480.webp",
+      "bytes": 68290,
+      "sha256": "441b7fa447801cd350cf2a49f3022174c8975d84620409d44154fd1b68a54fd0",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/06-960.webp",
+      "bytes": 258312,
+      "sha256": "c4b2e6f0518f34bc1f263f14370503850be1f7be9d441b0fd6dd783df2b91ef0",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/07-1080.webp",
+      "bytes": 148140,
+      "sha256": "9142df9db86a65f07de6d303a5c0818ba938404b8b19b2fe3dea713a51b7896d",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/07-480.webp",
+      "bytes": 43112,
+      "sha256": "905cfaeaf804fb724f8a6291afa27ef707d12bc678b1802aa65817bad1143399",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/07-960.webp",
+      "bytes": 137640,
+      "sha256": "419444fd43d38020e7af133a0820a0c959a89d6148a272da5d2b466c24348631",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/08-1080.webp",
+      "bytes": 192264,
+      "sha256": "7a30008f6836c37512732804908a4850d79cbe9acd48000d822733baa06fe711",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/08-480.webp",
+      "bytes": 46678,
+      "sha256": "d5fe78fc0f313126c2190e1452a99778357f91dee0a78533ac6d542b9d314029",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/08-960.webp",
+      "bytes": 182222,
+      "sha256": "fd41173ad3bfc16a137aafb2a377017b0f6f436dfb7a1fdc822e9775a40c7f95",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/09-1080.webp",
+      "bytes": 205106,
+      "sha256": "852dc3ed726356183acd60d5c14fbf38a55ddbed545fe121e78698ba1877c873",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/09-480.webp",
+      "bytes": 45052,
+      "sha256": "72f9ea57cfd7882af3a8ea0aa7b08ba829fb2f90a5a985ec61ed744f34af2397",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/09-960.webp",
+      "bytes": 182222,
+      "sha256": "c1cd7b6f225e7927e87f7572f296176002715c95fc87495329c3af61ff623318",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/10-1080.webp",
+      "bytes": 123970,
+      "sha256": "71b13e58ec6644669ca3e0ab93c18fc9f14449df4289dbc63a2964639153be43",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/10-480.webp",
+      "bytes": 36612,
+      "sha256": "20359e02a9fb2541fac84435f156757a6667651c291211c6561f577211f15424",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/10-960.webp",
+      "bytes": 119884,
+      "sha256": "0fc77fe0c11f807da60762c4a29094c8063f0f1a97f65f58930796ad42d5efd3",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/card-410.webp",
+      "bytes": 9752,
+      "sha256": "0514c8d502292fb609b5a180b9b72a65a01e6ede3d27800d935fee82f037f5d5",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb-2/cut-410.webp",
+      "bytes": 15194,
+      "sha256": "d518546a33716cffc1d3e1adfc3a9e64fa148795da1ce63cd242f8f116a79eb9",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb/card-410.webp",
+      "bytes": 9752,
+      "sha256": "0514c8d502292fb609b5a180b9b72a65a01e6ede3d27800d935fee82f037f5d5",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/skoda-superb/cut-410.webp",
+      "bytes": 15194,
+      "sha256": "d518546a33716cffc1d3e1adfc3a9e64fa148795da1ce63cd242f8f116a79eb9",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-corolla-2/card-410.webp",
+      "bytes": 9912,
+      "sha256": "6d8cbf8d4b4d0070bb717d99301d2a950799fb2d3ef295b5d1af9bb3c5b55cbc",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-corolla-2/cut-410.webp",
+      "bytes": 14866,
+      "sha256": "8eb0fae9c767001f71c7281931c5d2d46d1b377776295b84a40b89a90bc5c219",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/01-1080.webp",
+      "bytes": 171892,
+      "sha256": "b83fdf87e60414300065f5c01a13fdcecc135d6d6ed1656672cffec72bbb6534",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/01-480.webp",
+      "bytes": 52484,
+      "sha256": "4c1e401914b5093a2718c20872d5a6e59f97f46dccd1e0ffd678424b1a4b7ee9",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/01-960.webp",
+      "bytes": 162522,
+      "sha256": "f2fae65d85d97895af25b2a671c56ab1dde8689cb91534f8115f98450ba1668c",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/02-1080.webp",
+      "bytes": 233004,
+      "sha256": "ef8b2833a1fe837cf2305f88cfcde3a911bb54e65088de9ea9f10e86662d455d",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/02-480.webp",
+      "bytes": 58740,
+      "sha256": "e7ab47e054111e9f2012be9856ba6bfd709fb527192a52b0f6dbfbd247bc27f8",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/02-960.webp",
+      "bytes": 213578,
+      "sha256": "cd1f3e3e82ece786de2824f4ea40870c726be2c8a733d9e204bdd525d90e3d8f",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/03-1080.webp",
+      "bytes": 102318,
+      "sha256": "c0a29b31ecbcb128a4fbf161a3f405a34fa8f4f6ca6069e7aa8c62ff8b1d3de4",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/03-480.webp",
+      "bytes": 39036,
+      "sha256": "99452b15255e20f2a50e190adfc80c17a1ad0312f4c9591b1ea7570492f403ea",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/03-960.webp",
+      "bytes": 103056,
+      "sha256": "087e306e902b25bfc3c97b4390244216f611fad9f14a14d87d00391fff59df15",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/04-1080.webp",
+      "bytes": 240088,
+      "sha256": "40419033e47aeea121a03d89dcd6f1cdbcc554bd94be9a23a1425dd951bdd080",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/04-480.webp",
+      "bytes": 63360,
+      "sha256": "5c8814ea37d6441609dc0ad053d1ce0f286efe4b82d40661972b70b27548cddd",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/04-960.webp",
+      "bytes": 224136,
+      "sha256": "3451849f2241a9615228602b2025f1d74290cf961c91dd0ad2689d59afc2dd9b",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/05-1080.webp",
+      "bytes": 269148,
+      "sha256": "0be46bad13e3147a05ddfcb6db929e8d58c85d28f8ff05e80bc7be80df2efba3",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/05-480.webp",
+      "bytes": 68532,
+      "sha256": "8cbc9e74e4c7fa04921933708d39e3f772a9481806d7b40860bf3e0b635f463b",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/05-960.webp",
+      "bytes": 249314,
+      "sha256": "7b90ae341cd2d8c44b9081842030b7aef6f385427ebb185ad7bd7c4750e392db",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/06-1080.webp",
+      "bytes": 173316,
+      "sha256": "479595b4bc504493fe750e6ec54f8afd675bbf6f06bc87ab25f212738a0212b1",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/06-480.webp",
+      "bytes": 48730,
+      "sha256": "ce79d7f17cda12bbd0addbc5b0a139c155403f32f5139e57063a73f2e452ef9e",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/06-960.webp",
+      "bytes": 168190,
+      "sha256": "bd22ba2a99d01eb506deb1289d3239bde1aa3e6fa48edf1c2e1e05cee041e120",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/07-1080.webp",
+      "bytes": 137772,
+      "sha256": "e1fd27545c2763a62515502424b62ccd7af2423b68790d0103f54417c60d438c",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/07-480.webp",
+      "bytes": 41910,
+      "sha256": "daa7aa514c52ee272834853c8dc3ea8f5213348825fdedcf2fb4587dc40b965e",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/07-960.webp",
+      "bytes": 126388,
+      "sha256": "1726f35775e66759cb9e812e05213567777dccebd864cfebcd84140dea884857",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/08-1080.webp",
+      "bytes": 185654,
+      "sha256": "bc8a5a7f59bc06f6fb113d7d5226ff2772bd0a58327871cf76899662b710858d",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/08-480.webp",
+      "bytes": 52566,
+      "sha256": "2efa19f28bf0dd3af4eb2cd5698720af50b29bbcc90ea6a29a8fc6cb768818c1",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/08-960.webp",
+      "bytes": 179554,
+      "sha256": "ad90044c0901a18bf60b846a89e1b8d9a9797696d535330aadb3d30e5b45996b",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/09-1080.webp",
+      "bytes": 150596,
+      "sha256": "588e2038da7352975f5f3ee1397ea6cf0877c56fb346b8c1b102928508934f45",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/09-480.webp",
+      "bytes": 32288,
+      "sha256": "2b3b9da379e499a864a3a0fd523600ee0808f532ddacda373245d370e25a8356",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/09-960.webp",
+      "bytes": 128174,
+      "sha256": "932b2404c96ee41b35d061a777ea1672f72e9b56893bc0594e081f54df54df94",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/10-1080.webp",
+      "bytes": 180506,
+      "sha256": "b4c77cf460b53e59943e9324bcbecd1ec12b953fff99347819bc023b891aecab",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/10-480.webp",
+      "bytes": 39206,
+      "sha256": "e6fe46dc09429b7ff11c884c3a5ac7413be84088352284eb696829ae2eaab937",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/10-960.webp",
+      "bytes": 175638,
+      "sha256": "bb5a3c2b989e87f32c69a9921541957de2c9d53920234bc2a451d3033878e83b",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris-cross/card-410.webp",
+      "bytes": 12302,
+      "sha256": "6a5faedcaa4ace40904db889879929f12468636ef419c4cca0c4c17ab1dcc4a2",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/01-1080.webp",
+      "bytes": 243632,
+      "sha256": "843f9550cab8571f59458c8669e17b30f574f4efc1a3ac597a09080a251c6fb7",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/01-480.webp",
+      "bytes": 61898,
+      "sha256": "344b828f6a57bb2fd072676187409825b49de72d33c96549c94d92474e296b84",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/01-960.webp",
+      "bytes": 227940,
+      "sha256": "9eda095e8561579249247dd4c06c6744cb453e6b1e03b1c15f88415559f8c460",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/02-1080.webp",
+      "bytes": 194716,
+      "sha256": "a027783473a3b5afd7bc23cb52e92d75ca6464d1a5d37fb97c0aa0bbd9da1631",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/02-480.webp",
+      "bytes": 53778,
+      "sha256": "3699dbc6cb421e5342756ba2021d1c3aaac0a36567c792120b1dd81fcb352e88",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/02-960.webp",
+      "bytes": 183746,
+      "sha256": "0139cb08b0f53db6abf7dc0d6b2d958487d1a723eb1b3d600cc5e376dad570cc",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/03-1080.webp",
+      "bytes": 168532,
+      "sha256": "755de28525150e889363c766387d5cdf1e1f329836a4c62c45a9c83911b098a0",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/03-480.webp",
+      "bytes": 41584,
+      "sha256": "5290b5b73464d39f845bfba5a303405c9c0093fc306fbd5009438b9a6edbf8ef",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/03-960.webp",
+      "bytes": 140348,
+      "sha256": "e794f8811380a0aae6126fd12e41754bf08b61ff34c5909521882ebb7f6ba735",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/04-1080.webp",
+      "bytes": 214958,
+      "sha256": "c522924978f277afd68c2ee6ed5208b108cba4b0b6b28a79981d76992726df15",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/04-480.webp",
+      "bytes": 58766,
+      "sha256": "c159d2f9a177f564be5d7e97d68eab3f32b6df741e4e9993daa65d2c80374efd",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/04-960.webp",
+      "bytes": 204218,
+      "sha256": "6b1c2bbaf3ba5d5a3740479f8650bc7347bf82ae9aed04d2ab09f5b372e3fa66",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/05-1080.webp",
+      "bytes": 221394,
+      "sha256": "ab65570547313e95f85437eadaf112130c0216a1674ae9531893a34fe84fbb3c",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/05-480.webp",
+      "bytes": 58368,
+      "sha256": "aef758c26db880264dde050ac0a54fac610ee10170dc4de3eebeb6505a655ca2",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/05-960.webp",
+      "bytes": 209732,
+      "sha256": "db330686a6040c65a2c487278f71d1c8dd01ffd0a5c656eeeb03f766ddc1c409",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/06-1080.webp",
+      "bytes": 148598,
+      "sha256": "883f3e61411340d338d1eed8cacad851768a12a958371e37a3f4f1fee5441c6f",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/06-480.webp",
+      "bytes": 39758,
+      "sha256": "a8040b985fc4e60454ef82ca000fb168d96c2b9cb8934988816c3ad72bb185bc",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/06-960.webp",
+      "bytes": 125280,
+      "sha256": "9975471e1dfc38b322e14e0e2ceea8d84365be267dd7049c25ab0944d15e3826",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/07-1080.webp",
+      "bytes": 115718,
+      "sha256": "884489e84b092617339d3e338fdbb56fe52eb5accc4bc69a87e653d965eb30e8",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/07-480.webp",
+      "bytes": 35918,
+      "sha256": "eddcfcaef680c4fbcce15a533da82aa7ac844147d27b75d3995d31b6c7a8c5bc",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/07-960.webp",
+      "bytes": 112964,
+      "sha256": "9bb340d43cf4ccb8fc61ca8c8e223bdc3dcbf80850e1833b3e6d6101041b7a33",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/08-1080.webp",
+      "bytes": 193646,
+      "sha256": "971f0353209bbc7b7e73542d3acb8b97d7ed2ee92c819d23a4ccdb71dd70fc6a",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/08-480.webp",
+      "bytes": 43076,
+      "sha256": "aef36565f233a4d6898c73badc9ac5360a127d1951bb607d723659d27f41ad0b",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/08-960.webp",
+      "bytes": 180700,
+      "sha256": "d360a0c2fc35bed3a53d46af1a03e90ca4cd3e7d6a2fd0524df16955749689d1",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/09-1080.webp",
+      "bytes": 192142,
+      "sha256": "e155b6db18628232088195b957941350466f55c4fbbb19a140912dc7b5ea7975",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/09-480.webp",
+      "bytes": 37514,
+      "sha256": "e56e5a0f8571b3b24ca340ea12135822c75163c4cc8f0f406c74bc7c63d1d601",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/09-960.webp",
+      "bytes": 180738,
+      "sha256": "32e4d680bb90530bc52601a075887a56af70c6bdea0a5430f7b7dbe5fa55450d",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/fleet/toyota-yaris/card-410.webp",
+      "bytes": 11084,
+      "sha256": "aae4da20891fee4b7aa18b3d676e71e62e6bdb65348fbe68738fde01f21baaa5",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/icon-192.png",
+      "bytes": 9657,
+      "sha256": "3b96f9ca94bb58800c86e64e42d754cff9d609d73a9a3a6ef7f8a410fbc58810",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/icon-512.png",
+      "bytes": 28085,
+      "sha256": "328d1bec44af11f6049fda4a331e8f2da57605fe11035bf379e6b8ddba2bb55c",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/icon-maskable-512.png",
+      "bytes": 19763,
+      "sha256": "e2e8d0c2872243bb59c142587aecb2f45f545640a4b82a4a0d93026b41a49f4c",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/img/og-image.jpg",
+      "bytes": 44460,
+      "sha256": "eae83b17210e274ff3dea0f6afd11fea50335e8b0d2655be11ad56e757f8ba8a",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/models/karoq-LICENSE.txt",
+      "bytes": 2814,
+      "sha256": "cf4ffd1b2c82ee177fc54ef9be7586a0c1e02b2a2fe3a469f2940f12ce6cbcdb",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/models/karoq-manifest.json",
+      "bytes": 3478,
+      "sha256": "8e8a47a8b2ca58557606cd453a0bc56461ecdb55c89a35001f446938e97b8c92",
+      "kind": "copied"
+    },
+    {
+      "path": "public/assets/models/karoq.glb",
+      "bytes": 2533812,
+      "sha256": "cc2e40f1e99e5b932198c37ef6915ce0f97efa90754955cb73554e486ebd458e",
+      "kind": "copied"
+    },
+    {
+      "path": "public/favicon.svg",
+      "bytes": 1581,
+      "sha256": "70da4cf84cfcb30f19032a7cb6f9ae9197438f01ac4f77acaf7a7339c63ce9d3",
+      "kind": "copied"
+    },
+    {
+      "path": "public/robots.txt",
+      "bytes": 174,
+      "sha256": "c99e1f965f2774145a774bc27ec29d43c5c5a9539aa0b6e0d2d95151291b8ab2",
+      "kind": "copied"
+    },
+    {
+      "path": "public/site.webmanifest",
+      "bytes": 492,
+      "sha256": "2f924f6e0d5cb2588d35027a73b3ed44c368e1c3c41ff9144cfc228eb252eb4f",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/atlas.html",
+      "bytes": 6038,
+      "sha256": "6921cb5216512701390839ffc16f1c199095a75dac29c6f58f7d86fdab7bbdfe",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/contact.html",
+      "bytes": 13806,
+      "sha256": "935f867ecc2c5cea80fee8d044083f4998982a0c7735d1ff15060376c6fffb84",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/cover.html",
+      "bytes": 8820,
+      "sha256": "baf60b79824864b63f8e3080243b7ca15c20afb24c5046fa431a67b50827890f",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/fleet.html",
+      "bytes": 2236,
+      "sha256": "be7b7b5ed37dfbd5d856bcd8c9dcdeea1c2caedabaefa0f14b1a96478971498a",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/footer.html",
+      "bytes": 2930,
+      "sha256": "1194197554af5d4b469a9c53a53137c1e12d2bcd2bacf553455adb2c12d0defe",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/nav.html",
+      "bytes": 6177,
+      "sha256": "ad7b9e46309f2173285df6380587d27863fc5ddaa8447b5ef01147f1b0c39623",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/preloader.html",
+      "bytes": 1892,
+      "sha256": "ec885b28160d7ed1198f3470fcf31d2241343197f0e4642576b7ac46701b0277",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/price.html",
+      "bytes": 11428,
+      "sha256": "244ee6f8a021d924fd1863813f2111dab9bdb0edf1400f31586d370de6c71a75",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/reel.html",
+      "bytes": 1347,
+      "sha256": "e058abcb15fd78a3662174f67f821fe7907b1ac92f2e80045d1bbcbaf50d47da",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/rental-info.html",
+      "bytes": 5377,
+      "sha256": "973362c2b1a25abc3392c2f7f1f86b0b5d38e9997cc77ab35e9e2682ff7f72c8",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/route.html",
+      "bytes": 7601,
+      "sha256": "6a8ebf096f55db36a9999cc07546f2472ed8c8cbafe7986a76c7e26bddbc2b5e",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/stickybar.html",
+      "bytes": 405,
+      "sha256": "0f66f067c8f4533e0840d3e6f2281da0d011aa968c7db9f5bb38701585205578",
+      "kind": "copied"
+    },
+    {
+      "path": "sections/terms.html",
+      "bytes": 5824,
+      "sha256": "82f8604bb31502e2b47579d80cb223328f1ad41280ce9ffc0c60ea11cbf4a5d2",
+      "kind": "copied"
+    },
+    {
+      "path": "vite.config.js",
+      "bytes": 5640,
+      "sha256": "f7865707f33632b9c9f50c26d6ddab651bd97df8e0726a54c699880f8f64e514",
+      "kind": "copied"
+    }
+  ],
+  "note": "The manifest does not hash itself. Source revision identifies a clean tracked checkout."
+}

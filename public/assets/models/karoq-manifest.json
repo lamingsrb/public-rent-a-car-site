@@ -1,0 +1,136 @@
+{
+  "model": "2019 Skoda Karoq",
+  "source": "https://sketchfab.com/3d-models/2019-skoda-karoq-7e359874ebe744158eddc37c9da8f487",
+  "download": "https://raw.githubusercontent.com/pedrosoandre/carros/main/assets/skoda-karoq.glb",
+  "author": "BHP3D",
+  "upstreamCredits": [
+    "SerbianMods",
+    "PQCProjectQualityCarMods"
+  ],
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "originalBytes": 5718440,
+  "originalSHA256": "c507c08ecd51c2ef085a65d600720b7667f46ff2310cf5b227e85f11fb3d26bb",
+  "bytes": 2533812,
+  "sha256": "cc2e40f1e99e5b932198c37ef6915ce0f97efa90754955cb73554e486ebd458e",
+  "textures": [
+    {
+      "image": 0,
+      "originalBytes": 501544,
+      "bytes": 184418,
+      "width": 1024,
+      "height": 1024,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    },
+    {
+      "image": 1,
+      "originalBytes": 272922,
+      "bytes": 168296,
+      "width": 1024,
+      "height": 1024,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    },
+    {
+      "image": 2,
+      "originalBytes": 595441,
+      "bytes": 183470,
+      "width": 1024,
+      "height": 1024,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    },
+    {
+      "image": 3,
+      "originalBytes": 1221922,
+      "bytes": 350416,
+      "width": 1024,
+      "height": 1024,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    },
+    {
+      "image": 4,
+      "originalBytes": 675484,
+      "bytes": 192351,
+      "width": 1024,
+      "height": 1024,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    },
+    {
+      "image": 5,
+      "originalBytes": 638841,
+      "bytes": 201700,
+      "width": 1024,
+      "height": 1024,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    },
+    {
+      "image": 6,
+      "originalBytes": 273936,
+      "bytes": 173737,
+      "width": 1024,
+      "height": 1024,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    },
+    {
+      "image": 7,
+      "originalBytes": 549771,
+      "bytes": 146541,
+      "width": 1024,
+      "height": 1024,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    },
+    {
+      "image": 8,
+      "originalBytes": 44620,
+      "bytes": 42033,
+      "width": 512,
+      "height": 512,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    },
+    {
+      "image": 9,
+      "originalBytes": 12652,
+      "bytes": 5396,
+      "width": 128,
+      "height": 128,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    },
+    {
+      "image": 10,
+      "originalBytes": 31473,
+      "bytes": 12650,
+      "width": 256,
+      "height": 256,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    },
+    {
+      "image": 11,
+      "originalBytes": 48956,
+      "bytes": 21716,
+      "width": 256,
+      "height": 256,
+      "alphaPreserved": false,
+      "mime": "image/jpeg"
+    }
+  ],
+  "runtimePresentation": {
+    "paint": "Natural silver material response",
+    "registrationGraphic": "BG 099-ST",
+    "registrationNotice": "Illustrative Serbian BG graphic on two runtime CanvasTexture planes; not the actual rental vehicle registration. Source plate meshes are hidden without changing GLB geometry or UVs.",
+    "journeyMetres": 36,
+    "journeyProgress": [0.16, 1],
+    "wheelRadiusMetres": 0.345
+  },
+  "geometryChanged": false,
+  "variantNotice": "2019 illustrative 3D model; the actual fleet Karoq is a 2021 Sportline 1.5 TSI. Exterior trim, paint, wheels and interior may differ."
+}

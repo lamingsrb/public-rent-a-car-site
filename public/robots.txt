@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap: https://publicrentacar.rs/sitemap.xml
+# (domain not final; enable the Sitemap line together with SITE_URL once the domain is decided)

@@ -1,0 +1,175 @@
+/* price.css (slot D) — "The price, plainly". Prefix .price__ ; mobile-first.
+   Part A (statement, bands, dials, extras, fees) = normal flow. Part B (.price__cockpit) = night card, pinned on desktop in full mode only. */
+.sec-price { background: var(--bg-alt); }
+
+.price__head { margin-bottom: clamp(36px, 5vw, 72px); }
+.price__head-main { display: grid; gap: var(--s-4); } /* the wrapper keeps the folio-to-title gap of .sec__head (2026-11-01) */
+.price__lead { margin: 0; }
+@media (min-width: 1024px) {
+  /* same 12-column grid and gap as .price__a, so the lead starts exactly where the bands column starts */
+  .price__head { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-6); align-items: end; }
+  .price__head-main { grid-column: 1 / span 7; }
+  .price__lead { grid-column: 8 / span 5; justify-self: start; padding-bottom: .4em; max-width: 34ch; }
+}
+
+/* ---------- Part A layout ---------- */
+.price__a { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(56px, 8vw, 96px) var(--s-6); }
+@media (min-width: 1024px) {
+  .price__a { grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: start; }
+  .price__statement { grid-column: 1 / span 7; align-self: center; } /* centred on the bands, not hanging at their top (2026-11-01) */
+  .price__bandswrap { grid-column: 8 / span 5; }
+  .price__included { grid-column: 1 / -1; }
+  .price__extras { grid-column: 1 / span 7; }
+  .price__fees { grid-column: 8 / span 5; }
+}
+
+/* 1. numeral statement */
+.price__statement { display: grid; gap: var(--s-3); align-content: start; }
+.price__big {
+  display: flex; align-items: baseline; margin: 0; color: var(--ink);
+  font-size: calc(var(--fs-numeral) * 1.4); line-height: .82; letter-spacing: -.04em;
+}
+.price__cur { color: var(--accent-ink); font-size: .62em; margin-right: .04em; transform: translateY(-.2em); }
+html[lang^="sr"] .price__cur { order: 2; margin: 0 0 0 .14em; }
+.price__n { font-variant-numeric: lining-nums tabular-nums; }
+.price__from { margin: 0; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; color: var(--ink-3); }
+.price__note { margin: var(--s-2) 0 0; max-width: 40ch; font-size: 16px; line-height: 1.55; color: var(--ink-2); }
+
+/* 2. group bands */
+.price__bands { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
+.price__band {
+  position: relative; width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--s-4); row-gap: 6px; align-items: baseline;
+  padding: 18px 0 16px; text-align: left; border-top: 1px solid var(--line); color: var(--ink);
+}
+.price__band-name { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 1.2rem + 1vw, 1.875rem); line-height: 1.1; letter-spacing: -.01em; }
+.price__band-price { grid-column: 2; grid-row: 1; font-family: var(--font-ui); font-weight: 700; font-size: 15px; white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; }
+.price__band-count { grid-column: 1; grid-row: 2; font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; color: var(--ink-3); text-transform: uppercase; }
+.price__bar { grid-column: 1 / -1; grid-row: 3; display: block; height: 2px; margin-top: 8px; background: transparent; }
+.price__bar-fill { display: block; height: 100%; width: calc(var(--w, 1) * 100%); background: var(--ink); transform-origin: 0 50%; transition: background-color var(--dur-2) var(--ease-out); }
+@media (hover: hover) { .price__band:hover .price__bar-fill, .price__band.is-lit .price__bar-fill { background: var(--accent); } }
+.price__band:focus-visible .price__bar-fill, .price__band.is-lit .price__bar-fill { background: var(--accent); }
+
+/* decorative dot-plot ladder under the bands (14 cars on a EUR 20 to 60 axis) */
+.price__ladder { margin: var(--s-6) 0 0; color: var(--ink); }
+.price__ladder svg { display: block; width: 100%; height: auto; overflow: visible; }
+.price__ladder-axis { stroke: var(--line-ui); stroke-width: 1; }
+.price__ladder-tick { stroke: var(--line-ui); stroke-width: 1; }
+.price__ladder-lab { font-family: var(--font-mono); font-size: 18px; letter-spacing: .04em; fill: var(--ink-3); }
+@media (min-width: 768px) { .price__ladder-lab { font-size: 13px; } }
+.price__dot { fill: var(--ink); transition: fill var(--dur-2) var(--ease-out); }
+.price__dot.is-lit { fill: var(--accent); }
+
+/* 3. included strip */
+.price__dials { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-5); border-block: 1px solid var(--line); padding-block: var(--s-6); }
+.price__dial { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--s-5); align-items: center; }
+.price__ring { position: relative; display: grid; place-items: center; width: 72px; height: 72px; }
+.price__ring > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.price__ring-track { fill: none; stroke: var(--line); stroke-width: 1.5; }
+.price__ring-arc { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
+.price__ring-dot { transform-origin: 60px 60px; }
+.price__ring-dot circle { fill: var(--accent); }
+.price__glyph { position: relative; font-family: var(--font-display); font-weight: 700; font-size: 28px; line-height: 1; color: var(--ink); display: grid; place-items: center; }
+.price__inf { width: 30px; height: 15px; fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.price__dial-tx { display: block; min-width: 0; }
+.price__dial-t { display: block; font-family: var(--font-ui); font-weight: 700; font-size: 16px; line-height: 1.3; color: var(--ink); }
+.price__dial-sub { display: block; margin-top: 4px; font-size: 14px; line-height: 1.4; color: var(--ink-2); }
+.price__included-note { margin: var(--s-4) 0 0; max-width: 62ch; font-size: 15px; color: var(--ink-2); }
+@media (min-width: 768px) {
+  .price__dials { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-6); align-items: start; }
+  .price__dial { grid-template-columns: minmax(0, 1fr); row-gap: var(--s-4); justify-items: start; }
+  .price__ring { width: 96px; height: 96px; }
+  .price__glyph { font-size: 36px; }
+  .price__inf { width: 40px; height: 20px; }
+}
+
+/* 4. extras */
+.price__h { margin: 0 0 var(--s-5); font-size: var(--fs-h3); }
+.price__extra-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
+.price__extra {
+  display: grid; align-content: start; gap: 4px; padding: clamp(16px, 2.2vw, 24px);
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md);
+}
+.price__extra-ic { display: block; width: 40px; height: 40px; margin-bottom: var(--s-3); color: var(--ink); }
+.price__extra-ic svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.price__extra-ic .fill { fill: currentColor; stroke: none; }
+.price__extra-n { font-family: var(--font-ui); font-weight: 700; font-size: 16px; line-height: 1.25; color: var(--ink); overflow-wrap: anywhere; }
+.price__extra-p { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); }
+.price__link {
+  display: inline-flex; align-items: center; min-height: 44px; margin-top: var(--s-4);
+  font-weight: 600; font-size: 16px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: .28em;
+}
+
+/* 5. fees */
+.price__fee-list { margin: 0; padding: 0 clamp(16px, 2vw, 24px); background: var(--paper); border-radius: var(--r-md); border: 1px solid var(--line); }
+.price__fee { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4); padding: 16px 0; border-top: 1px solid var(--line); }
+.price__fee:first-child { border-top: 0; }
+.price__fee dt { margin: 0; font-size: 15px; line-height: 1.4; color: var(--ink-2); min-width: 0; }
+.price__fee dd { margin: 0; flex: none; font-size: 14px; color: var(--ink); white-space: nowrap; }
+.price__cta { margin-top: var(--s-5); }
+
+/* ---------- Part B: the cockpit ---------- */
+.price__b { margin-top: clamp(72px, 9vw, 140px); }
+.price__cockpit { /* .wrap in the markup: same width and edges as every other section (was min(92vw, 1280px), 2026-11-01) */
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s-5);
+  padding: clamp(16px, 3vw, 48px); border-radius: clamp(24px, 3vw, 32px); overflow: hidden;
+  background: var(--night); color: var(--fg);
+}
+.price__photo { position: relative; overflow: hidden; border-radius: var(--r-lg); background: var(--night-deep); aspect-ratio: 16 / 10; container-type: size; }
+.price__zoom { position: absolute; left: 0; width: 100cqw; height: 125cqw; top: calc((100cqh - 125cqw) * .55); transform-origin: 59% 60%; }
+.price__cimg { display: block; width: 100%; height: 100%; object-fit: cover; }
+.price__tag {
+  position: absolute; left: 14px; bottom: 14px; z-index: 3; max-width: calc(100% - 28px);
+  padding: 6px 12px; border-radius: var(--r-pill); background: var(--paper); color: var(--ink);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .05em; line-height: 1.3; text-transform: uppercase;
+}
+
+.price__hot {
+  position: absolute; left: var(--x); top: var(--y); z-index: 2; width: 44px; height: 44px; margin: -22px 0 0 -22px;
+  display: grid; place-items: center; border-radius: 50%;
+}
+.price__hot-ring {
+  position: relative; width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--accent);
+  box-shadow: inset 0 0 0 3px var(--paper); transition: transform var(--dur-2) var(--ease-out);
+}
+.price__hot-ring::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: var(--accent); transform: scale(0); transition: transform var(--dur-2) var(--ease-out); }
+.price__hot.is-active .price__hot-ring::after { transform: scale(1); }
+@media (hover: hover) { .price__hot:hover .price__hot-ring { transform: scale(1.12); } }
+
+.price__list { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.price__cockpit-title { margin: 0 0 var(--s-4); font-size: var(--fs-h3); color: var(--fg); }
+.price__eq { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-dark); }
+.price__eqrow {
+  position: relative; width: 100%; display: grid; grid-template-columns: 36px minmax(0, 1fr); align-items: baseline; min-height: 48px; padding: 12px 0 12px 16px;
+  text-align: left; color: var(--fg); border-bottom: 1px solid var(--line-dark); font-family: var(--font-ui); font-weight: 600; font-size: 17px; line-height: 1.3;
+  transition: color var(--dur-2) var(--ease-out);
+}
+.price__eqrow::before { content: ""; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: var(--accent); transform: scaleY(0); transition: transform var(--dur-2) var(--ease-out); }
+.price__eqrow.is-active::before { transform: scaleY(1); }
+.price__eqn { font-size: 12px; color: var(--fg-2); letter-spacing: .06em; }
+.price__cockpit.is-pinned .price__eqrow:not(.is-active) { color: var(--fg-2); }
+@media (hover: hover) { .price__eqrow:hover { color: var(--fg); } .price__cockpit.is-pinned .price__eqrow:not(.is-active):hover { color: var(--fg); } }
+.price__eqnote { margin: var(--s-4) 0 0; max-width: 44ch; color: var(--fg-2); font-size: 14px; }
+.price__prog { display: flex; align-items: center; gap: var(--s-4); margin-top: var(--s-4); }
+.price__count { font-size: 12px; letter-spacing: .08em; color: var(--fg-2); font-variant-numeric: tabular-nums lining-nums; }
+.price__progbar { position: relative; flex: 1; height: 2px; background: var(--line-dark); overflow: hidden; }
+.price__progfill { position: absolute; inset: 0; background: var(--fg); transform-origin: 0 50%; transform: scaleX(.1667); }
+
+@media (min-width: 1024px) {
+  .price__cockpit { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(24px, 3vw, 56px); height: min(78vh, 720px); }
+  .price__photo { aspect-ratio: auto; height: 100%; }
+  .price__list { padding-block: var(--s-2); }
+  .price__tag { left: 18px; bottom: 18px; }
+}
+
+/* ?hotspots=1 QA overlay: 10% grid on the photo + click readout */
+.price__dbg { position: absolute; inset: 0; z-index: 4; cursor: crosshair;
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--paper) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--paper) 55%, transparent) 1px, transparent 1px);
+  background-size: 10% 10%; }
+.price__dbg-read { position: fixed; right: 12px; bottom: 12px; z-index: 9999; padding: 6px 10px; border-radius: var(--r-sm); background: var(--paper); color: var(--ink); font-family: var(--font-mono); font-size: 13px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .price__bar-fill, .price__eqrow, .price__eqrow::before, .price__hot-ring, .price__hot-ring::after, .price__dot { transition: none; }
+}
+html.mode-static .price__bar-fill, html.mode-static .price__eqrow, html.mode-static .price__eqrow::before { transition: none; }

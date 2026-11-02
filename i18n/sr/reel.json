@@ -1,0 +1,12 @@
+{
+  "reel.folio": "03 · Galerija",
+  "reel.title": "Vozila, <em class=\"acc\">u kadru.</em>",
+  "reel.lead": "Fotografije naših vozila. Dodirnite sliku da vidite vozilo u pregledu.",
+  "reel.leadBanner": "Ilustrativne slike vozila. Dodirnite sliku da vidite vozilo u pregledu.",
+  "reel.alt": "Fotografija vozila {name}",
+  "reel.tag": "Ilustracija",
+  "reel.show": "{name}: prikažite u vozilima",
+  "reel.swipe": "Prevucite",
+  "reel.aria": "Galerija fotografija vozila, listajte horizontalno",
+  "reel.altBanner": "Ilustrativna slika vozila {name}"
+}

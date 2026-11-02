@@ -1,0 +1,157 @@
+<!-- price (slot D): "The price, plainly". Part A = statement + group bands + included dials + extras + fees (normal flow).
+     Part B = the cockpit card (desktop pin 1.2 vh in full mode only; unpinned everywhere else).
+     Money figures here are only the whitelisted ones (brief 11.1): group minimums come from data/fleet.json at run time, fees/deposit are fixed copy.
+     Hotspot positions are estimated by eye and calibrated with ?hotspots=1 (client-confirmable, brief 11.2 item 11). -->
+<section id="price" class="sec sec-price" data-nav-theme="light" aria-labelledby="price-title">
+  <header class="sec__head wrap price__head" data-reveal>
+    <div class="price__head-main">
+      <p class="folio"><span class="folio__tick"></span><span data-i18n="price.folio">05 · Prices</span></p>
+      <h2 id="price-title" data-i18n="price.title" data-i18n-html>Starting at <em class="acc">€20 a day.</em></h2>
+    </div>
+    <p class="lead price__lead" data-i18n="price.lead">Starting prices by group, what the daily price includes, and the fees that exist.</p>
+  </header>
+
+  <div class="wrap price__a">
+    <div class="price__statement" data-reveal>
+      <p class="price__big numeral" aria-hidden="true"><span class="price__cur">€</span><span class="price__n" data-count="20">20</span></p>
+      <p class="price__from mono" data-i18n="price.statFrom">from / day*</p>
+      <p class="price__note" data-i18n="common.price.note">Daily starting price. The final price depends on rental period and season. Ask us for a quote.</p>
+    </div>
+
+    <div class="price__bandswrap">
+      <ul class="price__bands" role="list" data-reveal="stagger"></ul>
+      <figure class="price__ladder" role="img" aria-label="Fourteen cars on a scale from €20 to €60 a day" data-i18n-attr="aria-label:price.ladder" data-reveal></figure>
+    </div>
+
+    <div class="price__included">
+      <ul class="price__dials" role="list" data-reveal="stagger">
+        <li class="price__dial" data-reveal-item>
+          <span class="price__ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="price__ring-track" cx="60" cy="60" r="54"/>
+              <circle class="price__ring-arc" cx="60" cy="60" r="54" transform="rotate(-90 60 60)"/>
+              <g class="price__ring-dot"><circle cx="60" cy="6" r="5"/></g>
+            </svg>
+            <span class="price__glyph" aria-hidden="true">%</span>
+          </span>
+          <span class="price__dial-tx"><span class="price__dial-t" data-i18n="price.dial1">Tax</span></span>
+        </li>
+        <li class="price__dial" data-reveal-item>
+          <span class="price__ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="price__ring-track" cx="60" cy="60" r="54"/>
+              <circle class="price__ring-arc" cx="60" cy="60" r="54" transform="rotate(-90 60 60)"/>
+              <g class="price__ring-dot"><circle cx="60" cy="6" r="5"/></g>
+            </svg>
+            <span class="price__glyph" aria-hidden="true"><svg class="price__inf" viewBox="0 0 48 24" aria-hidden="true" focusable="false"><path d="M24 12c-3.5-5.5-6.5-8-10.5-8C8.5 4 5 7.5 5 12s3.5 8 8.500 8c4 0 7-2.500 10.500-8s6.500-8 10.500-8c5 0 8.500 3.500 8.500 8s-3.500 8-8.500 8c-4 0-7-2.500-10.500-8z"/></svg></span>
+          </span>
+          <span class="price__dial-tx"><span class="price__dial-t" data-i18n="price.dial2">Unlimited mileage</span></span>
+        </li>
+        <li class="price__dial" data-reveal-item>
+          <span class="price__ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="price__ring-track" cx="60" cy="60" r="54"/>
+              <circle class="price__ring-arc" cx="60" cy="60" r="54" transform="rotate(-90 60 60)"/>
+              <g class="price__ring-dot"><circle cx="60" cy="6" r="5"/></g>
+            </svg>
+            <span class="price__glyph" aria-hidden="true">24</span>
+          </span>
+          <span class="price__dial-tx"><span class="price__dial-t" data-i18n="price.dial3">24-hour rental day</span>
+          <span class="price__dial-sub" data-i18n="price.dial3sub">plus 1 hour of tolerance on return</span></span>
+        </li>
+      </ul>
+      <p class="price__included-note small" data-i18n="common.price.included">The daily price includes tax and unlimited mileage, unless a promotional price says otherwise.</p>
+    </div>
+
+    <div class="price__extras">
+      <h3 class="price__h" data-i18n="price.extrasTitle">Extras</h3>
+      <ul class="price__extra-grid" role="list" data-reveal="stagger">
+          <li class="price__extra" data-reveal-item>
+            <span class="price__extra-ic"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M11 7c-2 0-3.500 1.500-3.500 3.500V28c0 2 1.500 3.500 3.500 3.500h20.500c1.500 0 2.500-1 2.500-2.500v-2c0-1.500-1-2.500-2.500-2.500H19.500V10.500C19.500 8.500 18 7 16 7z"/><path d="M19.500 21.500 14 15.500"/><circle cx="26" cy="35" r="1.600"/><circle cx="12" cy="35" r="1.600"/></svg></span>
+            <span class="price__extra-n" data-i18n="price.extra.baby">Baby seats</span>
+            <span class="price__extra-p mono" data-i18n="price.onRequest">Price on request</span>
+          </li>
+          <li class="price__extra" data-reveal-item>
+            <span class="price__extra-ic"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M6 16c8-7.500 20-7.500 28 0"/><path d="M11 21.500c5.500-5 12.500-5 18 0"/><path d="M16 27c2.500-2.300 5.500-2.300 8 0"/><circle class="fill" cx="20" cy="32.500" r="1.800"/></svg></span>
+            <span class="price__extra-n" data-i18n="price.extra.wifi">Wi-Fi</span>
+            <span class="price__extra-p mono" data-i18n="price.onRequest">Price on request</span>
+          </li>
+          <li class="price__extra" data-reveal-item>
+            <span class="price__extra-ic"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="20" cy="20" r="15"/><circle cx="20" cy="20" r="6"/><path d="M8 11.500l8 5.500-8 5.500 8 5.500"/><path d="M32 11.500l-8 5.500 8 5.500-8 5.500"/></svg></span>
+            <span class="price__extra-n" data-i18n="price.extra.chains">Snow chains</span>
+            <span class="price__extra-p mono" data-i18n="price.onRequest">Price on request</span>
+          </li>
+          <li class="price__extra" data-reveal-item>
+            <span class="price__extra-ic"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M8 11h24a3 3 0 0 1 3 3v4H5v-4a3 3 0 0 1 3-3z"/><path d="M3 31l3.500-8.500c.4-1 1.300-1.500 2.300-1.500h22.400c1 0 1.900.5 2.300 1.500L37 31"/><path d="M3 31h34"/><circle cx="11" cy="31" r="3"/><circle cx="29" cy="31" r="3"/></svg></span>
+            <span class="price__extra-n" data-i18n="price.extra.thule">Thule roof box</span>
+            <span class="price__extra-p mono" data-i18n="price.onRequest">Price on request</span>
+          </li>
+      </ul>
+      <a class="price__link" href="#contact" data-i18n="price.extrasAsk">Ask for extras when you message us.</a>
+    </div>
+
+    <div class="price__fees" data-reveal>
+      <h3 class="price__h" data-i18n="price.feesTitle">Fees</h3>
+      <dl class="price__fee-list">
+          <div class="price__fee">
+            <dt data-i18n="price.fee.airportDay">Airport pick-up, 08:00–22:00</dt>
+            <dd class="mono" data-i18n="price.feeV.airportDay">€20 + VAT</dd>
+          </div>
+          <div class="price__fee">
+            <dt data-i18n="price.fee.airportNight">Airport pick-up, outside those hours</dt>
+            <dd class="mono" data-i18n="price.feeV.airportNight">€30 + VAT</dd>
+          </div>
+          <div class="price__fee">
+            <dt data-i18n="price.fee.abroad">Leaving Serbia (with our consent)</dt>
+            <dd class="mono" data-i18n="price.feeV.abroad">€25</dd>
+          </div>
+          <div class="price__fee">
+            <dt data-i18n="price.fee.deposit">Deposit (depends on the vehicle)</dt>
+            <dd class="mono" data-i18n="price.feeV.deposit">from €300</dd>
+          </div>
+      </dl>
+      <a class="btn btn--ink price__cta" href="#contact" data-i18n="price.ctaPrice">Ask about a price</a>
+    </div>
+  </div>
+
+  <div class="price__b">
+    <div class="price__cockpit wrap" data-theme="night" data-reveal-skip>
+      <div class="price__photo">
+        <div class="price__zoom" data-zoom>
+          <img src="/assets/img/fleet/skoda-karoq/06-1080.webp" srcset="/assets/img/fleet/skoda-karoq/06-480.webp 480w, /assets/img/fleet/skoda-karoq/06-960.webp 960w, /assets/img/fleet/skoda-karoq/06-1080.webp 1080w" sizes="(min-width:1024px) 52vw, 92vw" width="1080" height="1350" alt="Interior of a Škoda Karoq: dashboard and centre screen" loading="lazy" decoding="async" class="price__cimg" data-i18n-attr="alt:price.cockpitAlt" style="background-color:#717279">
+          <button type="button" class="price__hot" data-row="0" data-obj="climate" style="--x:60%;--y:61%"><span class="price__hot-ring" aria-hidden="true"></span></button>
+          <button type="button" class="price__hot" data-row="1" data-obj="screen" style="--x:58%;--y:48%"><span class="price__hot-ring" aria-hidden="true"></span></button>
+        </div>
+        <span class="price__tag" data-i18n="price.tagPhoto">Photo: Škoda Karoq interior</span>
+      </div>
+      <div class="price__list">
+        <h3 class="price__cockpit-title" data-i18n="price.cockpitTitle">What&#39;s inside</h3>
+        <ol class="price__eq" role="list">
+          <li><button type="button" class="price__eqrow is-active" data-row="0" aria-current="true">
+            <span class="price__eqn mono" aria-hidden="true">01</span><span class="price__eqt" data-i18n="price.eq.1">Air conditioning</span>
+          </button></li>
+          <li><button type="button" class="price__eqrow" data-row="1">
+            <span class="price__eqn mono" aria-hidden="true">02</span><span class="price__eqt" data-i18n="price.eq.2">Navigation</span>
+          </button></li>
+          <li><button type="button" class="price__eqrow" data-row="2">
+            <span class="price__eqn mono" aria-hidden="true">03</span><span class="price__eqt" data-i18n="price.eq.3">USB port</span>
+          </button></li>
+          <li><button type="button" class="price__eqrow" data-row="3">
+            <span class="price__eqn mono" aria-hidden="true">04</span><span class="price__eqt" data-i18n="price.eq.4">Bluetooth</span>
+          </button></li>
+          <li><button type="button" class="price__eqrow" data-row="4">
+            <span class="price__eqn mono" aria-hidden="true">05</span><span class="price__eqt" data-i18n="price.eq.5">Parking sensors</span>
+          </button></li>
+          <li><button type="button" class="price__eqrow" data-row="5">
+            <span class="price__eqn mono" aria-hidden="true">06</span><span class="price__eqt" data-i18n="price.eq.6">Driving assistance</span>
+          </button></li>
+        </ol>
+        <p class="price__eqnote small" data-i18n="price.eqNote">A general list for the fleet; equipment is not listed per car. Ask us about a specific car.</p>
+        <div class="price__prog" aria-hidden="true">
+          <span class="price__count mono"><span data-eq-now>01</span> / 06</span>
+          <span class="price__progbar"><i class="price__progfill"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

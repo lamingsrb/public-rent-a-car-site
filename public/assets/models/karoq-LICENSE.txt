@@ -1,0 +1,49 @@
+2019 Skoda Karoq - 3D model attribution and provenance
+
+Source work: 2019 Skoda Karoq
+Published by BHP3D: https://sketchfab.com/BHP3D
+Source: https://sketchfab.com/3d-models/2019-skoda-karoq-7e359874ebe744158eddc37c9da8f487
+Source API: https://api.sketchfab.com/v3/models/7e359874ebe744158eddc37c9da8f487
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+License text: https://creativecommons.org/licenses/by/4.0/legalcode
+License summary: https://creativecommons.org/licenses/by/4.0/
+
+Original credit chain from the source description:
+SerbianMods and PQCProjectQualityCarMods: model, textures and game mod.
+BHP3D: export and edits. The source identifies an export from a GTA SA mod.
+The public API identifies the selected license as CC Attribution, requiring
+author credit and allowing commercial use. The source also has a NoAI label.
+This model is displayed using conventional WebGL rendering, without generative
+image generation, generative texturing or model training.
+
+GLB distribution archive:
+https://github.com/pedrosoandre/carros
+https://raw.githubusercontent.com/pedrosoandre/carros/main/assets/skoda-karoq.glb
+https://github.com/pedrosoandre/carros/blob/main/CREDITS.md
+https://github.com/pedrosoandre/carros/blob/main/LICENSE-3D-MODELS.md
+Archive modifications: vertex welding, geometry simplification, pruning and
+meshopt compression, documented by that archive. Its code license does not
+replace this model's CC BY 4.0 license.
+
+Public Rent a Car presentation modifications:
+Embedded RGB maps recompressed to JPEG quality 92, 4:4:4, at original dimensions
+(maximum 1024 pixels). Maps with alpha are preserved. Geometry, UVs and meshopt
+geometry buffers are unchanged from the archive GLB. Runtime scale, orientation,
+silver paint response, lighting, contact shadow, camera, road and abstract
+architectural frames are adapted. SHA-256 hashes and image changes are recorded
+in the adjacent karoq-manifest.json.
+The source registration graphics are hidden at runtime and replaced on both
+ends by a code-drawn Serbian BG 099-ST graphic using one shared CanvasTexture.
+This is an illustrative registration, not the actual rental vehicle's plate.
+The GLB geometry and UVs are unchanged. Runtime presentation also adds a
+36-metre route journey and rotation of the four original centred wheel groups.
+
+Variant distinction:
+This asset depicts a 2019 Karoq in the same pre-facelift body family as the
+client's 2021 Karoq Sportline 1.5 TSI. It is not a scan of their individual car.
+Trim, wheels, paint and interior details may differ. Actual rental vehicle
+photographs and confirmed specifications remain in the fleet catalogue.
+
+Suggested visible credit:
+3D Karoq: BHP3D / SerbianMods / PQCProjectQualityCarMods - CC BY 4.0.
+Model optimized and presentation adapted for Public Rent a Car.

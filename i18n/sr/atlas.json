@@ -1,0 +1,15 @@
+{
+  "atlas.folio": "06 · Lokacije",
+  "atlas.title": "Tri mesta da <em class=\"acc\">krenete.</em>",
+  "atlas.lead": "Preuzmite vozilo na aerodromu Nikola Tesla u Beogradu ili na jednoj od dve naše gradske lokacije.",
+  "atlas.diagramTag": "Šematski prikaz, nije u razmeri",
+  "atlas.place.airport": "Aerodrom Nikola Tesla, Beograd",
+  "atlas.place.milosa": "Kneza Miloša 14, Beograd",
+  "atlas.place.dobracina": "Dobračina, Beograd {{DOBRACINA_NO}}",
+  "atlas.note.airport": "Preuzimanje na aerodromu: 20 € + PDV od 08:00 do 22:00; 30 € + PDV van tog vremena.",
+  "atlas.note.city": "Gradska lokacija.",
+  "atlas.hours": "Radno vreme: pitajte nas",
+  "atlas.ask": "Pitajte za preuzimanje ovde",
+  "atlas.maps": "Prikažite na mapi",
+  "atlas.confirmBadge": "broj adrese za potvrdu"
+}

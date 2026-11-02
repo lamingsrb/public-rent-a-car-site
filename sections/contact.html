@@ -1,0 +1,136 @@
+<!-- contact: back cover (brief 5.9). Dusk gradient, message composer (no form, no backend), direct channels. The dusk column moved to the footer brand block (2026-11-01, footer.html).
+     Phone / e-mail / messenger values are never typed here: data-contact fills hrefs (main.js), data-contact-text fills the printed text (lib/contact.js).
+     Redesign 2026-10-31 (Feedback_Loop/2026-10-31 v2): compact two-column composer, channel icons (sprite below), the number printed once. -->
+<section id="contact" class="sec sec-contact compact-contact" data-nav-theme="dark" data-theme="night" data-contact-anchor aria-labelledby="contact-title">
+  <svg class="contact__sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="ic-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g></symbol>
+    <symbol id="ic-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
+    <symbol id="ic-viber" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2.6C6.4 2.6 2.4 5.9 2.4 10.4c0 2.5 1.2 4.6 3.2 6V21l3.7-2.2c.9.2 1.8.3 2.7.3 5.6 0 9.6-3.3 9.6-7.7S17.6 2.6 12 2.6z"/><path fill="currentColor" d="M9.1 7.3c.4-.4 1-.3 1.3.1l1 1.5c.2.4.2.8-.1 1.1l-.7.6c.5 1 1.3 1.8 2.3 2.3l.6-.7c.3-.3.8-.3 1.1-.1l1.5 1c.5.3.5.9.1 1.3l-.7.7c-.6.6-1.5.7-2.3.4a9.2 9.2 0 0 1-4.9-4.9c-.3-.8-.2-1.7.4-2.3z"/></symbol>
+    <symbol id="ic-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol>
+    <symbol id="ic-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></g></symbol>
+    <symbol id="ic-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.3 6.7h.01"/></g></symbol>
+    <symbol id="ic-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></g></symbol>
+    <symbol id="ic-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></g></symbol>
+  </svg>
+
+  <div class="contact__sky" aria-hidden="true"></div>
+  <div class="wrap contact__inner">
+    <header class="sec__head contact__head" data-reveal="stagger">
+      <p class="folio" data-reveal-item><span class="folio__tick"></span><span data-i18n="contact.folio">04. Your trip</span></p>
+      <h2 id="contact-title" data-reveal-item data-i18n="contact.title">Tell us your plans.</h2>
+      <p class="lead" data-reveal-item data-i18n="contact.lead">Choose your trip details and send an enquiry.</p>
+    </header>
+
+    <div class="contact__grid">
+      <div class="contact__composer" data-reveal role="group" aria-label="Message composer" data-i18n-attr="aria-label:contact.composer">
+        <div class="contact__console-status"><span class="contact__console-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v5a2 2 0 0 0 0 4v5H4v-5a2 2 0 0 0 0-4V5Z" stroke="currentColor" stroke-width="1.4"/><path d="M15 6v12" stroke="currentColor" stroke-dasharray="2 2"/></svg></span><p class="contact__status" data-i18n="contact.enquiryStatus">Enquiry only. Availability and the final price need confirmation.</p></div>
+        <div class="contact__fields">
+          <div class="contact__field contact__field--full">
+            <label for="cf-car" data-i18n="contact.car">Car</label>
+            <span class="contact__select"><select id="cf-car" data-cf="car"><option value="" data-i18n="contact.carAny">Not chosen yet</option></select></span>
+          </div>
+
+          <div class="contact__field contact__field--wide">
+            <label for="cf-pickup" data-i18n="contact.pickup">Pick-up</label>
+            <span class="contact__select">
+              <select id="cf-pickup" data-cf="pickup">
+                <option value="airport" data-i18n="contact.pickupAirport">Belgrade Nikola Tesla Airport</option>
+                <option value="milos" data-i18n="contact.pickupMilos">Kneza Miloša 14</option>
+                <option value="dobracina" data-i18n="contact.pickupDobracina">Dobračina</option>
+                <option value="other" data-i18n="contact.pickupOther">Other, ask us</option>
+              </select>
+            </span>
+          </div>
+
+          <div class="contact__field contact__field--wide">
+            <label for="cf-dropoff" data-i18n="contact.dropoff">Return location</label>
+            <span class="contact__select">
+              <select id="cf-dropoff" data-cf="dropoff">
+                <option value="same" data-i18n="contact.dropoffSame">Same as pick-up</option>
+                <option value="airport" data-i18n="contact.pickupAirport">Belgrade Nikola Tesla Airport</option>
+                <option value="milos" data-i18n="contact.pickupMilos">Kneza Miloša 14</option>
+                <option value="dobracina" data-i18n="contact.pickupDobracina">Dobračina</option>
+              </select>
+            </span>
+          </div>
+
+          <div class="contact__field">
+            <label for="cf-from" data-i18n="contact.from">Pick-up date</label>
+            <input id="cf-from" type="date" data-cf="from" autocomplete="off">
+          </div>
+          <div class="contact__field">
+            <label for="cf-pickup-time" data-i18n="contact.pickupTime">Pick-up time</label>
+            <input id="cf-pickup-time" type="time" step="60" data-cf="pickupTime" autocomplete="off">
+          </div>
+          <div class="contact__field">
+            <label for="cf-to" data-i18n="contact.to">Return date</label>
+            <input id="cf-to" type="date" data-cf="to" autocomplete="off">
+          </div>
+          <div class="contact__field">
+            <label for="cf-dropoff-time" data-i18n="contact.dropoffTime">Return time</label>
+            <input id="cf-dropoff-time" type="time" step="60" data-cf="dropoffTime" autocomplete="off">
+          </div>
+        </div>
+        <p id="cf-error" class="contact__error" role="alert" hidden></p>
+
+        <details class="contact__preview">
+          <summary id="cf-preview-label" data-i18n="contact.preview">Review or edit the message</summary>
+          <div class="contact__preview-head">
+            <span class="contact__tools">
+              <button type="button" class="contact__tool" data-send="copy"><svg class="contact__ic" aria-hidden="true" focusable="false"><use href="#ic-copy"/></svg><span data-i18n="common.msg.copyBtn">Copy</span></button>
+              <button type="button" class="contact__tool contact__edit" id="cf-edit" aria-pressed="false"><span data-i18n="contact.edit">Edit</span></button>
+            </span>
+          </div>
+          <p class="contact__msg" id="cf-msg" role="status" aria-live="polite" aria-atomic="true" aria-labelledby="cf-preview-label"></p>
+          <textarea class="contact__text" id="cf-text" rows="3" hidden aria-label="Message" data-i18n-attr="aria-label:contact.editLabel"></textarea>
+        </details>
+
+        <a class="contact__terms" href="#terms" data-i18n="contact.reviewTerms">Review the rental conditions before sending</a>
+        <div class="contact__send">
+          <button type="button" class="btn btn--accent contact__wa" data-send="wa"><svg class="contact__ic" aria-hidden="true" focusable="false"><use href="#ic-wa"/></svg><span data-i18n="contact.sendWa">Send on WhatsApp</span></button>
+          <div class="contact__send-more">
+            <button type="button" class="btn btn--outline" data-send="viber"><svg class="contact__ic" aria-hidden="true" focusable="false"><use href="#ic-viber"/></svg><span data-i18n="contact.sendViber">Viber</span></button>
+            <button type="button" class="btn btn--outline" data-send="telegram"><svg class="contact__ic" aria-hidden="true" focusable="false"><use href="#ic-tg"/></svg><span data-i18n="contact.sendTg">Telegram</span></button>
+            <button type="button" class="btn btn--outline" data-send="mail"><svg class="contact__ic" aria-hidden="true" focusable="false"><use href="#ic-mail"/></svg><span data-i18n="contact.sendMail">E-mail</span></button>
+            <button type="button" class="btn btn--outline" data-send="tel"><svg class="contact__ic" aria-hidden="true" focusable="false"><use href="#ic-phone"/></svg><span data-i18n="contact.sendCall">Call</span></button>
+          </div>
+        </div>
+        <p class="contact__note small" data-i18n="contact.channelNote">Viber and Telegram open the chat; you paste the copied message.</p>
+      </div>
+
+      <aside class="contact__direct" data-reveal aria-labelledby="contact-direct-title">
+        <p class="folio contact__direct-title" id="contact-direct-title" data-i18n="contact.direct">Or reach us directly</p>
+
+        <a class="contact__phone" data-contact="tel">
+          <span class="contact__ico" aria-hidden="true"><svg class="contact__ic"><use href="#ic-phone"/></svg></span>
+          <span class="contact__phone-body">
+            <span class="contact__phone-k" data-i18n="contact.phoneK">Call us</span>
+            <span class="contact__phone-v" data-contact-text="tel"></span>
+          </span>
+          <svg class="contact__ic contact__arrow" aria-hidden="true" focusable="false"><use href="#ic-arrow"/></svg>
+        </a>
+
+        <div class="contact__tiles">
+          <ul class="contact__apps" role="list">
+            <li><a class="contact__app contact__app--wa" data-contact="wa"><span class="contact__ico" aria-hidden="true"><svg class="contact__ic"><use href="#ic-wa"/></svg></span><span class="contact__app-k" data-i18n="common.cta.whatsapp">WhatsApp</span></a></li>
+            <li><a class="contact__app contact__app--viber" data-contact="viber"><span class="contact__ico" aria-hidden="true"><svg class="contact__ic"><use href="#ic-viber"/></svg></span><span class="contact__app-k" data-i18n="common.cta.viber">Viber</span></a></li>
+            <li><a class="contact__app contact__app--tg" data-contact="telegram"><span class="contact__ico" aria-hidden="true"><svg class="contact__ic"><use href="#ic-tg"/></svg></span><span class="contact__app-k" data-i18n="common.cta.telegram">Telegram</span></a></li>
+          </ul>
+        </div>
+
+        <ul class="contact__rows" role="list">
+          <li><a class="contact__row" data-contact="mail">
+            <span class="contact__ico contact__ico--sm" aria-hidden="true"><svg class="contact__ic"><use href="#ic-mail"/></svg></span>
+            <span class="contact__row-body"><span class="contact__row-k" data-i18n="common.cta.email">E-mail</span><span class="contact__row-v" data-contact-text="mail"></span></span>
+            <svg class="contact__ic contact__arrow" aria-hidden="true" focusable="false"><use href="#ic-arrow"/></svg>
+          </a></li>
+          <li><a class="contact__row" data-contact="instagram">
+            <span class="contact__ico contact__ico--sm" aria-hidden="true"><svg class="contact__ic"><use href="#ic-ig"/></svg></span>
+            <span class="contact__row-body"><span class="contact__row-k">Instagram</span><span class="contact__row-v" data-contact-text="instagram"></span></span>
+            <svg class="contact__ic contact__arrow" aria-hidden="true" focusable="false"><use href="#ic-arrow"/></svg>
+          </a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>

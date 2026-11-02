@@ -1,0 +1,18 @@
+<!-- reel (slot D): "In the picture". Strips are rendered by js/reel.js from a data array (REEL_SET = 'photos' by default) so the
+     banner variant needs no layout change. Desktop: three offset rows with scrubbed parallax; mobile: one native snap scroller. -->
+<section id="reel" class="sec sec-reel" data-nav-theme="light" aria-labelledby="reel-title">
+  <header class="sec__head wrap reel__head" data-reveal>
+    <div class="reel__head-main">
+      <p class="folio"><span class="folio__tick"></span><span data-i18n="reel.folio">03 · Gallery</span></p>
+      <h2 id="reel-title" data-i18n="reel.title" data-i18n-html>The cars, <em class="acc">in the picture.</em></h2>
+    </div>
+    <p class="lead reel__lead" data-i18n="reel.lead">Photos of our cars. Tap a picture to see the car in the index.</p>
+  </header>
+
+  <div class="reel__stage" data-reel-stage data-lenis-prevent tabindex="0" role="group" aria-roledescription="carousel" aria-label="Photo gallery of our cars, scroll horizontally" data-i18n-attr="aria-label:reel.aria"></div>
+
+  <div class="reel__meta wrap" aria-hidden="true">
+    <span class="reel__swipe mono"><span data-i18n="reel.swipe">Swipe</span> <span class="reel__swipe-arrow">→</span></span>
+    <span class="reel__count mono"><span data-reel-now>01</span> / <span data-reel-total>09</span></span>
+  </div>
+</section>

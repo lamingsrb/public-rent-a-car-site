@@ -1,0 +1,19 @@
+/* ==========================================================================
+   preloader — paper overlay with the column glyph (brief 5.0.7). Class prefix: .preloader__
+   The JS removes #preloader on release (or on the first frame when skipped); <noscript> in index.html hides it without JS.
+   ========================================================================== */
+.preloader {
+  position: fixed; inset: 0; z-index: var(--z-preloader);
+  display: grid; place-items: center;
+  background: var(--paper); color: var(--ink);
+  clip-path: inset(0 0 0 0);
+  animation: preloader-failsafe .3s linear 6s forwards; /* last resort if the script never runs */
+}
+@keyframes preloader-failsafe { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+.preloader__stage { display: grid; justify-items: center; gap: 22px; padding-inline: var(--gutter); text-align: center; }
+.preloader__mark { width: 84px; height: 120px; overflow: visible; stroke: var(--ink); }
+.preloader__mark [data-p^="wheel"] { stroke: var(--accent); }
+.preloader__text { margin: 0; color: var(--ink-2); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+/* CORE fallback: plain fade when the timeline is not used */
+.preloader.is-fading { opacity: 0; transition: opacity .5s var(--ease-in-out); pointer-events: none; }
+@media print { .preloader { display: none !important; } }

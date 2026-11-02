@@ -1,0 +1,78 @@
+<header id="nav" class="nav">
+  <svg class="nav__sprite" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <symbol id="prc-column" viewBox="0 0 210 300">
+      <path d="M15.5 6 C37.17,6 57.92,6 80.5,6 C103.08,6 133.58,4.17 151,6 C168.42,7.83 176.58,11 185,17 C193.42,23 198.33,34 201.5,42 C204.67,50 205.5,57.08 204,65 C202.5,72.92 198.17,83.17 192.5,89.5 C186.83,95.83 179.08,100.42 170,103 C160.92,105.58 148.67,104.33 138,105"/>
+      <path d="M4 37.5 C26,37.5 48.75,37.58 70,37.5 C91.25,37.42 117.92,36.92 131.5,37 C145.08,37.08 145.83,37.08 151.5,38 C157.17,38.92 161.83,39.25 165.5,42.5 C169.17,45.75 172.83,52.25 173.5,57.5 C174.17,62.75 172.5,70.08 169.5,74 C166.5,77.92 160,80.75 155.5,81 C151,81.25 145.17,78.33 142.5,75.5 C139.83,72.67 138.92,67.25 139.5,64 C140.08,60.75 144.42,57.42 146,56 C147.58,54.58 147.5,55 149,55.5 C150.5,56 155.33,57.92 155,59 C154.67,60.08 148.5,61.67 147,62 C145.5,62.33 146.33,61.33 146,61"/>
+      <path d="M137.5 40.5 C133.83,43.5 129.25,45.83 126.5,49.5 C123.75,53.17 121.67,57.33 121,62.5 C120.33,67.67 120.83,75.25 122.5,80.5 C124.17,85.75 127.33,90.33 131,94 C134.67,97.67 140,99.67 144.5,102.5"/>
+      <path d="M25.5 59.5 L105 59.5"/>
+      <path d="M45.5 83 L105.5 83"/>
+      <path d="M105 104 L105 192"/>
+      <path d="M139 108.5 L139 192"/>
+      <path d="M68.5 210.75 L173.5 210.75"/>
+      <path d="M68.5 227.5 L173 227.5"/>
+      <circle cx="92" cy="270" r="23.5" style="stroke:var(--wheel, currentColor)"/>
+      <circle cx="153.5" cy="270" r="23.5" style="stroke:var(--wheel, currentColor)"/>
+    </symbol>
+  </svg>
+  <div class="nav__bar wrap">
+    <a class="nav__logo" href="#cover" aria-label="Public Rent a Car · home" data-i18n-attr="aria-label:nav.logo">
+      <svg class="nav__mark" viewBox="0 0 210 300" width="20" height="28" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="#prc-column"/></svg>
+      <span class="nav__name">Public Rent a Car</span>
+    </a>
+    <nav class="nav__links" aria-label="Main" data-i18n-attr="aria-label:nav.aria">
+      <a href="#fleet" data-nav-link="fleet" data-i18n="nav.fleet">Fleet</a>
+      <a href="#cover" data-nav-link="cover" data-i18n="nav.journey">The drive</a>
+      <a href="#terms" data-nav-link="terms" data-i18n="nav.terms">Terms</a>
+      <a href="#contact" data-nav-link="contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav__tools">
+      <div class="nav__lang" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.lang">
+        <button type="button" class="nav__langbtn" data-lang-switch="en" aria-pressed="true">EN</button>
+        <button type="button" class="nav__langbtn" data-lang-switch="sr" aria-pressed="false">SR</button>
+      </div>
+      <button type="button" class="btn btn--icon nav__motion" data-motion-toggle aria-pressed="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 12c2.2-5.5 4.4-5.5 6.6 0s4.4 5.5 6.6 0 4.4-5.5 6.6 0"/><path class="nav__slash" d="M4 20 20 4"/></svg>
+      </button>
+      <a class="btn btn--ink nav__cta" href="#contact" data-i18n="nav.cta">Message us</a>
+      <button type="button" class="nav__burger" aria-expanded="false" aria-controls="menu" aria-label="Menu" data-i18n-attr="aria-label:nav.menu">
+        <span class="nav__burgerbars" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div id="menu" class="menu" role="dialog" aria-modal="true" aria-label="Menu" data-i18n-attr="aria-label:nav.menu" data-theme="night" data-lenis-prevent hidden>
+  <div class="menu__inner">
+    <div class="menu__top">
+      <a class="nav__logo menu__logo" href="#cover" aria-label="Public Rent a Car · home" data-i18n-attr="aria-label:nav.logo">
+        <svg class="nav__mark" viewBox="0 0 210 300" width="20" height="28" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="#prc-column"/></svg>
+        <span class="nav__name">Public Rent a Car</span>
+      </a>
+      <button type="button" class="menu__close" aria-label="Close menu" data-i18n-attr="aria-label:nav.menuClose">
+        <span class="nav__burgerbars is-open" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+    <nav class="menu__links" aria-label="Main" data-i18n-attr="aria-label:nav.aria">
+      <a href="#fleet" data-nav-link="fleet" data-i18n="nav.fleet">Fleet</a>
+      <a href="#cover" data-nav-link="cover" data-i18n="nav.journey">The drive</a>
+      <a href="#atlas" data-nav-link="atlas" data-i18n="nav.locations">Locations</a>
+      <a href="#terms" data-nav-link="terms" data-i18n="nav.terms">Terms</a>
+      <a href="#contact" data-nav-link="contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="menu__foot">
+      <div class="menu__tools">
+        <div class="nav__lang" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.lang">
+          <button type="button" class="nav__langbtn" data-lang-switch="en" aria-pressed="true">EN</button>
+          <button type="button" class="nav__langbtn" data-lang-switch="sr" aria-pressed="false">SR</button>
+        </div>
+        <button type="button" class="menu__motion" data-motion-toggle aria-pressed="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 12c2.2-5.5 4.4-5.5 6.6 0s4.4 5.5 6.6 0 4.4-5.5 6.6 0"/><path class="nav__slash" d="M4 20 20 4"/></svg>
+          <span class="js-motion-text">Motion: on</span>
+        </button>
+      </div>
+      <div class="menu__cta">
+        <a class="btn btn--outline" data-contact="tel" data-i18n="stickybar.call">Call</a>
+        <a class="btn btn--ink" data-contact="wa" data-i18n="stickybar.wa">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>

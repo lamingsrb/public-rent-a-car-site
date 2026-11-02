@@ -1,0 +1,293 @@
+/* contact — back cover (brief 5.9). Dusk gradient built from tokens. The column moved to the footer brand block on 2026-11-01 (footer.css .footer__stage).
+   Class prefix: .contact__ . Contrast rule: below the top 40% of the gradient only --fg / --fg-2 / --peach carry small text; --fg-3 stays out.
+   2026-10-31 redesign (Feedback_Loop v2): compact two-column composer, glass "direct" card with channel icons; app tiles carry the
+   messenger's own colour lifted for the dark ground (WhatsApp green, Viber violet, Telegram blue) — none of them is near the orange budget hue. */
+
+.sec-contact {
+  --dusk-w: 1;                       /* warm overlay strength; contact.js scrubs it .35 -> 1 with the section (static: 1) */
+  --dusk-mid: color-mix(in srgb, var(--night-2) 46%, var(--sculpt-dusk-bottom));
+  --dusk-low: color-mix(in srgb, var(--night-2) 22%, var(--sculpt-dusk-bottom));
+  --glass: rgba(255, 248, 246, .055);
+  --glass-hover: rgba(255, 248, 246, .1);
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding-block: clamp(72px, 9vw, 136px) clamp(56px, 6vw, 96px); /* no column reserve any more (2026-11-01) */
+}
+.contact__sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.contact__ic { width: 20px; height: 20px; flex: none; display: block; }
+
+/* ---------- sky: cool base + warm overlay (opacity is the dusk scrub) ---------- */
+.contact__sky {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%);
+}
+.contact__sky::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: var(--dusk-w);
+  background: linear-gradient(180deg, transparent 0%, var(--dusk-mid) 58%, var(--dusk-low) 82%, var(--sculpt-dusk-bottom) 100%);
+}
+
+/* ---------- header ---------- */
+.contact__head { margin-bottom: clamp(24px, 3.5vw, 44px); }
+.contact__head .lead { color: var(--fg-2); max-width: 56ch; }
+
+/* ---------- grid ---------- */
+.contact__inner { position: relative; z-index: 1; }
+.contact__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s-5); } /* minmax(0, 1fr): the single column must not grow past the wrapper on a wide min-content (verification 2026-10-31, SR at 320 px) */
+@media (min-width: 1024px) {
+  .contact__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-5); align-items: stretch; }
+  .contact__composer { grid-column: 1 / span 7; }
+  .contact__direct { grid-column: 8 / span 5; }
+}
+/* equal-height cards (Feedback 2026-11-01): the two cards share one row; one flexible block per card absorbs the difference —
+   the message preview in the composer, the gaps between the four blocks in the glass card. */
+.contact__composer { container: composer / inline-size; }
+.contact__tiles { display: grid; gap: var(--s-3); }
+@media (min-width: 1024px) {
+  .contact__composer { align-content: start; }
+  .contact__preview { grid-template-rows: auto 1fr; }
+  .contact__text { align-self: stretch; }
+  .contact__direct { align-content: space-between; } /* title | phone | tiles | rows */
+}
+
+/* ---------- composer: the one light card in this chapter ---------- */
+.contact__composer {
+  --text: var(--ink); --text-2: var(--ink-2); --text-3: var(--ink-3);
+  --border-ui: var(--line-ui); --border-soft: var(--line);
+  --focus: var(--ink); --focus-halo: var(--paper);
+  display: grid;
+  gap: var(--s-4);
+  padding: clamp(18px, 2.4vw, 28px);
+  border-radius: var(--r-lg);
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow-dark);
+}
+.contact__fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
+.contact__field { display: grid; gap: 5px; min-width: 0; }
+.contact__field--wide { grid-column: 1 / -1; }
+.contact__field--full { grid-column: 1 / -1; }
+@media (min-width: 640px) { .contact__field--wide { grid-column: auto; } }
+.contact__field label,
+.contact__label {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+@media (min-width: 768px) { .contact__field label, .contact__label { font-size: 12px; } }
+
+.contact__field select,
+.contact__field input,
+.contact__text {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1.5px solid var(--line-ui);
+  border-radius: var(--r-md);
+  background: var(--paper-3);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 16px;           /* 16 px keeps iOS from zooming on focus */
+  font-weight: 500;
+  line-height: 1.3;
+  color-scheme: light;
+  transition: border-color var(--dur-2) var(--ease-press), background-color var(--dur-2) var(--ease-press);
+}
+.contact__field input[type="date"], .contact__field input[type="time"] { min-width: 0; text-align: left; padding-inline: 10px; }
+.contact__field [aria-invalid="true"] { border-color: #A72C20; }
+.contact__status { margin: 0; padding-bottom: 12px; border-bottom: 1px solid var(--line-ui); color: var(--ink-2); font-size: 14px; line-height: 1.45; }
+.contact__error { margin: 0; color: #A72C20; font-size: 14px; line-height: 1.45; }
+.contact__terms { color: var(--ink); font-size: 14px; line-height: 1.45; text-underline-offset: 4px; }
+@media (hover: hover) and (pointer: fine) {
+  .contact__field select:hover, .contact__field input:hover, .contact__text:hover { border-color: var(--ink); }
+}
+
+.contact__select { position: relative; display: block; }
+.contact__select select { appearance: none; -webkit-appearance: none; padding-right: 40px; text-overflow: ellipsis; cursor: pointer; }
+.contact__select::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+
+/* preview + edit */
+.contact__preview { display: grid; gap: 6px; }
+.contact__preview-head { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); }
+.contact__tools { display: flex; gap: 6px; }
+@media (max-width: 389px) {
+  /* under 390 px the SR head ("Pregled poruke" + "Kopirajte" + "Izmenite") no longer fits on one line: at 320-329 px it pushed the card 10 px past the gutter, at 360-389 px the label broke into two lines — so the tools may drop under the label (verification 2026-10-31) */
+  .contact__preview-head { flex-wrap: wrap; }
+  .contact__tools { margin-inline-start: auto; }
+}
+.contact__tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1.5px solid var(--line-ui);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: background-color var(--dur-2) var(--ease-press), color var(--dur-2) var(--ease-press), border-color var(--dur-2) var(--ease-press);
+}
+.contact__tool .contact__ic { width: 16px; height: 16px; }
+.contact__edit[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+@media (hover: hover) and (pointer: fine) { .contact__tool:hover { border-color: var(--ink); } }
+.contact__msg,
+.contact__text {
+  min-height: 5.4em;
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  font-size: 15px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.contact__msg { background: var(--paper-2); color: var(--ink); border: 1.5px solid transparent; }
+.contact__text { resize: vertical; font-size: 16px; }
+.contact__text[hidden], .contact__msg[hidden] { display: none; }
+
+/* send row */
+.contact__send { display: grid; gap: var(--s-2); }
+.contact__wa { width: 100%; min-height: 52px; font-size: 16px; }
+.contact__wa .contact__ic { width: 22px; height: 22px; }
+.contact__send-more { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-2); }
+.contact__send-more .btn { min-height: 44px; padding: .5em .9em; font-size: 14px; gap: .45em; }
+.contact__send-more .btn .contact__ic { width: 18px; height: 18px; }
+@media (min-width: 560px) { .contact__send-more { grid-template-columns: repeat(4, minmax(0, 1fr)); } } /* below 560 px a 4-up row wraps "E-pošta" (review 2026-10-31) */
+/* wide composer (about 1400 px viewport and up): WhatsApp and the four other channels share one row.
+   Kept AFTER the base send rules on purpose: same specificity, so the compact button sizing has to come later in the
+   source (above them it lost the cascade and SR "E-pošta" wrapped in the one-row variant at 1440, review 2026-11-01). */
+@container composer (min-width: 690px) {
+  .contact__send { grid-template-columns: max-content minmax(0, 1fr); align-items: stretch; column-gap: var(--s-2); }
+  .contact__send-more { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .contact__send-more .btn { padding-inline: .6em; font-size: 13px; gap: .35em; }
+  .contact__send-more .btn .contact__ic { width: 16px; height: 16px; }
+}
+.contact__note { margin: 0; color: var(--ink-2); font-size: 13px; }
+
+/* ---------- direct channels: glass card, icons, the number once ---------- */
+.contact__direct {
+  display: grid;
+  gap: var(--s-4);
+  min-width: 0;
+  padding: clamp(18px, 2.4vw, 28px);
+  border: 1px solid var(--line-dark);
+  border-radius: var(--r-lg);
+  background: var(--glass);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .contact__direct { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+}
+.contact__direct-title { color: var(--peach); margin: 0; }
+
+/* icon tile: tinted square, the app's colour as the glyph colour */
+.contact__ico {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: var(--app, var(--peach));
+  background: color-mix(in srgb, var(--app, var(--peach)) 16%, transparent);
+}
+.contact__ico--sm { width: 38px; height: 38px; border-radius: 10px; }
+.contact__ico--sm .contact__ic { width: 18px; height: 18px; }
+.contact__app--wa { --app: #5FE08C; }     /* WhatsApp green, lifted for the dusk ground (≥ 9:1 on night-2) */
+.contact__app--viber { --app: #B3A8FF; }  /* Viber violet, lifted (≥ 6.5:1) */
+.contact__app--tg { --app: #5CC8F5; }     /* Telegram blue, lifted (≥ 8:1) */
+
+/* the phone row: the one place the number is printed */
+.contact__phone {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 64px;
+  padding: 10px 12px;
+  margin-inline: -12px;
+  border-radius: var(--r-md);
+  color: var(--fg);
+  text-decoration: none;
+  transition: background-color var(--dur-2) var(--ease-press);
+}
+.contact__phone-body { display: grid; gap: 2px; min-width: 0; flex: 1 1 auto; }
+.contact__phone-k { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--peach); }
+.contact__phone-v { font-family: var(--font-display); font-weight: 700; font-size: clamp(24px, 5.6vw, 30px); line-height: 1.05; letter-spacing: -.01em; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; transition: color var(--dur-2) var(--ease-press); }
+.contact__arrow { color: var(--peach); transition: transform var(--dur-2) var(--ease-out); }
+
+/* app tiles */
+.contact__same { margin: 0; color: var(--fg); font-size: 14px; line-height: 1.4; } /* --fg, not --fg-2: --fg-2 measured 3.7:1 on the sun bloom that sat here until 2026-11-01 (now in the footer); --fg stays, it is safe on every dusk stop */
+.contact__apps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-2); container: apps / inline-size; }
+.contact__app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 92px;
+  padding: 12px 8px;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--r-md);
+  background: var(--glass);
+  color: var(--fg);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color var(--dur-2) var(--ease-press), border-color var(--dur-2) var(--ease-press), transform var(--dur-2) var(--ease-out);
+}
+.contact__app-k { font-family: var(--font-ui); font-weight: 700; font-size: 14px; line-height: 1.15; }
+/* row layout only when the list is wide enough for three row tiles ("WhatsApp" needs ~146 px): a viewport query put the row
+   variant on the 330-440 px aside at 1024-1290 px and the labels spilled past the tile border (review 2026-10-31).
+   Browsers without container queries keep the stacked tiles, which fit everywhere. */
+@container apps (min-width: 470px) {
+  .contact__app { flex-direction: row; justify-content: flex-start; gap: 10px; min-height: 60px; padding: 8px 12px; text-align: left; }
+  .contact__app .contact__ico { width: 40px; height: 40px; border-radius: 11px; }
+}
+
+/* e-mail + instagram rows */
+.contact__rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; border-top: 1px solid var(--line-dark); padding-top: var(--s-2); }
+.contact__row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 56px;
+  padding: 8px 12px;
+  margin-inline: -12px;
+  border-radius: var(--r-md);
+  color: var(--fg);
+  text-decoration: none;
+  transition: background-color var(--dur-2) var(--ease-press);
+}
+.contact__row-body { display: grid; gap: 1px; min-width: 0; flex: 1 1 auto; }
+.contact__row-k { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--peach); }
+.contact__row-v { font-family: var(--font-ui); font-weight: 600; font-size: 16px; line-height: 1.25; overflow-wrap: anywhere; transition: color var(--dur-2) var(--ease-press); }
+
+@media (hover: hover) and (pointer: fine) {
+  .contact__phone:hover, .contact__row:hover { background: var(--glass-hover); }
+  .contact__phone:hover .contact__phone-v, .contact__row:hover .contact__row-v { color: var(--peach); }
+  .contact__phone:hover .contact__arrow, .contact__row:hover .contact__arrow { transform: translateX(5px); }
+  .contact__app:hover { background: var(--glass-hover); border-color: var(--app, var(--peach)); transform: translateY(-2px); }
+}
+/* focus ring: the global 3 px :focus-visible rule in tokens.css applies (walk check 16); no override here */

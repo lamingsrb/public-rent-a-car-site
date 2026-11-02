@@ -1,0 +1,76 @@
+<!-- terms (slot E): the rental conditions as large numerals + a "Fine print" accordion (brief 5.8). Numerals carry data-i18n-html because of the unit spans. -->
+<section id="terms" class="sec sec-terms" data-nav-theme="light" aria-labelledby="terms-title">
+  <header class="sec__head wrap" data-reveal>
+    <p class="folio"><span class="folio__tick"></span><span data-i18n="terms.folio">07 · Terms</span></p>
+    <h2 id="terms-title" data-i18n="terms.title" data-i18n-html>The terms, <em class="acc">in numbers.</em></h2>
+  </header>
+
+  <div class="wrap">
+    <ul class="terms__grid" data-reveal="stagger">
+      <li class="terms__card" data-reveal-item>
+        <p class="numeral terms__numeral" data-i18n="terms.n1" data-i18n-html><span class="terms__count" data-count="21">21</span><span class="numeral__unit">+</span></p>
+        <h3 class="terms__label" data-i18n="terms.l1">Driver age</h3>
+        <p class="terms__sentence" data-i18n="terms.s1">The driver must be at least 21 years old.</p>
+      </li>
+      <li class="terms__card" data-reveal-item>
+        <p class="numeral terms__numeral" data-i18n="terms.n2" data-i18n-html><span class="terms__count" data-count="2">2</span> <span class="numeral__unit numeral__unit--word">yrs</span></p>
+        <h3 class="terms__label" data-i18n="terms.l2">Licence held</h3>
+        <p class="terms__sentence" data-i18n="terms.s2">The driver must have held a valid licence for at least 2 years.</p>
+      </li>
+      <li class="terms__card" data-reveal-item>
+        <p class="numeral terms__numeral" data-i18n="terms.n3" data-i18n-html><span class="numeral__unit">€</span><span class="terms__count" data-count="300">300</span><span class="numeral__unit">+</span></p>
+        <h3 class="terms__label" data-i18n="terms.l3">Deposit</h3>
+        <p class="terms__sentence" data-i18n="terms.s3">A deposit is paid at pick-up. It depends on the vehicle, with a minimum of €300.</p>
+      </li>
+      <li class="terms__card" data-reveal-item>
+        <p class="numeral terms__numeral" data-i18n="terms.n4" data-i18n-html><span class="terms__count" data-count="24">24</span> <span class="numeral__unit numeral__unit--word">h</span></p>
+        <h3 class="terms__label" data-i18n="terms.l4">Rental day</h3>
+        <p class="terms__sentence" data-i18n="terms.s4">The daily price covers 24 hours from pick-up, with up to 1 hour of tolerance on return.</p>
+      </li>
+      <li class="terms__card" data-reveal-item>
+        <p class="numeral terms__numeral" data-i18n="terms.n5" data-i18n-html><span class="numeral__unit">€</span><span class="terms__count" data-count="25">25</span></p>
+        <h3 class="terms__label" data-i18n="terms.l5">Leaving Serbia</h3>
+        <p class="terms__sentence" data-i18n="terms.s5">Possible with our consent and for a €25 fee.</p>
+      </li>
+      <li class="terms__card" data-reveal-item>
+        <p class="numeral terms__numeral" data-i18n="terms.n6" data-i18n-html><span class="terms__rsd">RSD</span></p>
+        <h3 class="terms__label" data-i18n="terms.l6">Payment</h3>
+        <p class="terms__sentence" data-i18n="terms.s6">Prices are in euros; payment is made in dinars at the Banka Intesa selling rate at pick-up. All payment cards are accepted.</p>
+      </li>
+    </ul>
+
+    <div class="terms__fine" data-reveal>
+      <h3 class="terms__fine-title" data-i18n="terms.fineTitle">Fine print</h3>
+      <div class="terms__fine-main">
+        <div class="terms__list">
+          <details class="terms__item" name="terms">
+            <summary><span data-i18n="terms.a1t">At pick-up</span><span class="terms__glyph" aria-hidden="true"></span></summary>
+            <div class="terms__body"><p data-i18n="terms.a1b">Bring a passport or ID card and your driving licence. We copy and keep them for our records, and you sign a rental contract.</p></div>
+          </details>
+          <details class="terms__item" name="terms">
+            <summary><span data-i18n="terms.a2t">If your car is unavailable</span><span class="terms__glyph" aria-hidden="true"></span></summary>
+            <div class="terms__body"><p data-i18n="terms.a2b">If the selected car is unavailable, we may provide a car of the same or a higher class under the same conditions.</p></div>
+          </details>
+          <details class="terms__item" name="terms">
+            <summary><span data-i18n="terms.a3t">Deposit details</span><span class="terms__glyph" aria-hidden="true"></span></summary>
+            <div class="terms__body"><p data-i18n="terms.a3b">Regular clients can receive a reduced deposit. The deposit can be paid in any currency, in proportion to the euro exchange rate.</p></div>
+          </details>
+          <details class="terms__item" name="terms">
+            <summary><span data-i18n="terms.a4t">Leaving Serbia</span><span class="terms__glyph" aria-hidden="true"></span></summary>
+            <div class="terms__body"><p data-i18n="terms.a4b">Taking the vehicle out of Serbia needs our consent and a €25 fee.</p></div>
+          </details>
+          <!-- CLIENT-CONFIRM: insurance EN/SR wording -->
+          <details class="terms__item" name="terms">
+            <summary><span data-i18n="terms.a5t">Insurance</span><span class="terms__glyph" aria-hidden="true"></span></summary>
+            <div class="terms__body"><p data-i18n="terms.a5b">Insurance terms are not summarised on this page. Message us and ask about them.</p></div>
+          </details>
+        </div>
+
+        <div class="terms__cta">
+          <a class="btn btn--ink" data-contact="wa" data-contact-ctx="terms" href="#contact" data-i18n="terms.cta">Ask about the deposit</a>
+          <!-- terms.ctaOutline ("Read the full conditions", .btn--outline) is injected by js/terms.js only when TERMS_PDF_URL is set -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,138 @@
+/* footer — colophon (brief 5.10). Continues the dusk of #contact: starts at the same bottom stop and sinks toward night.
+   Class prefix: .footer__ . Small text uses --fg / --fg-2 / --peach only (--fg-3 fails on the warm stops). */
+
+.footer {
+  --foot-end: color-mix(in srgb, var(--night-deep) 64%, var(--sculpt-dusk-bottom));
+  --foot-sun: color-mix(in srgb, var(--sculpt-dusk-sun) 20%, transparent); /* the sun bloom behind the column (was in #contact) */
+  background:
+    radial-gradient(520px 260px at 14% 210px, var(--foot-sun), transparent 72%),
+    linear-gradient(180deg, var(--sculpt-dusk-bottom) 0%, var(--foot-end) 100%);
+  color: var(--fg);
+  padding-block: clamp(48px, 6vw, 88px) clamp(32px, 4vw, 48px);
+  overflow: clip; /* the poster glow and the sun bloom may run past the footer box: clip, never a scrollbar */
+}
+@media (max-width: 1023.98px) {
+  .footer {
+    background-image:
+      radial-gradient(320px 200px at 24% 150px, var(--foot-sun), transparent 72%),
+      linear-gradient(180deg, var(--sculpt-dusk-bottom) 0%, var(--foot-end) 100%);
+    /* the sticky bar hides itself once #contact / #footer are in view (stickybar.js drops html.has-bar), so no --bar-h reserve here (2026-11-01) */
+    padding-bottom: calc(var(--s-6) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+.footer__grid { display: grid; gap: var(--s-7) var(--s-5); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.footer__brand { --stage-h: 210px; --stage-gutter: var(--gutter); grid-column: 1 / -1; display: grid; gap: var(--s-3); justify-items: start; align-content: start; }
+/* the dusk column (moved here from #contact on 2026-11-01): poster first, the live canvas on top once footer.js attaches the stage */
+.footer__stage {
+  position: relative; height: var(--stage-h); aspect-ratio: 420 / 600;
+  margin-left: max(calc(var(--stage-h) * -.08), calc(-1 * var(--stage-gutter))); /* the poster has clear space around the column; never past the page gutter (was -0.8 px at 390, review 2026-11-01) */
+  margin-bottom: calc(var(--stage-h) * -.04);
+  pointer-events: none;
+}
+.footer__stage > img, .footer__stage > canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.footer__stage > img {
+  /* the poster carries a baked glow; feather its outer edge so no rectangle shows against the ground */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, black 9%, black 91%, transparent 100%), linear-gradient(180deg, black 0, black 90%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent 0, black 9%, black 91%, transparent 100%), linear-gradient(180deg, black 0, black 90%, transparent 100%);
+  mask-composite: intersect;
+}
+.footer__stage.is-live > img { opacity: 0; }
+@media (min-width: 560px) and (max-width: 1023.98px) {
+  /* tablet: the column beside the wordmark; under 560 px the wordmark would wrap next to it, so it stacks */
+  .footer__brand { --stage-h: clamp(200px, 36vw, 280px); --stage-gutter: var(--gutter-lg); grid-template-columns: auto minmax(0, 1fr); grid-template-rows: 1fr auto auto; column-gap: var(--s-4); row-gap: var(--s-2); }
+  .footer__stage { grid-row: 1 / span 3; margin-bottom: 0; }
+  .footer__lockup { grid-column: 2; grid-row: 2; }
+  .footer__tagline { grid-column: 2; grid-row: 3; }
+}
+.footer__reach, .footer__settings { grid-column: 1 / -1; }
+@media (max-width: 639.98px) {
+  .footer__grid { gap: var(--s-6) var(--s-4); }
+  .footer__nav { order: 1; } .footer__settings { order: 2; grid-column: auto; } .footer__reach { order: 3; }
+}
+@media (min-width: 640px) { .footer__reach { grid-column: auto; } }
+@media (min-width: 1024px) {
+  .footer__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .footer__brand { --stage-h: clamp(230px, min(19vw, 36vh), 290px); --stage-gutter: var(--gutter-lg); grid-column: 1 / span 4; }
+  .footer__nav { grid-column: 5 / span 2; }
+  .footer__reach { grid-column: 7 / span 3; }
+  .footer__settings { grid-column: 10 / span 3; }
+}
+
+/* lockup */
+.footer__lockup { display: inline-flex; align-items: center; width: max-content; max-width: 100%; color: var(--fg); text-decoration: none; min-height: 44px; } /* align-items centres the wordmark in the 44 px target */
+.footer__name { font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 3vw, 34px); line-height: 1; letter-spacing: -.005em; } /* 30.7 px at 1024: a 267 px wordmark in the 298 px brand column (measured 2026-11-01) */
+.footer__tagline { margin: 0; color: var(--fg); font-size: 15px; font-weight: 500; line-height: 1.45; } /* --fg: it sits on the sun bloom now */
+
+/* columns */
+.footer__col { display: grid; gap: var(--s-3); align-content: start; min-width: 0; }
+.footer__h { margin: 0; font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--peach); }
+.footer__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.footer__link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: .8em;
+  min-height: 44px;
+  padding-block: 10px;
+  color: var(--fg);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.footer__link--reach { flex-direction: column; align-items: flex-start; gap: 2px; min-height: 52px; padding-block: 8px; }
+.footer__k { font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-2); }
+.footer__v { font-weight: 600; font-size: 15px; }
+/* "Message us" row: the three messenger links inline (the number itself is printed once, in the Call row) */
+.footer__reach-apps { display: grid; gap: 2px; padding-block: 8px; }
+/* the 44 px links sit on a 20 px flow line: (44 - 20) / 2 = 12 px pulled in on both sides, so this row has the same pitch as the
+   label + value rows around it (at -8 px it was ~10 px taller than its neighbours; review 2026-11-01) */
+.footer__apps { display: flex; flex-wrap: wrap; column-gap: var(--s-4); margin-block: -12px; }
+.footer__app { width: max-content; min-width: 44px; justify-content: center; } /* "Viber" alone is 39 px wide: every target stays 44 px */
+@media (hover: hover) and (pointer: fine) {
+  .footer__link:hover { color: var(--peach); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+}
+
+/* settings */
+.footer__setting { display: grid; gap: 6px; }
+.footer__lang { display: inline-flex; width: max-content; border: 1.5px solid var(--line-dark-ui); border-radius: var(--r-pill); overflow: hidden; }
+.footer__langbtn {
+  min-width: 56px; min-height: 44px; padding: 0 14px; border: 0; background: transparent; color: var(--fg);
+  font: 500 13px/1 var(--font-mono); letter-spacing: .04em; cursor: pointer;
+  transition: background-color var(--dur-2) var(--ease-press), color var(--dur-2) var(--ease-press);
+}
+.footer__langbtn[aria-pressed="true"] { background: var(--fg); color: var(--night); }
+
+.footer__switch {
+  display: inline-flex; align-items: center; gap: .8em; width: max-content; min-height: 44px; padding: 0;
+  border: 0; background: transparent; color: var(--fg); font: 500 13px/1 var(--font-mono); cursor: pointer;
+}
+.footer__switch[aria-disabled="true"] { cursor: default; opacity: .85; }
+.footer__switch-track {
+  position: relative; flex: none; width: 52px; height: 30px; border-radius: var(--r-pill);
+  border: 1.5px solid var(--line-dark-ui); background: transparent;
+  transition: background-color var(--dur-2) var(--ease-press), border-color var(--dur-2) var(--ease-press);
+}
+.footer__switch-thumb {
+  position: absolute; top: 3px; left: 3px; width: 21px; height: 21px; border-radius: 50%; background: var(--fg);
+  transition: transform var(--dur-2) var(--ease-out), background-color var(--dur-2) var(--ease-press);
+}
+.footer__switch[aria-checked="true"] .footer__switch-track { background: var(--fg); border-color: var(--fg); }
+.footer__switch[aria-checked="true"] .footer__switch-thumb { transform: translateX(22px); background: var(--night); }
+
+/* legal row */
+.footer__legal {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: var(--s-3) var(--s-6); /* texts cluster left, Back to top goes right (2026-11-01) */
+  margin-top: clamp(40px, 5vw, 72px); padding-top: var(--s-5); border-top: 1px solid var(--line-dark);
+}
+.footer__copy, .footer__note { margin: 0; font-size: 13px; font-weight: 500; line-height: 1.45; color: var(--fg-2); }
+.footer__note { flex: 0 1 auto; }
+.footer__top {
+  display: inline-flex; align-items: center; gap: .6em; min-height: 44px; margin-inline-start: auto; color: var(--fg);
+  font: 500 13px/1 var(--font-mono); letter-spacing: .04em; text-decoration: none;
+}
+.footer__top-arrow { font-family: var(--font-ui); font-size: 18px; transition: transform var(--dur-2) var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .footer__top:hover .footer__top-arrow { transform: translateY(-4px); } .footer__top:hover { color: var(--peach); } }

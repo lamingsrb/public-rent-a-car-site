@@ -1,0 +1,20 @@
+{
+  "name": "public-rent-a-car",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Public Rent a Car — Belgrade. Cinematic scroll-driven presentation site (vanilla + Vite + GSAP + Lenis + Three.js).",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --port 5177 --host 127.0.0.1",
+    "preview": "vite preview --port 4177 --host 127.0.0.1 --strictPort"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "lenis": "^1.1.0",
+    "three": "^0.170.0"
+  }
+}

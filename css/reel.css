@@ -1,0 +1,102 @@
+/* reel.css (slot D) — "In the picture". Prefix .reel__ ; mobile-first.
+   Mobile: one native snap scroller (rows dissolve with display:contents). >=1024: three offset rows that overflow the viewport by design. */
+.sec-reel { background: var(--bg-alt); overflow: clip; }
+
+/* header: h2 left, lead right (editorial) */
+.reel__head { margin-bottom: clamp(28px, 4vw, 56px); }
+.reel__head-main { display: grid; gap: var(--s-4); } /* the wrapper keeps the folio-to-title gap of .sec__head (2026-11-01) */
+.reel__lead { margin: 0; }
+@media (min-width: 1024px) {
+  .reel__head { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: end; column-gap: var(--s-8); }
+  .reel__lead { justify-self: end; padding-bottom: .4em; max-width: 34ch; }
+}
+
+/* stage: mobile scroller */
+.reel__stage {
+  --reel-w: 82vw;
+  --reel-gap: 14px;
+  display: flex;
+  gap: var(--reel-gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  padding-inline: var(--gutter);
+  padding-block: 4px 10px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.reel__stage::-webkit-scrollbar { display: none; }
+.reel__row { display: contents; }
+
+.reel__strip {
+  position: relative;
+  flex: 0 0 var(--reel-w);
+  scroll-snap-align: start;
+  margin: 0;
+  min-width: 0;
+}
+.reel__media {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  background: var(--bg-deep);
+  transition: transform var(--dur-3) var(--ease-out);
+}
+.reel__img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; display: block; will-change: auto; }
+.reel__media::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: color-mix(in srgb, var(--ink) 4%, transparent);
+  transition: opacity var(--dur-3) var(--ease-out);
+}
+.reel__tag {
+  position: absolute; left: 12px; top: 12px; z-index: 2;
+  padding: 4px 10px; border-radius: var(--r-pill);
+  background: var(--card); color: var(--ink);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; line-height: 1.3;
+}
+
+.reel__cap { margin-top: 12px; }
+.reel__btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 44px; padding: 0;
+  font-family: var(--font-ui); font-weight: 600; font-size: 15px; line-height: 1.3; letter-spacing: -.005em;
+  color: var(--ink); text-align: left;
+}
+.reel__btn::after { content: ""; position: absolute; inset: 0; border-radius: var(--r-md); } /* whole figure is the hit area */
+/* focus: the single global ink ring (tokens.css) applies to the button; the photo gets the same ink ring so the whole figure reads as focused */
+.reel__strip:has(.reel__btn:focus-visible) .reel__media { outline: 3px solid var(--focus); outline-offset: 3px; }
+.reel__arrow { display: inline-block; transition: transform var(--dur-2) var(--ease-out); color: var(--accent-ink); }
+
+@media (hover: hover) {
+  .reel__strip:hover .reel__media { transform: scale(1.02); }
+  .reel__strip:hover .reel__media::after { opacity: 0; }
+  .reel__strip:hover .reel__arrow { transform: translateX(4px); }
+}
+
+/* meta (mobile only): swipe hint + counter */
+.reel__meta { display: flex; justify-content: space-between; align-items: center; margin-top: var(--s-4); }
+.reel__swipe { display: inline-flex; gap: 8px; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; color: var(--text-3); transition: opacity var(--dur-3) var(--ease-out); }
+.reel__swipe-arrow { display: inline-block; animation: reel-nudge 1.8s var(--ease-out) infinite; }
+.sec-reel.is-scrolled .reel__swipe { opacity: 0; }
+.reel__count { font-size: 11px; letter-spacing: .08em; color: var(--text-3); font-variant-numeric: tabular-nums lining-nums; }
+@keyframes reel-nudge { 0%, 60%, 100% { transform: translateX(0); } 30% { transform: translateX(6px); } }
+html.mode-static .reel__swipe-arrow { animation: none; }
+@media (prefers-reduced-motion: reduce) { .reel__swipe-arrow { animation: none; } .reel__media, .reel__arrow { transition: none; } }
+
+/* desktop: three offset rows */
+@media (min-width: 1024px) {
+  .reel__stage {
+    --reel-w: clamp(260px, 39vw, 840px);
+    --reel-gap: 20px;
+    display: flex; flex-direction: column; gap: clamp(20px, 2.2vw, 32px);
+    overflow: visible; scroll-snap-type: none; padding: 0;
+  }
+  .reel__row { display: flex; gap: var(--reel-gap); width: max-content; will-change: auto; }
+  .reel__row:nth-child(1) { margin-left: -12vw; }
+  .reel__row:nth-child(2) { margin-left: 6vw; }
+  .reel__row:nth-child(3) { margin-left: -6vw; }
+  .reel__strip { flex: 0 0 var(--reel-w); }
+  .reel__meta { display: none; }
+}

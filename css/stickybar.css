@@ -1,0 +1,27 @@
+/* ==========================================================================
+   stickybar — phone contact bar (brief 5.0.9). < 1024 only. Class prefix: .stickybar
+   Appears after the cover pin is left; hidden over #contact, with the menu or keyboard open.
+   ========================================================================== */
+.stickybar { display: none; }
+
+@media (max-width: 1023px) {
+  .stickybar {
+    position: fixed; inset: auto 0 0 0; z-index: var(--z-bar);
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;
+    height: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
+    padding: 8px max(12px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+    background: var(--card); border-top: 1px solid var(--line-ui);
+    transform: translateY(105%); visibility: hidden;
+    transition: transform .3s var(--ease-out), visibility 0s linear .3s;
+  }
+  .stickybar.is-on { transform: none; visibility: visible; transition-delay: 0s; }
+  .stickybar .btn {
+    min-height: 48px; min-width: 0; padding: 0 6px; font-size: 15px; letter-spacing: 0; white-space: nowrap;
+  }
+  html.has-bar body { padding-bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px)); }
+}
+@media (max-width: 359px) {
+  .stickybar { gap: 6px; padding-inline: 10px; }
+  .stickybar .btn { font-size: 14px; padding-inline: 4px; }
+}
+@media print { .stickybar { display: none !important; } }

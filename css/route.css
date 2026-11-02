@@ -1,0 +1,64 @@
+/* route.css (slot D) — "How it works". Prefix .route__ ; mobile-first.
+   Base = the mobile/static arrangement (step image above its text, steps in a grid from 768).
+   Desktop sticky arch window lives ONLY under html.mode-full / html.mode-lite at >=1024, so static + no-JS always show all four images. */
+.sec-route { background: var(--bg); }
+
+.route__layout { display: block; }
+.route__main { position: relative; }
+.route__line { display: none; }
+.route__side { display: none; }
+
+.route__steps { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(48px, 9vw, 72px) var(--s-7); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) { .route__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.route__step { display: grid; gap: var(--s-5); align-content: start; min-width: 0; }
+.route__fig { margin: 0; aspect-ratio: 16 / 10; border-radius: var(--r-lg); overflow: hidden; background: var(--bg-deep); }
+.route__img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; display: block; }
+
+.route__body { display: grid; gap: var(--s-3); align-content: start; }
+.route__num { display: block; color: var(--ink); transition: color var(--dur-3) var(--ease-out); }
+.route__dot { color: var(--accent-ink); }
+.route__t { margin: 0; font-size: var(--fs-h3); }
+.route__b { margin: 0; font-size: var(--fs-body); line-height: 1.55; color: var(--ink-2); max-width: 46ch; }
+
+.route__channels { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
+.route__channels .btn { min-height: 48px; padding: .6em 1.15em; }
+
+.route__cta { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: clamp(40px, 7vw, 72px); }
+.route__cta .btn { flex: 1 1 200px; }
+@media (min-width: 768px) { .route__cta .btn { flex: 0 0 auto; } }
+
+/* desktop with motion/lite: two columns, sticky arch window, one image at a time */
+@media (min-width: 1024px) {
+  html:is(.mode-full, .mode-lite) .route__layout {
+    display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-6);
+  }
+  html:is(.mode-full, .mode-lite) .route__main { grid-column: 1 / span 6; padding-left: 28px; }
+  html:is(.mode-full, .mode-lite) .route__side { display: block; grid-column: 8 / span 5; }
+  html:is(.mode-full, .mode-lite) .route__steps { display: block; }
+  html:is(.mode-full, .mode-lite) .route__step { display: flex; min-height: 65vh; align-items: center; }
+  html:is(.mode-full, .mode-lite) .route__step:last-child { min-height: 0; } /* no empty 65vh band after step 4 (2026-11-01) */
+  html:is(.mode-full, .mode-lite) .route__fig { display: none; }
+  html:is(.mode-full, .mode-lite) .route__body { padding-block: var(--s-6); }
+  html:is(.mode-full, .mode-lite) .route__cta { margin-top: var(--s-6); }
+
+  /* inactive numerals dim to ink-3, the active one is ink */
+  html:is(.mode-full, .mode-lite) .route__step:not(.is-active) .route__num { color: var(--ink-3); }
+  html:is(.mode-full, .mode-lite) .route__step:not(.is-active) .route__dot { color: var(--ink-3); }
+
+  /* 2px progress line left of the numerals; default CSS state is full (JS scrubs it from 0) */
+  html:is(.mode-full, .mode-lite) .route__line { display: block; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--line); }
+  .route__line-fill { position: absolute; inset: 0; background: var(--ink); transform-origin: 50% 0; }
+
+  .route__frame {
+    position: sticky; top: calc(var(--nav-h-lg) + 5vh);
+    aspect-ratio: 4 / 5; max-height: 78vh; width: min(100%, calc(78vh * .8)); margin-left: auto;
+  }
+  .route__frame::before { /* offset hairline arch behind the window (decorative) */
+    content: ""; position: absolute; inset: 0; transform: translate(14px, 14px);
+    border: 1px solid var(--line-ui); border-radius: var(--arch); pointer-events: none; /* closed outline: the open bottom read as a cut (2026-11-01) */
+  }
+  .route__window { position: absolute; inset: 0; border-radius: var(--arch); overflow: hidden; background: var(--bg-deep); isolation: isolate; }
+  .route__wimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; visibility: hidden; }
+  .route__wimg.is-active, .route__wimg.is-prev { visibility: visible; }
+}

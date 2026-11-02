@@ -1,0 +1,121 @@
+/* css/atlas.css — section 07 "Locations" (slot E, brief 5.7). Tokens only; the final (fully drawn) state is the CSS default,
+   JS only hides things inside the full-motion branches. Orange appears as stroke/dot only (halo ring, traveller dot). */
+.sec-atlas { background: var(--bg); }
+.sec-atlas .sec__head { margin-bottom: clamp(28px, 4vw, 56px); }
+
+/* ---------- Stage: map + cards ---------- */
+.atlas__pinbox { position: relative; }
+.atlas__stage { display: grid; gap: var(--s-5); }
+
+.atlas__map {
+  position: relative; margin: 0;
+  aspect-ratio: 5 / 4;
+  border-radius: var(--r-lg);
+  background-color: var(--card);
+  background-image: radial-gradient(var(--line) 1px, transparent 1.6px);
+  background-size: 28px 28px;
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+}
+.atlas__svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.atlas__river path { fill: none; stroke: var(--line-ui); stroke-width: 1.5; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.atlas__mask { fill: none; stroke: var(--card); stroke-width: 16; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.atlas__route {
+  fill: none; stroke: var(--ink-2); stroke-width: 2.5; stroke-linecap: round;
+  stroke-dasharray: 2 9; vector-effect: non-scaling-stroke;
+}
+.atlas__traveller { fill: var(--accent); opacity: 0; }
+
+.atlas__tag {
+  position: absolute; left: 14px; bottom: 14px; z-index: 1;
+  padding: 5px 11px; border-radius: var(--r-pill);
+  background: var(--paper-2); color: var(--ink-2);
+  font-size: 12px; letter-spacing: .04em; line-height: 1.2;
+  max-width: calc(100% - 28px);
+}
+
+/* ---------- Pins: <button> 44 px hit target; 16 px ink dot, 3 px paper ring, 24 px halo (accent stroke only) ---------- */
+.atlas__pin {
+  position: absolute; left: var(--x); top: var(--y); z-index: 2;
+  width: 44px; height: 44px; margin: -22px 0 0 -22px;
+  display: grid; place-items: center; border-radius: 50%;
+}
+.atlas__dot {
+  position: relative; display: block; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--ink); box-shadow: 0 0 0 3px var(--paper);
+}
+.atlas__halo {
+  position: absolute; left: 50%; top: 50%; width: 48px; height: 48px; margin: -24px 0 0 -24px;
+  border-radius: 50%; border: 2px solid var(--accent);
+  opacity: 0; transform: scale(.7); pointer-events: none;
+  transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+}
+.atlas__pin.is-hot .atlas__halo,
+.atlas__pin:focus-visible .atlas__halo { opacity: 1; transform: none; }
+.atlas__pin-n {
+  position: absolute; left: 50%; top: -4px; translate: -50% -100%;
+  color: var(--ink-2); font-size: 12px; line-height: 1; pointer-events: none; white-space: nowrap;
+}
+@media (hover: hover) and (pointer: fine) {
+  .atlas__pin:hover .atlas__halo { opacity: 1; transform: none; }
+}
+
+/* ---------- Cards ---------- */
+.atlas__cards { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.atlas__card {
+  display: grid; gap: 10px; align-content: start;
+  padding: 18px 20px 20px;
+  border: 2px solid var(--border-soft); border-radius: var(--r-lg);
+  background: var(--surface);
+  transition: border-color var(--dur-2) var(--ease-out);
+}
+.atlas__card.is-active { border-color: var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+  .atlas__card:hover { border-color: var(--border-ui); }
+  .atlas__card.is-active:hover { border-color: var(--ink); }
+}
+.atlas__card-head { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
+.atlas__card h3 { min-width: 0; overflow-wrap: anywhere; text-wrap: balance; }
+.atlas__idx { flex: none; color: var(--ink-3); font-size: 12px; letter-spacing: .06em; }
+.atlas__note { color: var(--text-2); font-size: var(--fs-body); line-height: 1.45; max-width: 52ch; }
+.atlas__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; container: actions / inline-size; }
+.atlas__actions .btn { flex: 1 1 15rem; }
+/* card 03 has one button: it takes the width of the buttons in the pairs above it — half the row where a pair shares one row,
+   the full row where the pair stacks (two 15 rem buttons fit from 490 px; two 11 rem buttons from 362 px at 1024 px and up).
+   A viewport query cannot tell the two apart (the card column is 330 px at 1024, 428 px at 1280), so this is a container query;
+   browsers without container queries keep the full-width button (review 2026-11-01). */
+.atlas__actions .btn:only-child { flex: 1 1 100%; }
+@container actions (min-width: 490px) { .atlas__actions .btn:only-child { flex: 0 1 calc(50% - 5px); } }
+.atlas__hours { color: var(--ink-3); font-size: 12px; letter-spacing: .04em; }
+.atlas__badge { justify-self: start; }
+
+/* ---------- Responsive ---------- */
+@media (min-width: 600px) {
+  .atlas__map { aspect-ratio: 1200 / 720; }
+  .atlas__card { padding: 20px 24px 22px; }
+}
+@media (min-width: 1024px) {
+  .atlas__pinbox { min-height: calc(100svh - var(--nav-h-lg)); display: flex; align-items: center; }
+  .atlas__stage {
+    width: min(100% - 2 * var(--gutter-lg), var(--maxw));
+    grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: stretch;
+    padding-block: 12px;
+  }
+  .atlas__map { grid-column: 6 / -1; grid-row: 1; aspect-ratio: auto; } /* as tall as the card list (the map SVG is preserveAspectRatio="none") */
+  .atlas__cards { grid-column: 1 / span 5; grid-row: 1; }
+  .atlas__actions .btn { flex-basis: 11rem; }
+  @container actions (min-width: 362px) { .atlas__actions .btn:only-child { flex: 0 1 calc(50% - 5px); } }
+  /* not pinned (static / reduced / short viewport): no reserved viewport-tall box, so no empty band under the heading */
+  .sec-atlas.is-static .atlas__pinbox, html.is-static .atlas__pinbox { min-height: 0; }
+}
+@media (min-width: 1024px) and (prefers-reduced-motion: reduce) {
+  .atlas__pinbox { min-height: 0; }
+}
+
+/* will-change is added by script during tweens only */
+html.is-static .atlas__halo,
+html.is-static .atlas__card { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .atlas__halo, .atlas__card { transition: none; }
+}

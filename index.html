@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="application-name" content="Public Rent a Car">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title data-i18n="meta.title">Public Rent a Car · car rental in Belgrade</title>
+  <meta name="description" content="Car rental in Belgrade: hatchbacks, SUVs, sedans and a van, with pick-up at the airport and two city locations. Message us your dates." data-i18n-attr="content:meta.description">
+  <link rel="canonical" href="https://publicrentacar.rs/">
+  <!-- Social cards. The absolute URLs use the working domain publicrentacar.rs until SITE_URL is decided (brief 11.2 #15); one search-and-replace swaps them. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Public Rent a Car">
+  <meta property="og:title" content="Public Rent a Car · car rental in Belgrade" data-i18n-attr="content:meta.title">
+  <meta property="og:description" content="Car rental in Belgrade: hatchbacks, SUVs, sedans and a van, with pick-up at the airport and two city locations. Message us your dates." data-i18n-attr="content:meta.description">
+  <meta property="og:url" content="https://publicrentacar.rs/">
+  <meta property="og:image" content="https://publicrentacar.rs/assets/img/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Public Rent a Car · car rental in Belgrade" data-i18n-attr="content:meta.title">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="sr_RS">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Public Rent a Car · car rental in Belgrade" data-i18n-attr="content:meta.title">
+  <meta name="twitter:description" content="Car rental in Belgrade: hatchbacks, SUVs, sedans and a van, with pick-up at the airport and two city locations. Message us your dates." data-i18n-attr="content:meta.description">
+  <meta name="twitter:image" content="https://publicrentacar.rs/assets/img/og-image.jpg">
+  <meta name="theme-color" content="#0c111c">
+  <script>
+    /* first-paint mirror of js/lib/motion-mode.js (static branch) + stored language; the module stays the source of truth */
+    (function () { try { var r = document.documentElement, s = matchMedia('(prefers-reduced-motion: reduce)').matches || localStorage.getItem('prc.motion') === 'off';
+      if (s) r.classList.add('mode-static', 'is-static'); if (localStorage.getItem('prc.lang') === 'sr') r.lang = 'sr-Latn'; } catch (e) {} })();
+  </script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- Structured data: only facts the client confirmed (name, phone, e-mail, site, Instagram). No address, hours, price range or rating. -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"AutoRental","name":"Public Rent a Car","url":"https://publicrentacar.rs/","image":"https://publicrentacar.rs/assets/img/og-image.jpg","telephone":"+38169693051","email":"booking@publicrentacar.rs","sameAs":["https://www.instagram.com/publicrentacar/"]}
+  </script>
+  <link rel="preload" href="/assets/fonts/epilogue-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    /* Serbian visitors need the latin-ext glyphs (č ć š ž đ) for the display face on first paint */
+    (function () { try { if (localStorage.getItem('prc.lang') === 'sr') { var l = document.createElement('link'); l.rel = 'preload'; l.as = 'font'; l.type = 'font/woff2'; l.crossOrigin = '';
+      l.href = '/assets/fonts/epilogue-latin-ext-wght-normal.woff2'; document.head.appendChild(l); } } catch (e) {} })();
+  </script>
+  <noscript><style>#preloader{display:none}</style></noscript>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="common.skip">Skip to content</a>
+  <!-- @include sections/nav.html -->
+  <main id="main">
+    <!-- @include sections/cover.html -->
+    <!-- @include sections/fleet.html -->
+    <!-- @include sections/rental-info.html -->
+    <!-- @include sections/contact.html -->
+  </main>
+  <!-- @include sections/footer.html -->
+  <!-- @include sections/stickybar.html -->
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
