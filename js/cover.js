@@ -15,6 +15,10 @@ export function init() {
   const form = root.querySelector('[data-trip-form]')
   const from = form.elements.from, to = form.elements.to
   const error = form.querySelector('[data-trip-error]')
+  const paintTripNote = () => {
+    const note = document.querySelector('[data-fleet-trip]')
+    if (note && !note.hidden) note.textContent = say('cover.datesSelected','Dates saved. Choose your car to prepare an enquiry.')
+  }
   let pendingTrip = null
   document.addEventListener('prc:ready', () => {
     if (pendingTrip) document.dispatchEvent(new CustomEvent('prc:tripchange', { detail: pendingTrip }))
@@ -39,19 +43,32 @@ export function init() {
     if (!window.__prcReady) pendingTrip = trip
     document.dispatchEvent(new CustomEvent('prc:tripchange', {detail:trip}))
     const note = document.querySelector('[data-fleet-trip]')
-    if (note) { note.hidden = false; note.textContent = say('cover.datesSelected','Dates saved. Choose your car to prepare an enquiry.') }
+    if (note) { note.hidden = false; paintTripNote() }
     const heading=document.getElementById('fleet-title');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});scrollTo('#fleet',{duration:.7}); history.replaceState(null,'','#fleet')
   })
   document.addEventListener('prc:tripupdate', e => { const d=e.detail||{}; if(d.from!=null)from.value=d.from;if(d.to!=null)to.value=d.to;if(d.pickup&&[...form.elements.pickup.options].some(o=>o.value===d.pickup))form.elements.pickup.value=d.pickup;setDates() })
   const story = root.querySelector('[data-drive-story]')
   const stage = root.querySelector('[data-drive-stage]')
   const host = root.querySelector('[data-drive-scene]')
+  const poster = host.querySelector('[data-drive-poster]')
   const caption = root.querySelector('[data-scene-caption]')
   const acts = [...root.querySelectorAll('[data-drive-act]')]
   const stops = [0, .34, .67, 1]
   const buttons = [...root.querySelectorAll('[data-story-stop]')]
   let scene, progress = 0, chapter = 0, queued = 0, hasRenderedModel = false
-  let staticStory = REDUCED || MODE !== 'full' || new URLSearchParams(location.search).get('scene') === 'poster'
+  let sceneState = 'loading', fallbackReason = ''
+  const explicitPoster = new URLSearchParams(location.search).get('scene') === 'poster'
+  let staticStory = REDUCED || MODE !== 'full' || explicitPoster
+  const setSceneState = (next, reason = '') => {
+    sceneState = next
+    fallbackReason = next === 'fallback' && typeof reason === 'string' ? reason : ''
+    stage.dataset.sceneState = host.dataset.sceneState = next
+    if (fallbackReason) stage.dataset.fallbackReason = host.dataset.fallbackReason = fallbackReason
+    else { delete stage.dataset.fallbackReason; delete host.dataset.fallbackReason }
+    poster.hidden = next !== 'fallback'
+    host.classList.toggle('is-live', next === 'ready')
+  }
+  setSceneState('loading')
   const setChapter = next => {
     chapter = next
     stage.dataset.chapter = String(next)
@@ -93,26 +110,26 @@ export function init() {
     caption.textContent = say('cover.sceneNote','Škoda Karoq · detailed 3D model (2019 version)')
     caption.removeAttribute('data-i18n')
   }
-  const fallback = () => {
-    host.classList.remove('is-live')
+  const fallback = (reason = 'scene-unavailable') => {
+    setSceneState('fallback', reason)
     caption.setAttribute('data-i18n','cover.photoNote')
     caption.textContent=say('cover.photoNote','Our Škoda Karoq · actual fleet photograph')
     if (!hasRenderedModel) {staticStory = true;root.classList.add('has-photo-story')}
     update()
   }
   if (new URLSearchParams(location.search).get('qa') === '1') {
-    window.__prcDrive = { snapshot: () => ({progress,chapter,staticStory,storyHeight:story.offsetHeight,stageHeight:stage.offsetHeight,...(scene?.stats() || {})}) }
+    window.__prcDrive = { snapshot: () => ({progress,chapter,staticStory,sceneState,fallbackReason,storyHeight:story.offsetHeight,stageHeight:stage.offsetHeight,...(scene?.stats() || {})}) }
   }
-  document.addEventListener('prc:langchange', () => {setDates();if(scene&&host.classList.contains('is-live'))liveCaption()})
-  if (staticStory) {root.classList.add('has-photo-story');return}
+  document.addEventListener('prc:langchange', () => {setDates();paintTripNote();if(scene&&host.classList.contains('is-live'))liveCaption()})
+  if (staticStory) {fallback(explicitPoster ? 'explicit-poster' : REDUCED ? 'motion-disabled' : `mode-${MODE}`);return}
   const load = async () => {
     try {
       const probe=document.createElement('canvas'), gl=probe.getContext('webgl2')
-      if (!gl) return fallback()
+      if (!gl) return fallback('webgl-unavailable')
       gl.getExtension('WEBGL_lose_context')?.loseContext()
       const { mountDriveScene } = await import('./lib/drive-scene.js')
       scene = await mountDriveScene(host, {
-        onReady: () => {hasRenderedModel=true;staticStory=false;root.classList.remove('has-photo-story');host.classList.add('is-live');liveCaption();update()},
+        onReady: () => {hasRenderedModel=true;staticStory=false;root.classList.remove('has-photo-story');setSceneState('ready');liveCaption();update()},
         onFallback: fallback,
       })
       if (!scene) return fallback()
@@ -124,7 +141,7 @@ export function init() {
         removeEventListener('pageshow',onScroll)
         scene.dispose()
       })
-    } catch (error) {fallback();console.warn('[drive] Actual fleet photo fallback:',error.message)}
+    } catch (error) {if(sceneState!=='fallback')fallback('scene-load-failed');console.warn('[drive] Actual fleet photo fallback:',error.message)}
   }
   const defer = async () => {
     try {await host.querySelector('img')?.decode()} catch {}

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   css/fleet.css — "The Index" (brief 5.3). Sole writer: slot C. Class prefix .fleet__ ; tokens only, no hex literals.
+   css/fleet.css - "The Index" (brief 5.3). Class prefix .fleet__ ; tokens only, no hex literals.
    Layout states (set by js/fleet.js on #fleet):
      (none)       fail-visible default = native snap carousel (what the page shows if JS never runs)
      .is-carousel carousel on purpose: phones, lite mode, Gate F1, short desktop windows
@@ -318,3 +318,69 @@ html.is-static .fleet__render { transition: none; }
 .fleet__thumb.is-render-thumb { background: var(--stage); }
 .fleet__thumb.is-render-thumb img { object-fit: contain; padding: 4px; }
 html:has(.fleet__dialog[open]) { scrollbar-gutter: stable; }
+
+/* Two-row moving gallery. Specificity keeps this layout authoritative over
+   the compact/showroom skins, without changing their card/photo treatment. */
+.sec-fleet.is-grid.is-looping .fleet__viewport { min-width:0; overflow:hidden; }
+.sec-fleet.is-grid.is-looping .fleet__track {
+  --fleet-loop-gap:16px;
+  display:grid;
+  grid-template-columns:none;
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  grid-template-areas:none;
+  grid-auto-flow:column;
+  grid-auto-columns:calc((100% - 3 * var(--fleet-loop-gap)) / 4);
+  gap:var(--fleet-loop-gap);
+  align-items:stretch;
+  align-content:start;
+  width:100%; max-width:100%; min-width:0;
+  padding:8px 0 14px;
+  overflow-x:auto; overflow-y:hidden;
+  scroll-snap-type:none;
+  scroll-behavior:auto;
+  overscroll-behavior-x:contain;
+  overflow-anchor:none;
+  scrollbar-width:thin;
+  scrollbar-color:var(--showroom-muted) transparent;
+  cursor:grab;
+}
+.sec-fleet.is-grid.is-looping .fleet__track::-webkit-scrollbar { display:block; height:4px; }
+.sec-fleet.is-grid.is-looping .fleet__track::-webkit-scrollbar-thumb { background:var(--showroom-muted); border-radius:4px; }
+.sec-fleet.is-grid.is-looping .fleet__track:focus-visible { outline:2px solid var(--showroom-ink); outline-offset:-2px; }
+.sec-fleet.is-grid.is-looping .fleet__track.is-dragging { cursor:grabbing; user-select:none; }
+.sec-fleet.is-grid.is-looping .fleet__item {
+  display:flex; width:auto; min-width:0; max-width:none;
+  flex:initial; scroll-snap-align:none; overflow-anchor:none;
+}
+.sec-fleet.is-grid.is-looping .fleet__item[hidden] { display:none; }
+.sec-fleet.is-grid.is-looping .fleet__loop-filler { visibility:hidden; pointer-events:none; overflow-anchor:none; }
+.sec-fleet.is-grid.is-looping .fleet__result { align-items:center; gap:14px; }
+.sec-fleet.is-grid.is-looping .fleet__loop-controls { display:flex; flex:none; align-items:center; gap:6px; }
+.sec-fleet.is-grid.is-looping .fleet__loop-controls button {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:44px; min-height:44px; margin:0; padding:8px;
+  border:1px solid var(--showroom-line); border-radius:6px;
+  background:color-mix(in srgb,var(--showroom-ink) 5%,transparent);
+  color:var(--showroom-ink); font:500 11px/1.2 var(--font-ui);
+}
+.sec-fleet.is-grid.is-looping .fleet__loop-controls .fleet__loop-toggle { gap:7px; padding-inline:12px; }
+.sec-fleet.is-grid.is-looping .fleet__loop-controls button:focus-visible { outline:2px solid var(--showroom-ink); outline-offset:3px; }
+.sec-fleet.is-grid.is-looping .fleet__loop-controls button[disabled] { opacity:.35; cursor:default; }
+.sec-fleet.is-grid.is-looping .fleet__loop-controls button[aria-pressed="true"] { background:var(--showroom-ink); color:var(--night-deep); }
+.sec-fleet.is-grid.is-looping .fleet__loop-arrow[data-dir="-1"] svg { transform:rotate(180deg); }
+.sec-fleet.is-grid.is-looping [data-fleet-toggle-icon] { display:flex; }
+.sec-fleet.is-grid.is-looping .fleet__loop-hint { margin-top:7px; color:var(--showroom-muted); font:400 10px/1.5 var(--font-ui); }
+@media (hover:hover) and (pointer:fine) {
+  .sec-fleet.is-grid.is-looping .fleet__loop-controls button:not([disabled]):hover { border-color:var(--showroom-muted); }
+}
+@media (min-width:701px) and (max-width:1099px) {
+  .sec-fleet.is-grid.is-looping .fleet__track { grid-auto-columns:calc((100% - 2 * var(--fleet-loop-gap)) / 3); }
+}
+@media (max-width:700px) {
+  .sec-fleet.is-grid.is-looping .fleet__track { --fleet-loop-gap:11px; grid-auto-columns:calc((100% - var(--fleet-loop-gap)) / 2); }
+  .sec-fleet.is-grid.is-looping .fleet__result { gap:8px; padding-block:9px; }
+  .sec-fleet.is-grid.is-looping .fleet__result>p:first-child { display:none; }
+  .sec-fleet.is-grid.is-looping .fleet__loop-controls { gap:4px; }
+  .sec-fleet.is-grid.is-looping .fleet__loop-controls .fleet__loop-toggle { padding-inline:8px; font-size:10px; }
+  .sec-fleet.is-grid.is-looping .fleet__loop-hint { font-size:9px; }
+}

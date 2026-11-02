@@ -6,10 +6,11 @@
   <div class="fleet__pin wrap">
     <p class="fleet__trip" data-fleet-trip role="status" hidden></p>
     <div class="fleet__bar"><nav class="fleet__chips" aria-label="Vehicle groups" data-i18n-attr="aria-label:fleet.groupsNav" data-fleet-chips></nav><div class="fleet__filters"><label><span data-i18n="fleet.gearbox">Gearbox</span><select data-fleet-transmission><option value="all" data-i18n="fleet.anyGearbox">All gearboxes</option><option value="automatic" data-i18n="fleet.automatic">Automatic</option><option value="manual" data-i18n="fleet.manual">Manual</option></select></label><label><span data-i18n="fleet.sort">Sort by</span><select data-fleet-sort><option value="recommended" data-i18n="fleet.featured">Featured</option><option value="price" data-i18n="fleet.priceOrder">Starting price: low to high</option></select></label></div></div>
-    <div class="fleet__result"><p data-i18n="fleet.explore">Vehicle index</p><span class="fleet__result-rule" aria-hidden="true"></span><p class="fleet__counter" aria-live="polite" data-fleet-counter></p></div>
-    <div class="fleet__viewport"><ul class="fleet__track" role="list" data-fleet-track></ul></div>
+    <div class="fleet__result"><p data-i18n="fleet.explore">Vehicle index</p><span class="fleet__result-rule" aria-hidden="true"></span><p class="fleet__counter" aria-live="polite" data-fleet-counter></p><div class="fleet__loop-controls" role="group" aria-label="Fleet gallery controls" data-fleet-arrows></div></div>
+    <div class="fleet__viewport"><ul class="fleet__track" role="list" tabindex="0" aria-label="Fleet gallery in two rows" aria-describedby="fleet-gallery-help" data-lenis-prevent data-fleet-track></ul></div>
+    <p class="fleet__loop-hint" id="fleet-gallery-help" data-i18n="fleet.motionHint">Two rows. Drag to explore. Hover or focus to pause.</p>
     <p class="fleet__empty" data-fleet-empty hidden data-i18n="fleet.empty">No cars match these filters. Try another category or gearbox.</p>
-    <div data-fleet-ladder hidden></div><div data-fleet-arrows hidden></div><i data-fleet-progress hidden></i>
+    <div data-fleet-ladder hidden></div><i data-fleet-progress hidden></i>
   </div>
   <dialog class="fleet__dialog" aria-labelledby="fleet-dlg-title" data-lenis-prevent></dialog>
 </section>

@@ -48,5 +48,11 @@
   "fleet.priceOrder": "Početna cena: rastuće",
   "fleet.explore": "Katalog vozila",
   "fleet.empty": "Nema vozila za izabrane filtere. Probajte drugu kategoriju ili menjač.",
-  "fleet.askCompact": "Upit"
+  "fleet.askCompact": "Upit",
+  "fleet.pause": "Zaustavite kretanje",
+  "fleet.play": "Pokrenite kretanje",
+  "fleet.motionOff": "Bez animacije",
+  "fleet.controls": "Kontrole galerije vozila",
+  "fleet.trackLabel": "Galerija vozila u dva reda",
+  "fleet.motionHint": "Dva reda. Prevucite za pregled. Prelazak mišem ili fokus zaustavlja kretanje."
 }

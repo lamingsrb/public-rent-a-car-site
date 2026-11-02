@@ -60,6 +60,11 @@ const EN = {
   'fleet.close': 'Close',
   'fleet.prev': 'Previous cars',
   'fleet.next': 'Next cars',
+  'fleet.pause': 'Pause movement',
+  'fleet.play': 'Start movement',
+  'fleet.motionOff': 'Motion off',
+  'fleet.controls': 'Fleet gallery controls',
+  'fleet.trackLabel': 'Fleet gallery in two rows',
   'fleet.endTitle': 'Not sure which one?',
   'fleet.endLead': 'Tell us your dates and we will suggest a car.',
   'fleet.endCta': 'Message us',
@@ -162,7 +167,7 @@ function observeCardImages() {
       delete image.dataset.fleetSrcset
       delete image.dataset.fleetSrc
     })
-  }, { rootMargin: '300px 0px', threshold: 0 })
+  }, { rootMargin: '300px', scrollMargin: '300px', threshold: 0 })
   cardImageObserver = observer
   track.querySelectorAll('img[data-fleet-src]').forEach((image) => observer.observe(image))
 }
@@ -341,6 +346,7 @@ function clearCardFeedback() {
 }
 
 function filterGrid({ animate = true } = {}) {
+  active?.suspend?.()
   const revision = ++gridRevision
   finishGridMotion()
   const transmission = root.querySelector('[data-fleet-transmission]')?.value || 'all'
@@ -364,6 +370,7 @@ function filterGrid({ animate = true } = {}) {
     const outgoing = new Set(entries.filter((el) => !el.hidden && !visible.has(el)))
     let state = null
     try { state = F?.getState(entries) } catch { F = null }
+    track.querySelector('.fleet__loop-filler')?.remove()
     ordered.forEach((el) => {
       track.appendChild(el)
       el.dataset.fleetVisible = String(visible.has(el))
@@ -382,6 +389,17 @@ function filterGrid({ animate = true } = {}) {
         cardRevealObserver?.unobserve(el)
       }
     })
+    // An empty, silent slot keeps an odd result's last column aligned when
+    // whole two-card columns are recycled. It never represents another car.
+    if (visible.size % 2) {
+      const filler = document.createElement('li')
+      filler.className = 'fleet__loop-filler'
+      filler.setAttribute('aria-hidden', 'true')
+      filler.setAttribute('role', 'presentation')
+      filler.inert = true
+      track.appendChild(filler)
+    }
+    track.scrollLeft = 0
     // Filtering normally starts from its control. Keep external/programmatic
     // changes from leaving focus inside a newly hidden card as well.
     if (focusedItem && !visible.has(focusedItem)) chipsEl.querySelector('[aria-pressed="true"]')?.focus({ preventScroll: true })
@@ -391,6 +409,7 @@ function filterGrid({ animate = true } = {}) {
     gridSignature = signature
     if (!F) {
       finishGridMotion()
+      active?.rebind?.({ reset: true })
       refresh(0)
       return
     }
@@ -416,11 +435,13 @@ function filterGrid({ animate = true } = {}) {
           if (revision !== gridRevision) return
           gridTween = null
           finishGridMotion()
+          active?.rebind?.({ reset: true })
           refresh(0)
         },
       })
     } catch {
       finishGridMotion()
+      active?.rebind?.({ reset: true })
     }
     refresh(0)
   }
@@ -435,6 +456,7 @@ function filterGrid({ animate = true } = {}) {
 }
 
 function renderAll({ reveal = true } = {}) {
+  active?.suspend?.()
   ++gridRevision
   finishGridMotion()
   stopCardReveals()
@@ -450,6 +472,8 @@ function renderAll({ reveal = true } = {}) {
   const markup=vehicles.map((v,i)=>itemHTML(v,i+1,vehicles.length)).join('')
   track.innerHTML='IntersectionObserver' in window ? deferCardImages(markup) : markup
   entries=[...track.children];chipsEl.innerHTML=chipsHTML();gridSignature='';filterGrid({animate:false})
+  renderLoopControls()
+  active?.rebind?.()
   observeCardImages()
   observeCardReveals({ reveal })
 }
@@ -544,6 +568,7 @@ function goToEntry(el, { immediate = false } = {}) {
   // its destination. A late first Flip import must never hide that destination.
   filterGrid({animate:false})
   if(el.hidden || el.dataset.fleetVisible === 'false'){category='all';root.querySelector('[data-fleet-transmission]').value='all';filterGrid({animate:false})}
+  active?.reveal?.(el, { cooldown: true })
   scrollTo(el,{duration:immediate?0:.6})
   return el.getBoundingClientRect().top+window.scrollY
 }
@@ -774,7 +799,244 @@ function startPinned() {
   }
 }
 
-function startLayout() { root.classList.remove('is-carousel','is-pinned');root.classList.add('is-grid');mode='grid' }
+function startLayout() {
+  root.classList.remove('is-carousel', 'is-pinned')
+  root.classList.add('is-grid', 'is-looping')
+  root.dataset.fleetRows = '2'
+  mode = 'loop'
+  active = startLoopingGallery()
+}
+
+function renderLoopControls() {
+  arrowsEl.innerHTML = `<button type="button" class="fleet__arrow fleet__loop-arrow" data-dir="-1" aria-label="${esc(T('fleet.prev'))}">${ARROW}</button>` +
+    `<button type="button" class="fleet__loop-toggle" data-fleet-toggle aria-pressed="false"><span data-fleet-toggle-icon aria-hidden="true"></span><span data-fleet-toggle-label>${esc(T('fleet.pause'))}</span></button>` +
+    `<button type="button" class="fleet__arrow fleet__loop-arrow" data-dir="1" aria-label="${esc(T('fleet.next'))}">${ARROW}</button>`
+  arrowsEl.setAttribute('aria-label', T('fleet.controls'))
+  track.setAttribute('aria-label', T('fleet.trackLabel'))
+}
+
+// A single native scroller moves both rows at the same speed. Once a complete
+// column is outside the left edge, move its two original nodes to the end and
+// subtract exactly that column's width. Nothing is cloned, and recycling never
+// runs while the user is interacting or a filter animation owns the layout.
+function startLoopingGallery() {
+  const viewport = root.querySelector('.fleet__viewport')
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
+  const hoverPointer = window.matchMedia('(hover: hover) and (pointer: fine)')
+  const holds = new Set()
+  const cleanups = []
+  let inView = false, updating = false, userPaused = false, stopped = false
+  let raf = 0, previousTime = 0, position = 0, step = 0, max = 0, shifted = 0
+  let interactionTimer = 0, drag = null, suppressClickUntil = 0
+  const on = (el, name, handler, options) => {
+    el.addEventListener(name, handler, options)
+    cleanups.push(() => el.removeEventListener(name, handler, options))
+  }
+  const rendered = () => [...track.children].filter(el => !el.hidden && el.dataset.fleetVisible !== 'false')
+  const allowed = () => !REDUCED && MODE !== 'static' && !reduce.matches
+  const reasons = () => {
+    const list = [...holds]
+    if (!allowed()) list.push('reduced')
+    if (!inView) list.push('offscreen')
+    if (document.hidden) list.push('hidden')
+    if (dlg?.open) list.push('dialog')
+    if (updating || root.hasAttribute('data-fleet-animating')) list.push('update')
+    if (userPaused) list.push('user')
+    // At least one whole column of runway is required for seamless recycling.
+    if (!step || max < step - 1) list.push('no-overflow')
+    return list
+  }
+  const paintControls = () => {
+    updateArrows()
+    const toggle = arrowsEl.querySelector('[data-fleet-toggle]')
+    if (!toggle) return
+    const label = !allowed() ? T('fleet.motionOff') : userPaused ? T('fleet.play') : T('fleet.pause')
+    toggle.disabled = !allowed()
+    toggle.setAttribute('aria-pressed', String(userPaused))
+    toggle.setAttribute('aria-label', label)
+    toggle.querySelector('[data-fleet-toggle-label]').textContent = label
+    toggle.querySelector('[data-fleet-toggle-icon]').innerHTML = userPaused || !allowed()
+      ? '<svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path d="m6 4 9 6-9 6z"/></svg>'
+      : '<svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path d="M5 4h3v12H5zm7 0h3v12h-3z"/></svg>'
+  }
+  const sync = () => {
+    if (stopped) return
+    const pausedBy = reasons()
+    root.dataset.fleetAutoplay = pausedBy.length ? 'paused' : 'running'
+    root.dataset.fleetPauseReasons = pausedBy.join(' ')
+    if (pausedBy.length) {
+      cancelAnimationFrame(raf)
+      raf = 0
+      previousTime = 0
+      position = track.scrollLeft
+    } else if (!raf) {
+      position = track.scrollLeft
+      previousTime = 0
+      raf = requestAnimationFrame(tick)
+    }
+    paintControls()
+  }
+  const tick = (time) => {
+    raf = 0
+    if (stopped || reasons().length) return sync()
+    if (previousTime) position += Math.min(64, time - previousTime) * 0.028
+    previousTime = time
+    while (position >= step) {
+      const items = rendered()
+      if (items.length < 4 || items.slice(0, 2).some(el => el.contains(document.activeElement))) {
+        holds.add('focus')
+        return sync()
+      }
+      // overflow-anchor:none prevents native anchoring from applying a second
+      // correction. The removal and compensated offset paint in the same frame.
+      track.append(items[0], items[1])
+      position -= step
+      root.dataset.fleetShift = String(++shifted)
+    }
+    track.scrollLeft = position
+    raf = requestAnimationFrame(tick)
+  }
+  const hold = (name, value) => {
+    value ? holds.add(name) : holds.delete(name)
+    sync()
+  }
+  const interact = () => {
+    clearTimeout(interactionTimer)
+    hold('interaction', true)
+    // Keep native touch momentum and manual smooth scrolling undisturbed.
+    interactionTimer = setTimeout(() => hold('interaction', false), 1600)
+  }
+  const rebind = ({ reset = false } = {}) => {
+    updating = false
+    if (reset) {
+      shifted = 0
+      root.dataset.fleetShift = '0'
+      track.scrollTo({ left: 0, behavior: 'instant' })
+    }
+    const first = rendered()[0]
+    step = first ? first.getBoundingClientRect().width + (parseFloat(getComputedStyle(track).columnGap) || 0) : 0
+    max = Math.max(0, track.scrollWidth - track.clientWidth)
+    root.dataset.fleetStep = step.toFixed(3)
+    holds.delete('focus')
+    if (root.contains(document.activeElement)) holds.add('focus')
+    sync()
+  }
+  const move = (dir) => {
+    interact()
+    track.scrollBy({ left: dir * (step || track.clientWidth) * Math.max(1, Math.floor(track.clientWidth / (step || 1))), behavior: REDUCED || reduce.matches ? 'auto' : 'smooth' })
+  }
+  const reveal = (item, { cooldown = false } = {}) => {
+    if (!item || item.hidden) return
+    const left = track.getBoundingClientRect().left
+    const rect = item.getBoundingClientRect()
+    if (rect.left < left || rect.right > left + track.clientWidth) {
+      track.scrollTo({ left: clamp(track.scrollLeft + rect.left - left, 0, max), behavior: 'instant' })
+    }
+    if (cooldown) interact()
+  }
+  on(root, 'pointerenter', e => {
+    if (e.pointerType !== 'touch' && hoverPointer.matches) hold('hover', true)
+  }, { passive: true })
+  on(root, 'pointerleave', e => {
+    if (e.pointerType !== 'touch') hold('hover', false)
+  }, { passive: true })
+  on(root, 'focusin', () => hold('focus', true))
+  on(root, 'focusout', e => {
+    if (!root.contains(e.relatedTarget)) hold('focus', false)
+  })
+  on(track, 'pointerdown', e => {
+    interact()
+    if (e.pointerType === 'touch') { hold('touch', true); return }
+    if (e.button !== 0 || e.target.closest('a,button,input,select,textarea')) return
+    drag = { id: e.pointerId, x: e.clientX, left: track.scrollLeft, moved: false }
+    hold('drag', true)
+  }, { passive: true })
+  on(track, 'pointermove', e => {
+    if (!drag || drag.id !== e.pointerId) return
+    const dx = e.clientX - drag.x
+    if (!drag.moved && Math.abs(dx) < 6) return
+    if (!drag.moved) { drag.moved = true; track.setPointerCapture(e.pointerId); track.classList.add('is-dragging') }
+    e.preventDefault()
+    track.scrollLeft = drag.left - dx
+  }, { passive: false })
+  const release = e => {
+    if (e.pointerType === 'touch' && e.type === 'pointerup') { hold('touch', false); interact() }
+    if (!drag || drag.id !== e.pointerId) return
+    if (drag.moved) suppressClickUntil = performance.now() + 200
+    drag = null
+    track.classList.remove('is-dragging')
+    if (track.hasPointerCapture(e.pointerId)) track.releasePointerCapture(e.pointerId)
+    hold('drag', false)
+    interact()
+  }
+  on(window, 'pointerup', release, { passive: true })
+  on(window, 'pointercancel', release, { passive: true })
+  // Native panning cancels pointer events before the finger is lifted. Touch
+  // events keep that gesture paused until its real end, including momentum.
+  on(track, 'touchstart', () => hold('touch', true), { passive: true })
+  const touchEnd = e => { if (!e.touches.length) { hold('touch', false); interact() } }
+  on(window, 'touchend', touchEnd, { passive: true })
+  on(window, 'touchcancel', touchEnd, { passive: true })
+  on(track, 'click', e => {
+    if (performance.now() >= suppressClickUntil) return
+    e.preventDefault()
+    e.stopImmediatePropagation()
+  }, true)
+  on(track, 'dragstart', e => e.preventDefault())
+  on(track, 'wheel', interact, { passive: true })
+  on(track, 'keydown', e => {
+    if (e.target !== track || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return
+    e.preventDefault()
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') move(e.key === 'ArrowLeft' ? -1 : 1)
+    else { interact(); track.scrollTo({ left: e.key === 'Home' ? 0 : max, behavior: 'instant' }) }
+  })
+  on(track, 'scroll', () => {
+    if (!raf) position = track.scrollLeft
+    if (holds.has('interaction')) {
+      clearTimeout(interactionTimer)
+      interactionTimer = setTimeout(() => hold('interaction', false), 1600)
+    }
+    updateArrows()
+  }, { passive: true })
+  on(arrowsEl, 'click', e => {
+    if (!e.target.closest('[data-fleet-toggle]')) return
+    userPaused = !userPaused
+    sync()
+  })
+  on(document, 'visibilitychange', sync)
+  on(window, 'resize', () => rebind())
+  on(window, 'pagehide', () => hold('pagehide', true))
+  on(window, 'pageshow', () => hold('pagehide', false))
+  on(reduce, 'change', sync)
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(changes => {
+      inView = changes.some(entry => entry.isIntersecting)
+      sync()
+    }, { threshold: 0 })
+    observer.observe(viewport)
+    cleanups.push(() => observer.disconnect())
+  } else {
+    const visibility = () => {
+      const bounds = viewport.getBoundingClientRect()
+      inView = bounds.bottom > 0 && bounds.top < innerHeight
+      sync()
+    }
+    on(window, 'scroll', visibility, { passive: true })
+    visibility()
+  }
+  root.dataset.fleetShift = '0'
+  rebind()
+  return {
+    rebind, hold, reveal, move,
+    suspend() { updating = true; sync() },
+    stop() {
+      stopped = true
+      cancelAnimationFrame(raf)
+      clearTimeout(interactionTimer)
+      cleanups.splice(0).forEach(fn => fn())
+    },
+  }
+}
 
 // ---------- detail dialog ----------
 function loadFlip() {
@@ -946,6 +1208,7 @@ function openDetail(id, { fromEl = null } = {}) {
   }
   openId = id
   openerId = id
+  active?.hold?.('dialog', true)
   fillDialog(v)
   const card = entryFor(id)
   lockScroll(true)
@@ -969,6 +1232,7 @@ function onDialogClosed() {
   const id = openerId
   openId = ''
   openerId = ''
+  active?.hold?.('dialog', false)
   const btn = id ? track.querySelector(`.fleet__more[data-id="${id}"]`) : null
   if (btn) btn.focus({ preventScroll: true })
 }
@@ -1033,6 +1297,7 @@ function litCar(id, on) {
 }
 
 function ensureVisible(it) {
+  if (mode === 'loop') { active?.reveal?.(it); return }
   if (mode !== 'pinned') return
   const x = currentX()
   const l = it.offsetLeft - x
@@ -1156,6 +1421,7 @@ function wire() {
     const arrow = e.target.closest('.fleet__arrow')
     if (arrow) {
       const dir = Number(arrow.dataset.dir)
+      if (mode === 'loop') return active?.move?.(dir)
       track.scrollBy({ left: dir * Math.round(track.clientWidth * 0.8), behavior: REDUCED ? 'auto' : 'smooth' })
       return
     }

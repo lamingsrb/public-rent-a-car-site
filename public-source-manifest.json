@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "sourceRepository": "lamingsrb/public_rent_a_car",
-  "sourceRevision": "b93d6e661b4acec99bd3930d0f8db1c732d3b61b",
+  "sourceRevision": "f3f63499e79de2f12c26ca934b2f281de3284dee",
   "sourceTreeClean": true,
   "localBootstrap": false,
   "hashAlgorithm": "sha256",
-  "contentSHA256": "a62304c689c83ecf3544aeb2da3687e8b38434e057a304cac26d792e2ed179d5",
+  "contentSHA256": "8d9d37a45fd478e3647691101ecbad1303b487d7e09e4e231a88ae89e4bf95bd",
   "files": [
     {
       "path": ".github/workflows/deploy-vercel.yml",
@@ -57,8 +57,8 @@
     },
     {
       "path": "css/drive-cover.css",
-      "bytes": 17360,
-      "sha256": "848bd0a63fa3634432b0cff97e8ec49a878b83298c49504b9a728c8b71c700fa",
+      "bytes": 17532,
+      "sha256": "b463ad10fcc2dc73de1392deae648bc3eb42db79ce7e4136e5cea7f191c92fb2",
       "kind": "copied"
     },
     {
@@ -69,8 +69,8 @@
     },
     {
       "path": "css/fleet.css",
-      "bytes": 22844,
-      "sha256": "db2e46db694f565fe29f4eaf21142329944ad8441aa423efa3226f9c84577394",
+      "bytes": 26764,
+      "sha256": "d2db3baa1c62bc9f4005590315987de51a852f0a204be31149c4132a268ae4f8",
       "kind": "copied"
     },
     {
@@ -171,8 +171,8 @@
     },
     {
       "path": "i18n/sr/fleet.json",
-      "bytes": 2173,
-      "sha256": "ee07fa164b2d755b8aa473bc9c778e10f9fc8a59a194e5da84ea9ff6baace58e",
+      "bytes": 2493,
+      "sha256": "dfdec44f6fb637aecb52302d2d5a8e7cc823fe0bd39a11a25fd4f6ba175df8b4",
       "kind": "copied"
     },
     {
@@ -249,14 +249,14 @@
     },
     {
       "path": "js/cover.js",
-      "bytes": 7600,
-      "sha256": "dc795ab8581be22ce6906bf0b9483045b77029e96ae72a3f8523f39631767be6",
+      "bytes": 8604,
+      "sha256": "eeaf73077094f0ed369a15eaa32d71311bb314a8d831f45073a66d5836e2c28f",
       "kind": "copied"
     },
     {
       "path": "js/fleet.js",
-      "bytes": 51037,
-      "sha256": "a582ec5384b6e0c1711666e4f5acda1253721c3fe416d1d0e4fe413dd1bbb6c5",
+      "bytes": 62294,
+      "sha256": "219e35f284465ceaddc5afed8571aec2f09c59fd9f3ecbb8e479954c206827f9",
       "kind": "copied"
     },
     {
@@ -1629,14 +1629,14 @@
     },
     {
       "path": "sections/cover.html",
-      "bytes": 8820,
-      "sha256": "baf60b79824864b63f8e3080243b7ca15c20afb24c5046fa431a67b50827890f",
+      "bytes": 9120,
+      "sha256": "2ee6e1cbe26914d4a5febf8cbadd4dd6af66f3a4abe095910313ee6870692e41",
       "kind": "copied"
     },
     {
       "path": "sections/fleet.html",
-      "bytes": 2236,
-      "sha256": "be7b7b5ed37dfbd5d856bcd8c9dcdeea1c2caedabaefa0f14b1a96478971498a",
+      "bytes": 2557,
+      "sha256": "15f923c565da2457f6f7d9d16cbbe10fd66ef2e70c50ddf3771fc9a7ef990e67",
       "kind": "copied"
     },
     {
